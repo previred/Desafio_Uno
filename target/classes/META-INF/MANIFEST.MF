@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gdd
+Implementation-Version: 0.0.1
+Built-By: me
+Implementation-Vendor-Id: com.previred.gdd
+Build-Jdk: 1.8.0_191
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/gdd
+Created-By: Maven Integration for Eclipse
+

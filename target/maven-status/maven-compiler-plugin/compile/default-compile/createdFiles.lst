@@ -1,0 +1,6 @@
+com\previred\gdd\config\SwaggerConfig.class
+com\previred\gdd\service\GeneradorDatosService.class
+com\previred\gdd\config\GeneradorDatosException.class
+com\previred\gdd\model\Periodo.class
+com\previred\gdd\GddApplication.class
+com\previred\gdd\controller\GeneradorDatosController.class
