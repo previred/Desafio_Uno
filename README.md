@@ -1,3 +1,13 @@
+
+# compilar
+
+gradlew build
+
+# run
+
+gradle bootRun
+
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:
