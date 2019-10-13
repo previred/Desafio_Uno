@@ -48,7 +48,7 @@ Requisitos, tener Python3, terminal de Linux:
 
 		```python3 nivel2.py```
 
-	1.5) Ver los resultados en la terminal de Linux
+	1.6) Ver los resultados en la terminal de Linux
 
 
 
