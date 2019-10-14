@@ -1,10 +1,10 @@
-Requisitos, tener Python3 y la terminal de Linux:
+#
+Requisitos, tener Python3 y la terminal de Linux
+
 
 1) Para ejecutar el nivel1.py, se debe seguir los siguientes pasos:
 
-	1.1) Se debe ir a la raiz del proyecto, ejecutar en la terminal de linux, el siguiente comando:
-
-		cd soluciones/
+	1.1) Se debe abrir dentro de la carpeta soluciones una nueva terminal de Linux
 
 	1.2) Para instalar pip, se debe ejecutar en la terminal de linux el siguiente comando:
 
@@ -24,9 +24,7 @@ Requisitos, tener Python3 y la terminal de Linux:
 
 2) Para ejecutar el nivel2.py, se debe seguir los siguientes pasos:
 
-	1.1) Se debe ir a la raiz del proyecto, ejecutar en la terminal de linux, el siguiente comando:
-
-		cd soluciones/
+	1.1) Se debe abrir dentro de la carpeta soluciones una nueva terminal de Linux
 
 	1.2) Para instalar pip, se debe ejecutar en la terminal de linux el siguiente comando:
 
@@ -50,9 +48,7 @@ Requisitos, tener Python3 y la terminal de Linux:
 
 3) Para ejecutar el nivel3.py, se debe seguir los siguientes pasos:
 
-	1.1) Se debe ir a la raiz del proyecto, ejecutar en la terminal de linux, el siguiente comando:
-
-		cd soluciones/
+	1.1) Se debe abrir adentro de la carpeta soluciones una nueva terminal de Linux
 
 	1.2) Para instalar pip, se debe ejecutar en la terminal de linux el siguiente comando:
 
@@ -70,7 +66,7 @@ Requisitos, tener Python3 y la terminal de Linux:
 
 		python3 nivel3.py
 
-	1.7) Ver los resultados en el navegador direccion:
+	1.7) Ver los resultados en el navegador dirección:
 
 		localhost:5000/
 
