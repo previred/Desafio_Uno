@@ -1,0 +1,4 @@
+ApiPeriodosPerdidos/target/
+swagger-codegen-cli.jar
+.idea/
+ApiPeriodosPerdidos/*.iml
