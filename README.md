@@ -1,130 +1,87 @@
-# Desafío 1: Periodos perdidos
+# Fechas Faltantes Desafio
 
-El desafío consiste en lo siguiente:
+Este proyecto expone un API REST que entrega la siguiente información:
 
--   Existe un servicio REST que llamaremos Generador De Datos o GDD.
-    -   El servicio responde con una lista de fechas generadas aleatoriamente. Estas fechas se encuentran en un lapso definidos por dos valores: fechaCreacion y fechaFin.
-    -   Cada fecha generada corresponde al primer día de un mes.
-    -   La respuesta contienen un máximo de 100 fechas. 
-    -   El servicio no entrega todas las fechas dentro del periodo, omite algunas de forma también aleatoria.
--   El objetivo de este ejercicio es que determines cuáles son los periodos que faltan.
-
-Este es un ejemplo de la respuesta que entrega este servicio:
-
+*id*: identificador
+*fechaCreacion*: Fecha de inicio de la secuencia
+*fechaFin*: Fecha de fin de la secuencia
+*fechas*: Lista de fechas que están en el rango de la fecha que se encuentra en “fechaCreacion” hasta la fecha “fechaFin”
+*fechasFaltantes*: Lista de fechas faltantes entre el rango "fechaCreacion" y "fechaFin" no incluidas en la Lista de "fechas"
+Ejemplo.
 ```json
 {
-    "id": 6,
-    "fechaCreacion": "1968-08-01",
-    "fechaFin": "1971-06-01",
+    "id": 1,
+    "fechaCreacion": "1985-04-01",
+    "fechaFin": "1986-01-01",
     "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1971-05-01"]
-}
-```
-
-Acá se puede apreciar que el servicio generó fechas entre el 1 de agosto de 1968 y el 1 de junio de 1971. Sólo se generaron 4 fechas en este caso. 
-De acuerdo a esto, faltarían 5 fechas de 1968, 9 fechas de 1969 y 5 fechas de 1971.
-Una versión del GDD se encuentra en este repositorio en GitHub:
-https://github.com/previred/Generador_Datos_Desafio_Uno
-
-El desafío puede ser resuelto de tres maneras distintas. 
-Tú eliges cuál es la que más te acomoda entre estos tres niveles:
-
-## Nivel 1: 
-    Crear un programa que recibe, a través de la entrada estándar, un archivo en formato Json con la estructura de la respuesta de servicio (como el ejemplo de arriba) y que entrega a través de la salida estándar, como respuesta, un archivo Json con las fechas faltantes.
-Ejemplo:
-    Se entrega un archivo con este contenido:
-    
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
-    "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"]
-}
-```
-
-El programa debe responder con archivo con este contenido:
-    
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
+        "1985-05-01",
+        "1985-07-01",
+        "1985-11-01"
+        ],
     "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
+        "1985-04-01",
+        "1985-06-01",
+        "1985-08-01",
+        "1985-09-01",
+        "1985-10-01",
+        "1985-12-01"
+    ]
 }
 ```
- 
-El programa se debe ejecutar de la siguiente manera:
-    $ mi_solucion < nombre_archivo_entrada > nombre_archivo_salida
+*Nota*:
+El formato de cada fechas Faltante es yyyy-MM-dd
+El servicio Invoca al servicio de Generacion de Datos Desafio donde este
+entrega 1 periodos, el periodo contiene una fecha inicial una fecha final y una lista fechas, para luego
+esta API REST completara la Lista fechasFaltantes
 
-## Nivel 2:
+# Detalle de los sistemas
 
-Construir un programa que invoque al servicio REST GDD y escriba como salida un archivo con las fechas, los periodos recibidos y la lista de periodos faltantes.
-Ejemplo:
+Java 8
+Spring-Boot (v2.2.1.BUILD-SNAPSHOT)
+Maven 3
+
+
+# Compilar y ejecutar el proyecto
+
+Para copilar el proyecto se requiere Java y Maven instalado.
+Ingresar al directorio *ApiPeriodos* ejecutar el siguiente comando *maven*
+
+```bash
+mvn package
+```
+
+Luego de compilar el proyecto ingresar al directorio *target* ejecutar el siguiente comando *java*
+
+```bash
+java -jar .\desafioCayo-0.0.1.jar
 
 ```
-INVOCACION:
-    $ mi-solucion
-SALIDA (un archivo con el siguiente contenido) :
-      fecha creación: 2018-10-01
-         fecha fin: 2019-04-01
-         fechas recibidas: 2018-10-01, 2018-12-01, 2019-01-01, 2019-04-01
-        fechas faltantes: 2018-11-01, 2019-02-01, 2019-03-01
+*Nota*:
+Debe estar disponible el puerto *8081* en el PC donde se ejecute esta API
+
+
+# Visualizar donde Consumir la API
+
+Para consumir el servicio se debe invocar la siguiente URL
+
+```bash
+curl -X GET --header 'Accept: application/json' 'http://localhost:8081/api/faltantes'
 ```
 
-## Nivel 3:
+# Codigos de Respuestas
 
-Implementar un nuevo servicio REST. Este servicio REST debe invocar al servicio GDD y entregar la respuesta en formato JSON con las fechas recibidas y las fechas faltantes.
-Ejemplo de la respuesta que debería entregar:
-
-```json
+200 OK - Devuelve el Json con todos los campos (enviados por GDD y fechasFaltantes)
+500 FALLO - Devuelve un Json con la siguiente estructura
 {
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
-    "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"],
-    "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
-
+    "mensaje":"Error al llamar al servicio Generador DD",
+    "error":"I/O error on GET request for \"http://127.0.0.1:8080/periodos/api\": 
+              Connection refused: connect; nested exception is java.net.ConnectException: 
+              Connection refused: connect: Connection refused: connect"
 }
-```
-
-REQUISITOS:
--   Se pueden implementar las soluciones en cualquier lenguaje y framework. Aunque recomendamos usar: Java(con o sin Spring Boot), Go y Python.
--   La solución debe ser enviada vía un pull request a este repositorio.
--   La solución debe contener un README.md con las instrucciones para compilar e instalar.
--   Puedes implementar cualquiera de los 3 niveles, no es necesario implementar los 3.
--   Hay bonus si usas SWAGGER.
--   Junto con la solución debes entregar un archivo con la entrada y con la salida en formato JSON.
-- Por ultimo en el detalle del commit debes indicar los siguientes datos
-   - Nombre Completo.
-   - Correo Electrónico.
-   - Vía por la que te entérate del desafío. Estas pueden ser: Empresa de outsourcing (indicar cuál), twitter, LinkedIn, etc.
 
 
-NOTA:
-Todos los pull reuqests serán rechazados, esto no quiere decir que ha sido rechazada la solución, sino que es una forma de que otros postulantes no copien tu código.
+# Elaborado por:
+
+Christian Ayo Roca
+christian.ayo@gmail.com
+Tech Consult
