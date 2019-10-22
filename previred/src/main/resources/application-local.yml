@@ -1,0 +1,18 @@
+server:
+  port: 8677
+
+logging:
+    level:
+        ROOT: DEBUG
+
+swagger:
+    titulo: aplicacion previred
+    descripcion: aplicacion de consumo gdd
+    responsable: Francisco Vengas Rojas
+    dependencias: apiPeriodos
+    impacto: Medio
+    version: develop
+    basePackageScan: cl.prueba.previred.controller
+endpoint:
+  api: http://localhost:8080/periodos/api
+
