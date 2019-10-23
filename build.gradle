@@ -5,8 +5,9 @@ plugins {
 }
 
 group = 'cl.previred.challenge'
-version = '0.0.1-SNAPSHOT'
+version = '1.0.0'
 sourceCompatibility = '1.8'
+targetCompatibility = 1.8
 
 repositories {
 	mavenCentral()
