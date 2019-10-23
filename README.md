@@ -25,7 +25,7 @@ Este es un ejemplo de la respuesta que entrega este servicio:
 ```
 
 Acá se puede apreciar que el servicio generó fechas entre el 1 de agosto de 1968 y el 1 de junio de 1971. Sólo se generaron 4 fechas en este caso. 
-De acuerdo a esto, faltarían 5 fechas de 1968, 9 fechas de 1969 y 5 fechas de 1971.
+De acuerdo a esto, faltarían fechas, 5 de 1968, 9 fechas de 1969, 5 fechas de 1971, etc.
 Una versión del GDD se encuentra en este repositorio en GitHub:
 https://github.com/previred/Generador_Datos_Desafio_Uno
 
