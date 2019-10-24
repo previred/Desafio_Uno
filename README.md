@@ -1,3 +1,24 @@
+# Solución al desafío 1:
+
+Se implementó la solución de nivel 3. Se implementó con python, usando Flask
+
+## Requisitos
+
+- Docker
+
+## Ejecución
+
+Existe un archivo, llamado `docker-compose.yml` que tiene una sección de variables, hay una llamada `GDD_URL` la cual contiene la url que se utiliza para obtener los datos del generador.
+
+Para compilar se utiliza: `docker-compose build`
+
+Para ejecutar se utiliza: `docker-compose up`
+
+Ambos juntos: `docker-compose up --build`
+
+Una vez ejecutado se puede ingresar a `https://localhost:5000` o enviar una petición a `curl -X GET "http://127.0.0.1:5000/missing-dates/" -H  "accept: application/json"`
+
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:

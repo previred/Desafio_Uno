@@ -1,0 +1,15 @@
+version: '3.5'
+services:
+  desafio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      FLASK_DEBUG: 1
+      GDD_URL: http://127.0.0.1:8080/periodos/api
+    network_mode: "host"
+    ports:
+      - 5000:5000
+    command: python -m flask run --host=0.0.0.0
