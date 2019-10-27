@@ -9,7 +9,9 @@ I take the followings technologies for the challenge:
 - Docker
 - Docker-Compose
 
-I chose Flask, even when i know better Django, because the API in this test was small, and use Flask is more accurated because in the future you can contain it in a docker container and put it in Kubernetes or something. Use Django for something so small is not optimum. I dockerized the flask API in a dev server, because i need more time to decide the more accurated container for Flask, but it's functional and i recommend to use UWSGI for a production server.
+Besides, you doesn't need nothing more that docker for this. I dockerized your API and with docker-compose, so it's everything assembled in one package. The container architecture is the new and the good, so we need to feel comfortable with containers, and CI/CD auto deploys.
+
+I chose Flask, even when i know Django better, because the API in this test was small, and to use Flask is more accurated because in the future you can contain it in a docker container and put it in Kubernetes or something. To Use Django for something so small is not optimum. I dockerized the flask API in a dev server, because the challenge is not about the better production server or more accurated. However, it's functional and i recommend to use UWSGI for a production server.
 
 # Get Started
 
