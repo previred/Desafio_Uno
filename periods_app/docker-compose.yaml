@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sourceapi:
+    container_name: sourceapi
+    restart: always
+    build: ./sourceapi/
+    ports:
+      - '8080:8080'
+  api:
+    container_name: api
+    restart: always
+    build: ./api/
+    ports:
+      - '5000:5000'
+    depends_on:
+      - sourceapi

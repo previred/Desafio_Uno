@@ -1,0 +1,10 @@
+**/.vscode/**/*
+**/.vscode/
+**/.vscode
+
+sourceapi/ApiPeriodos/target/
+sourceapi/swagger-codegen-cli.jar
+
+**/__pycache__
+*.pyc
+**/env
