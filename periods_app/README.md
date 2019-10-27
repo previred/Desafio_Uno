@@ -22,6 +22,15 @@ $ docker-compose build
 $ docker-compose up
 ```
 
+### Test
+
+After run the docker-compose command, two endpoints will be available in your local machine:
+
+| Type     | URL                             |
+| -------- | ------------------------------- |
+| Swagger  | http://localhost:5000/api/docs/ |
+| Solution | http://localhost:5000/periods/  |
+
 Finally, i hope to be part of Previred team, i'm young (or young enough haha), i want to achieve so much yet, however, i appreciate so much a team to talk with, about anything, because your job is your second life.
 
 I hope we could celebrate together, see ya!

@@ -10,7 +10,7 @@ flask_app = Flask(__name__)
 app = Api(app=flask_app,
           version="1.0",
           title="Interview Challenge API",
-          description="It consumes another service for the entrance and gives the input and answer of the challenge",
+          description="This service consumes GDD service and solves the challenge",
           doc='/api/docs/')
 
 period_namespace(Resource, app)
