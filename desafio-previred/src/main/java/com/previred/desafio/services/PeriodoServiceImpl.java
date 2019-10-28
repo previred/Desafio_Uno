@@ -61,16 +61,20 @@ public class PeriodoServiceImpl implements PeriodoService {
             //Inserta primero las fechas faltantes desde la fecha de creación hasta la primera fecha del response
             if(i == 0 && i < totalFechas - 1){
                 datosFechas = this.obtieneDatosFechas(fechaCreacion, fechas.get(i));
-                this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response);
+                this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response,2);
+
+                datosFechas = this.obtieneDatosFechas(fechas.get(i), fechas.get(i+1));
+                this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response,0);
+
             }else if (i < totalFechas - 1){
                 datosFechas = this.obtieneDatosFechas(fechas.get(i), fechas.get(i+1));
-                this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response);
+                this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response, 0);
             }
 
         }
         //Finalmente inserta fechas Faltantes desde la ultima fecha del response hasta la fechaFin
         datosFechas = this.obtieneDatosFechas(fechas.get(totalFechas - 1), fechaFin);
-        this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response);
+        this.insertaDatosFechas((long)datosFechas.get(0), (LocalDate) datosFechas.get(1), response, 1);
     }
 
     private ArrayList<Object> obtieneDatosFechas(LocalDate fechaIni, LocalDate fechaFin){
@@ -86,11 +90,20 @@ public class PeriodoServiceImpl implements PeriodoService {
         return responseDatos;
     }
 
-    private void insertaDatosFechas(long mes, LocalDate mesActual, Periodos response){
+    private void insertaDatosFechas(long mes, LocalDate mesActual, Periodos response, int tipo){
+
+
+        if(tipo == 2 && !response.getFechas().get(0).equals(response.getFechaCreacion())){
+            response.addFechasFaltantesItem(response.getFechaCreacion());
+        }
 
         for (int mesIni = 1 ; mesIni < mes ; mesIni++ ){
             LocalDate fechaNext = mesActual;
             response.addFechasFaltantesItem(fechaNext.plusMonths(mesIni));
+        }
+
+        if(tipo == 1 && !mesActual.equals(response.getFechaFin())){
+            response.addFechasFaltantesItem(response.getFechaFin());
         }
     }
 }
