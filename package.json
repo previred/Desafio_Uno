@@ -1,0 +1,15 @@
+{
+  "name": "api-rest-nivel3",
+  "version": "1.0.0",
+  "description": "Servicio respuesta Nivel 3 del desafio uno",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nelson Herrera",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "request": "^2.88.0"
+  }
+}
