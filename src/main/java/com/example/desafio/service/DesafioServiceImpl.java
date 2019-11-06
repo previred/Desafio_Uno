@@ -21,22 +21,28 @@ public class DesafioServiceImpl implements DesafioService{
 
     @Override
     public DesafioResponse buscarFechaFaltantes() {
-        DesafioResponse desafioResponse;
+        DesafioResponse desafioResponse = new DesafioResponse();
         RestTemplate restTemplate = new RestTemplate();
         ArrayList<String>  listaFechaFaltantes= new ArrayList<>();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
-        HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-        ResponseEntity<DesafioResponse> response = restTemplate.exchange("http://127.0.0.1:8080/periodos/api", HttpMethod.GET,
-                entity, DesafioResponse.class);
+        try {
+            HttpEntity<String> entity = new HttpEntity<String>(null, headers);
+            ResponseEntity<DesafioResponse> response = restTemplate.exchange("http://127.0.0.1:8080/periodos/api", HttpMethod.GET,
+                    entity, DesafioResponse.class);
 
-        desafioResponse = response.getBody();
+            desafioResponse = response.getBody();
 
-        listaFechaFaltantes = fechasFaltantes(desafioResponse.getFechaCreacion(), desafioResponse.getFechaFin(),
-                                                desafioResponse.getFechas());
+            if (desafioResponse!=null){
+                listaFechaFaltantes = fechasFaltantes(desafioResponse.getFechaCreacion(), desafioResponse.getFechaFin(),
+                        desafioResponse.getFechas());
 
-        desafioResponse.setFechasFaltantes(listaFechaFaltantes);
+                desafioResponse.setFechasFaltantes(listaFechaFaltantes);
+            }
+        } catch (Exception e){
+            // Ocurrió un error
+        }
 
         return desafioResponse;
 
