@@ -18,9 +18,9 @@ public class DesafioController {
     private DesafioService desafioService;
 
     @GetMapping("desafio")
-    @ApiOperation(value = "",
-                  notes = "")
-    public DesafioResponse getToken() {
+    @ApiOperation(value = "Servicio buscarFechaFaltantes ",
+                  notes = "Servicio que se conecta con el servicio GDD y luego busca las fechas faltantes que este servicio no retorna")
+    public DesafioResponse buscarFechaFaltantes() {
         DesafioResponse desafioResponse;
         desafioResponse = desafioService.buscarFechaFaltantes();
         return desafioResponse;
