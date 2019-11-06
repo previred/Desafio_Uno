@@ -35,7 +35,7 @@ Para ejecutar es proyecto es necesario:
 
 - Tener corriendo el servicio GDD para que este proyecto pueda conectarse, preferiblemente tener el proyecto configurado en: "127.0.0.1:8080".
 - Tener JDK 8
-- Descargar el proyecto con la resolución.
+- Descargar este proyecto.
 - Hacer maven clean, compile, install para descargar e instalar las dependecias.
 - Ejecutar el proyecto.
 - Se puede acceder al servicio por medio de "curl -X GET "http://127.0.0.1:8081/desafio" -H "accept: */*" "
