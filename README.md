@@ -24,7 +24,7 @@ java -jar ./previredTest-1.0.0.jar
 java -jar -Durl="http://127.0.0.1:9090" ./previredTest-1.0.0.jar
 ```
 *Nota*:
-Debe estar disponible el puerto *8080* en el PC donde se ejecute esta API
+Debe estar disponible el puerto *8081* en el PC donde se ejecute esta API
 
 # Visualizar Documentación y consumir la API
 
