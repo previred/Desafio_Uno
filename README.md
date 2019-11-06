@@ -19,6 +19,7 @@ Luego de compilar el proyecto ingresar al directorio *target* ejecutar uno de lo
 
 ```bash cuando el servicio CDD esta ejecutado en la siguiente ruta "http://127.0.0.1:8080"
 java -jar ./previredTest-1.0.0.jar
+```
 ```bash cuando el servicio CDD cambia la url
 java -jar -Durl="http://127.0.0.1:9090" ./previredTest-1.0.0.jar
 ```
