@@ -30,6 +30,11 @@
     		<artifactId>json</artifactId>
     		<version>20190722</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>wsdl4j</groupId>
+			<artifactId>wsdl4j</artifactId>
+		</dependency>
 
 
 		<dependency>

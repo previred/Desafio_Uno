@@ -7,7 +7,7 @@ public class DateInfo {
 
 	private String id;
 	private LocalDate fechaCreacion;
-	private LocalDate fechFin;
+	private LocalDate fechaFin;
 	private List<LocalDate> fechas;
 	private List<LocalDate> fechasFaltantes;
 	
@@ -23,11 +23,11 @@ public class DateInfo {
 	public void setFechaCreacion(LocalDate fechaCreacion) {
 		this.fechaCreacion = fechaCreacion;
 	}
-	public LocalDate getFechFin() {
-		return fechFin;
+	public LocalDate getFechaFin() {
+		return fechaFin;
 	}
-	public void setFechFin(LocalDate fechFin) {
-		this.fechFin = fechFin;
+	public void setFechaFin(LocalDate fechFin) {
+		this.fechaFin = fechFin;
 	}
 	public List<LocalDate> getFechas() {
 		return fechas;
