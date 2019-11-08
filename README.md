@@ -41,4 +41,4 @@ Para ejecutar es proyecto es necesario:
 - Se puede acceder al servicio por medio de "curl -X GET "http://127.0.0.1:8081/desafio" -H "accept: */*" "
 - En caso de tener dudas usar la documentación de la API en "http://127.0.0.1:8081/swagger-ui.html#/"
 - En la raíz del proyecto esta un archivo JSON llamado "response.json" con una de las respuestas posible del servicio, no es necesario ningún request o información de entrada para ejecutar el servicio, por eso NO existe un archivo similar al del response pero con el request.
-
+- Solución en Django -> https://github.com/eilincastillo/Desafio_Python
