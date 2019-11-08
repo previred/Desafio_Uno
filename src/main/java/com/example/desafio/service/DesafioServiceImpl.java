@@ -65,6 +65,7 @@ public class DesafioServiceImpl implements DesafioService{
 
                     if (localfecha.isEqual(nuevaFecha)){
                         exist=true;
+                        break;
                     }
                 }
 
