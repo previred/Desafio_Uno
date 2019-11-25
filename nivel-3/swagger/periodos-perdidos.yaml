@@ -1,0 +1,53 @@
+swagger: '2.0'
+info: 
+  title: 'API fechas faltantes'
+  description: 'Determina los periodos faltantes en prueba de desafío de implementacion'
+  contact:
+    name: 'Jorge San Martin'
+    email: 'jorgesanmartinjeldres@gmail.com'
+  version: 1.0.0
+schemes:
+  - http
+host: '127.0.0.1:8080'
+basePath: /periodos-perdidos
+tags:
+  - name: periodos perdidos
+    description: Lista de periodos perdidos
+paths:  
+  /periodos-perdidos:
+    get:
+      sumary: 'Permite obtener las fechas faltantes en la respuesta del Generador de Datos o GDD'
+      produces:
+      - 'application/json'      
+      responses:
+        200:
+          description: 'Periodo, lista de fechas y lista de fechas faltantes'
+          schema: 
+            $ref: '#/definitions/PeriodosPerdidos'
+                
+        500:
+          description: 'Error interno'  
+definitions:
+  PeriodosPerdidos:
+    type: object
+    properties:
+      id: 
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+      fechasFaltantes:
+        type: array
+        items:
+          type: string
+          format: date
+

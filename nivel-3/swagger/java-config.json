@@ -1,0 +1,12 @@
+{
+"modelPackage": "com.previred.periodosperdidos.swagger.codegen.model",
+"apiPackage": "com.previred.periodosperdidos.swagger.codegen.api",
+"basePackage": "com.previred.periodosperdidos",
+"configPackage": "com.previred.periodosperdidos.swagger.codegen.config",
+"groupId": "com.previred.periodosperdidos",
+"artifactId": "api-periodos-perdidos",
+"artifactVersion": "1.0.0",
+"java8": true,
+"hideGenerationTimestamp" : true,
+"library"         : "spring-boot"
+}
