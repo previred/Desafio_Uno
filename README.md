@@ -1,22 +1,36 @@
 # Respuesta Desafío 1
-El proyecto requiere Python>=3.6.5 y Pipenv>=2018.11.26
+El proyecto requiere `Python>=3.6.5` y `Pipenv>=2018.11.26` y una instancia
+del proyecto Generador_Datos_Desafio_Uno corriendo en
+`http://127.0.0.1:8080`.
 
-- Instalar proyecto via Pipenv
+Se provee archivos de ejemplo de entrada y salida de datos, `entry.json` y
+`output.json` respectivamente.
+
+### Instalar proyecto via Pipenv
+
 `pipenv install`
 
-- Activar entorno
+### Activar entorno
+
 `pipenv shell`
 
-- Correr migraciones
+### Correr migraciones
+
 `python desafio/manage.py migrate`
 
-- Levantar servidor
+### Levantar servidor
+
 `python manage.py runserver`
 
-- Acceder a la API en cualquiera de los siguientes medios
-    - Browser
-    `http://127.0.0.1:8000/api/GDD`
-    - Curl
-    `curl -X GET http://127.0.0.1:8000/api/GDD`
-    - Swagger
-    `http://127.0.0.1:8000/swagger/`
+### Acceder al endpoint con cualquiera de los siguientes medios
+Browser
+
+`http://127.0.0.1:8000/api/GDD`
+
+Curl
+
+`curl -X GET http://127.0.0.1:8000/api/GDD`
+
+Swagger
+
+`http://127.0.0.1:8000/swagger/`
