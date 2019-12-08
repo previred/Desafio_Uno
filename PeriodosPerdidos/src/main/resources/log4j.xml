@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+    
+    <appender name="APP_APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="DatePattern" value="'.'yyyyMMdd" />
+        <param name="Append" value="true" />
+        <param name="File" value="${path.logs}/info_previred_backend.log" />
+        <param name="threshold" value="info" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{dd/MM/yyyy}; %d{HH:mm:ss}; %p; %m%n" />
+        </layout>
+    </appender>
+
+    <logger name="cl.previred.periodosperdidos" additivity="false">
+        <level value="INFO" />
+        <appender-ref ref="APP_APPENDER" />
+    </logger>
+    
+    <logger name="org.apache.cxf" additivity="false">
+        <level value="INFO" />
+        <appender-ref ref="APP_APPENDER" />
+    </logger>
+   
+    <root>
+        <priority value="DEBUG" />
+        <appender-ref ref="APP_APPENDER" />
+    </root>
+
+</log4j:configuration>
