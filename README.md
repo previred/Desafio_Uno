@@ -30,8 +30,8 @@ $ java -jar target/DateRecovery-0.0.1-SNAPSHOT.jar
 
 | Documentación | URL |
 | ------ | ------ |
-| API Doc | http://localhost:8090/v2/api-docs |
-| Swagger UI | http://localhost:8090/swagger-ui.html |
+| API Doc | http://localhost:8090/dates-recovery/v1/api/api-docs |
+| Swagger UI | http://localhost:8090/dates-recovery/swagger-ui.html |
 
 ### Ejemplo de request
 
