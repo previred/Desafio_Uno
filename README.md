@@ -7,12 +7,15 @@
 | Spring Boot | 2.2.2.RELEASE |
 | Maven | 3.5.0 |
 
-### Configuración
- - Se puede configurar el endpoint de GDD en el archivo application.properties. Está configurado por defecto en:
+### Configuración por defecto
+ - endpoint de GDD
 ```sh
-http://localhost:8080/periodos/api	
+previred.api=http://localhost:8080/periodos/api	
 ```
- - El puerto de DateRecovery está configurado por defecto en el puerto 8090
+ - El puerto de DateRecovery
+```
+server.port=8090
+```
 
 
 ### Intrucciones de instalación
