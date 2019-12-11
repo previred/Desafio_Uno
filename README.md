@@ -489,20 +489,3 @@ curl -X GET "http://localhost:8081/api/" -H "accept: application/json"
     ]
 }
 ```
-
-
-REQUISITOS:
--   Se pueden implementar las soluciones en cualquier lenguaje y framework. Aunque recomendamos usar: Java(con o sin Spring Boot), Go y Python.
--   La solución debe ser enviada vía un pull request a este repositorio.
--   La solución debe contener un README.md con las instrucciones para compilar e instalar.
--   Puedes implementar cualquiera de los 3 niveles, no es necesario implementar los 3.
--   Hay bonus si usas SWAGGER.
--   Junto con la solución debes entregar un archivo con la entrada y con la salida en formato JSON.
-- Por ultimo en el detalle del commit debes indicar los siguientes datos
-   - Nombre Completo.
-   - Correo Electrónico.
-   - Vía por la que te entérate del desafío. Estas pueden ser: Empresa de outsourcing (indicar cuál), twitter, LinkedIn, etc.
-
-
-NOTA:
-Todos los pull reuqests serán rechazados, esto no quiere decir que ha sido rechazada la solución, sino que es una forma de que otros postulantes no copien tu código.
