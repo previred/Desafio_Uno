@@ -12,6 +12,9 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
+/**
+ * The Class DatesRecoveryRestController.
+ */
 @Api(value = "Dates Recovery", tags = { "Dates Recovery" })
 @RestController
 @ApiResponses(value = { 
@@ -22,9 +25,15 @@ import io.swagger.annotations.ApiResponses;
 		@ApiResponse(code = 500, message = "Internal Server Error") })
 public class DatesRecoveryRestController {
 
+	/** The re serv. */
 	@Autowired
 	private iRecuperarFechasService reServ;
 
+	/**
+	 * Recuperar fechas.
+	 *
+	 * @return the response entity
+	 */
 	@GetMapping("/recuperar-fechas")
 	@ApiOperation(httpMethod = "GET", value = "get")
 	public ResponseEntity<PeriodoDTO> recuperarFechas() {
