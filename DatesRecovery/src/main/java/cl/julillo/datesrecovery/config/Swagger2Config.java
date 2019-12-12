@@ -23,12 +23,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @Configuration
 @EnableSwagger2
-public class Swagger2config {
+public class Swagger2Config {
 	@Bean
 	public Docket api() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("cl.julillo.controller")).paths(PathSelectors.any()).build()
-				.apiInfo(apiInfo())
+				.apis(RequestHandlerSelectors.basePackage("cl.julillo.datesrecovery.controller"))
+				.paths(PathSelectors.any()).build().apiInfo(apiInfo())
 				.alternateTypeRules(AlternateTypeRules.newRule(typeResolver.resolve(List.class, LocalDate.class),
 						typeResolver.resolve(List.class, Date.class), Ordered.HIGHEST_PRECEDENCE));
 	}
