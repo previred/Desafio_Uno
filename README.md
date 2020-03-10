@@ -1,3 +1,29 @@
+# Solución Alexis Rivas:
+
+-   Para la solución Use el nivel 3 con Java 8 y Spring Boot.
+-   Generador_Datos_Desafio_Uno lo configure en el puerto 8081.
+
+## Compilar y ejecutar el proyecto
+
+Para copilar el proyecto se requiere Java y Maven instalado. Ingresar al directorio Desafio_Uno ejecutar el siguiente comando maven 
+
+*   mvn clean package spring-boot:repackage
+
+Luego de compilar el proyecto ingresar al directorio target ejecutar el siguiente comando java
+
+*   java -jar target/desafio-uno-0.0.1-SNAPSHOT.war.
+
+#  Consumir la API
+
+El servicio es de tipo Get:
+
+* http://localhost:8080/getMissingDates
+
+
+## En la carpeta Json se encuentran los archivos con la entrada y con la salida en formato JSON.
+
+
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:
