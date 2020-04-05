@@ -1,0 +1,77 @@
+swagger: "2.0"
+info:
+  description: >-
+    Prueba para desafío de implementación
+  version: 1.0.0
+  title: API periodos
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: ebustosmerino@gmail.com
+  license:
+    name: Apache 2.0
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "127.0.0.1:8080"
+basePath: /periodos
+tags:
+  - name: periodos
+    description: Lista de periodos a procesar
+schemes:
+  - http
+paths:
+  /api/getRandomPeriods:
+    get:
+      tags:
+        - periodos
+      summary: Lista de periodos a procesar
+      operationId: periodos
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Periodo y lista de fechas
+          schema:
+            $ref: "#/definitions/Periodo"
+  /api/getAllPeriodsByRandom:
+    get:
+      tags:
+        - periodosFaltantes
+      summary: Lista de periodos a procesar
+      operationId: periodosFaltantes
+      produces:
+        - application/json
+      responses:
+        "200":
+          description: Periodo y lista de fechas
+          schema:
+            $ref: "#/definitions/PeriodosFaltantes"
+definitions:
+  Periodo:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+  PeriodosFaltantes:
+    allOf:
+      - $ref: "#/definitions/Periodo"
+      - type: object
+      - properties:
+          fechasFaltantes:
+            type: array
+            items:
+              type: string
+              format: date
+externalDocs:
+  description: Especificación de swagger
+  url: "https://swagger.io/docs/specification/about/"

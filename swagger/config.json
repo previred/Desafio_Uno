@@ -1,0 +1,16 @@
+{
+  "groupId"         : "com.previred.periodos",
+  "artifactId"      : "api-periodos",
+  "artifactVersion" : "1.0.0",
+  "artifactDescription" : "Micro Servicio de prueva de periodos",
+  
+  "basePackage"     : "com.previred.periodos",
+  "invokerPackage"  : "com.previred.periodos.swagger",
+  "apiPackage"      : "com.previred.periodos.swagger.codegen.api",
+  "modelPackage"    : "com.previred.periodos.swagger.codegen.model",
+  "configPackage"   : "com.previred.periodos.swagger.codegen.config",
+  "java8"           : true,
+  "title"           : "API Periodos",
+  "hideGenerationTimestamp" : true,
+  "library"         : "spring-boot"
+}
