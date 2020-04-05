@@ -1,0 +1,9 @@
+myapp:
+  properties:
+    endpoint: http://127.0.0.1:8080/periodos/api
+server:
+  port: 8090
+spring:
+  application:
+    name: api-fechas
+

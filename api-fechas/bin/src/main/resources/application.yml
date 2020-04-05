@@ -1,0 +1,25 @@
+myapp:
+  properties:
+    btsGet: http://desaconvsb01.forum.local:8114/api/country/v1/
+    dealerService: http://desaspringboot.forum.local:8692/api/dealers/v2
+    Requerimiento: 1
+    Device: HOSTNAME_MICHAEL
+
+server:
+  port: 8090
+info:
+  version: "v1"
+spring:
+  application:
+    name: arq-app
+
+#Metricas de Actuator.
+management.endpoints.web.exposure.include: health,info,metrics
+management.endpoint.health.show-details: always  
+
+#Servidor Eureka 
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://10.20.3.171:1111/eureka/

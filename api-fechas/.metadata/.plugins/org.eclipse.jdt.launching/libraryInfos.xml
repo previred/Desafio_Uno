@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre" version="1.8.0_222">
+<bootpath>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\se-service.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9" version="1.8.0_222">
+<bootpath>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\bin\compressedrefs\jclSC180\vm.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\se-service.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\resources.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\jce.jar"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\AdoptOpenJDK\jdk-8.0.222.10-openj9\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

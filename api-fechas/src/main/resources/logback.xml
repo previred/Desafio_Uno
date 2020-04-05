@@ -1,0 +1,55 @@
+<configuration>
+<springProperty scope="context" name="springAppName" source="spring.application.name"/>
+<springProperty scope="context" name="springServerPort" source="server.port"/>
+  
+  <appender name="RESTSERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>./logs/restService.log</file>
+    <encoder>
+      <pattern>%date %level [%thread] [ApplicationName:${springAppName}] [%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+    		<fileNamePattern>./logs/restService.%d{yyyy-MM-dd}.log</fileNamePattern>
+    		<maxHistory>3</maxHistory>
+    </rollingPolicy>
+  </appender>
+  
+    <appender name="ERRORSERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <param name="maxBackupIndex" value="10"/>
+    <file>./logs/error.log</file>
+    <encoder>
+      <!--  <pattern>%date %level [%thread] %logger{10} [%fileñ:%line] %msg ${HOSTNAME} %C %M %n</pattern> -->
+        <pattern>%date %level [%thread] [ApplicationName:${springAppName}] [%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+        <!--  <pattern>%date %level [%thread] %logger{10} [%C:%line] %msg Metodo: [%M] - %contextName %n</pattern> -->
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./logs/error.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+    </rollingPolicy>
+  </appender>
+
+<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+      <pattern>%date %level [%thread] [ApplicationName:${springAppName}] [%C:%line] [Method:%M] %logger{10} %msg%n</pattern>
+              
+</encoder>
+</appender>
+
+  <logger name="restservice" level="INFO">
+    <appender-ref ref="RESTSERVICE" />
+</logger>
+<logger name="errorservice" level="ERROR">
+<appender-ref ref="ERRORSERVICE" />
+</logger>
+
+<root level="INFO">
+    <appender-ref ref="STDOUT" />
+     <appender-ref ref="RESTSERVICE"/>
+</root>
+
+<root level="ERROR">
+    <appender-ref ref="STDOUT" />
+     <appender-ref ref="ERRORSERVICE"/>
+</root>
+
+</configuration>  
