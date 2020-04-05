@@ -1,0 +1,78 @@
+swagger: '2.0'
+info:
+  description: Solución a Prueba para desafío de implementación, Nivel de solución 3
+  version: 1.0.0
+  title: API periodos Solución desafío 1.
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: cerna14@gmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: '127.0.0.1:8081'
+basePath: /periodossol
+tags:
+  - name: periodosCheck
+    description: Lista de periodos a procesar
+schemes:
+  - http
+paths:
+  /api:
+    get:
+      tags:
+        - periodosCheck
+      summary: Revisa los periodos e identifica las fechas faltantes Impl
+      operationId: periodosCheck
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Periodo y lista de fechas existentes y faltantes
+          schema:
+            $ref: '#/definitions/PeriodoSol'
+
+definitions:
+  PeriodoSol:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+      fechasFaltantes:
+        type: array
+        items:
+          type: string
+          format: date
+  # mantener modelo para accesar a servicio GDD
+  Periodo:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+          
+externalDocs:
+  description: Especificación de swagger
+  url: 'https://swagger.io/docs/specification/about/'
