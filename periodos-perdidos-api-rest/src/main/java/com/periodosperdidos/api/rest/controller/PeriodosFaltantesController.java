@@ -17,14 +17,14 @@ public class PeriodosFaltantesController {
 	@Autowired
 	private IPeriodosFaltantesService periodosFaltantesService;
 
-	@GetMapping("/periodos/faltantes")
+	@GetMapping("/periodos-faltantes")
 	public Object getPeriodosFaltantes() {
 
 		return periodosFaltantesService.getPeriodosFaltantes();
 
 	}
 
-	@GetMapping("/periodos/api-gdd")
+	@GetMapping("/periodos-api-gdd")
 	public String getPeriodosApiGDD() {
 
 		return periodosFaltantesService.getPeriodosApiGDD();
