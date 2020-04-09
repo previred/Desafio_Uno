@@ -1,0 +1,63 @@
+---
+swagger: "2.0"
+info:
+  description: "Este es un servicio para la prueba tecnica de Arquitectura de Software"
+  version: "1.0.0"
+  title: "API Desafio UNO"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "rafaeldanielmujica@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+tags:
+- name: "periodos"
+  description: "Lista de periodos con fechas faltantes"
+schemes:
+- "http"
+paths:
+  /api/v1/periodos:
+    get:
+      tags:
+      - "periodos"
+      summary: "Lista de periodos con fechas faltantes"
+      description: "Lista de periodos con fechas faltantes"
+      operationId: "getPeriodos"
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "successful operation"
+          schema:
+            $ref: '#/definitions/Periodo'
+        400:
+          description: "Invalid status value"
+        405:
+          description: "Invalid input"          
+definitions:
+  Periodo:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+      fechasFaltantes:
+        type: array
+        items:
+          type: string
+          format: date      
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
