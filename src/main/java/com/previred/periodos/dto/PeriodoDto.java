@@ -14,20 +14,14 @@ import java.util.Set;
 @AllArgsConstructor
 public class PeriodoDto {
 
-    //@NotNull(message = "Id no puede ser nulo")
     private int id;
 
-    //@NotNull(message = "Fecha Creación no puede ser nulo")
-    //@Pattern(regexp = "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",message = "La fecha debe tener el siguiente formato yyyy-mm-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate fechaCreacion;
 
-    //@NotNull(message = "Fecha Fin no puede ser nulo")
-    //@Pattern(regexp = "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",message = "La fecha debe tener el siguiente formato yyyy-mm-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate fechaFin;
 
-    //@Pattern(regexp = "([12]\\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01]))",message = "La fecha debe tener el siguiente formato yyyy-mm-dd")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private Set<LocalDate> fechas;
 
