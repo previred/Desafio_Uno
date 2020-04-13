@@ -3,6 +3,7 @@ package com.previred.periodos.service;
 import com.previred.periodos.client.ApiPeriodoClient;
 import com.previred.periodos.dto.PeriodoDto;
 import com.previred.periodos.exception.FechaInicioMayorException;
+import com.previred.periodos.exception.ServiceEmptyException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -18,6 +20,9 @@ public class PeriodoServiceImpl implements PeriodoService {
 
     @Value("${error.fechaInicioMayor}")
     private String errorFechaInicioMayor;
+
+    @Value("${error.periodoService}")
+    private String errorPeriodoService;
 
     private ApiPeriodoClient apiPeriodoClient;
 
@@ -29,7 +34,7 @@ public class PeriodoServiceImpl implements PeriodoService {
     @Override
     public PeriodoDto obtenerPeriodosPerdidos() {
 
-        PeriodoDto apiResponse = apiPeriodoClient.ejecutar();
+        PeriodoDto apiResponse = Optional.ofNullable(apiPeriodoClient.ejecutar()).orElseThrow( () -> new ServiceEmptyException(errorPeriodoService));
 
         validarFechaCreacionSeaMenor(apiResponse.getFechaCreacion(),apiResponse.getFechaFin());
 

@@ -22,6 +22,16 @@ public class ExceptionManager {
     }
 
     @ResponseBody
+    @ExceptionHandler(ServiceEmptyException.class)
+    private ResponseEntity<Object> mensajeException(ServiceEmptyException exception) {
+        ResponseErrorDto errorDto = ResponseErrorDto.builder()
+                .codigo(HttpStatus.BAD_REQUEST.toString())
+                .mensaje(exception.getMessage())
+                .build();
+        return new ResponseEntity<>(errorDto, new HttpHeaders(), HttpStatus.BAD_REQUEST);
+    }
+
+    @ResponseBody
     @ExceptionHandler(ServerErrorException.class)
     private ResponseEntity<Object> mensajeException(ServerErrorException exception) {
         ResponseErrorDto errorDto = ResponseErrorDto.builder()
