@@ -1,0 +1,21 @@
+swagger:
+  titulo: "Periodos Perdidos"
+  descripcion: "Obtiene los periodos perdidos segun la lista dada"
+  version: "1.0.0"
+  terminos-servicio: "Sujeto a contrato"
+  contacto:
+    nombre: "Diego Aguirre Rabanal"
+    url: "http://localhost:8081"
+    email: "diegoaguirre@hotmail.com"
+  licencia:
+    nombre: "License PreviRed"
+    url: "API Red"
+
+periodos:
+  endpoint:
+    fechas: "http://localhost:8082/periodos/api"
+
+
+error:
+  fechaInicioMayor: "La fecha de inicio es mayor a la fecha fin"
+  periodoService: "Error al obtener informacion de servicio de Periodo"
