@@ -1,0 +1,4 @@
+      fecha creación: __CREACION__
+         fecha fin: __FIN__
+         fechas recibidas: __FECHAS_RECIBIDAS__
+        fechas faltantes: __FECHAS_FALTANTES__
