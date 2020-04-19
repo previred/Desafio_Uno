@@ -1,7 +1,12 @@
 package com.previred.periodos.determinafaltantes.core;
 
+import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+
+import java.time.LocalDate;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @RequiredArgsConstructor
 @Slf4j
@@ -22,6 +27,17 @@ public class DeterminarPeriodosPerdidosService implements DeterminarPeriodosPerd
                 .fechaCreacion(fechasPeriodoAleatorio.getFechaCreacion())
                 .fechaFin(fechasPeriodoAleatorio.getFechaFin())
                 .fechas(fechasPeriodoAleatorio.getFechas())
+                .fechasFaltantes(calcularFechasFaltantes(fechasPeriodoAleatorio))
                 .build();
+    }
+
+    private SortedSet<LocalDate> calcularFechasFaltantes(@NonNull Periodo periodo) {
+        SortedSet<LocalDate> faltantes = new TreeSet<>();
+        for(LocalDate fecha = periodo.getFechaCreacion(); fecha.isBefore(periodo.getFechaFin()); fecha = fecha.plusMonths(1)){
+            if(!periodo.getFechas().contains(fecha)){
+                faltantes.add(fecha);
+            }
+        }
+        return faltantes;
     }
 }

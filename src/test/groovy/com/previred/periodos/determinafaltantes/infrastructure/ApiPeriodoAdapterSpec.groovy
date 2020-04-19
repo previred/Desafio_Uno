@@ -56,7 +56,7 @@ class ApiPeriodoAdapterSpec extends Specification {
         def respuesta = Periodo.builder().id(1).fechaCreacion(LocalDate.of(1968,8,1))
                 .fechaFin(LocalDate.of(1971,6,1))
                 .fechas([LocalDate.parse("1969-03-01"),LocalDate.parse("1969-05-01")
-                         ,LocalDate.parse("1969-09-01"),LocalDate.parse("1971-05-01")])
+                         ,LocalDate.parse("1969-09-01"),LocalDate.parse("1971-05-01")] as TreeSet)
                 .build()
         given:
         restTemplate.getForObject(_ as String, Periodo.class) >> respuesta

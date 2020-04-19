@@ -1,16 +1,18 @@
 package com.previred.periodos.determinafaltantes.core;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 @Getter
 @SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
 public class PeriodoConsFaltantes extends Periodo{
     @Builder.Default
-    private List<LocalDate> fechasFaltantes =  new ArrayList<>();
+    private SortedSet<LocalDate> fechasFaltantes =  new TreeSet<>();
 }

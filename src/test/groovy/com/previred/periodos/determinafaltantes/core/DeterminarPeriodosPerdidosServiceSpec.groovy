@@ -6,9 +6,12 @@ import spock.lang.Subject
 
 import java.time.LocalDate
 
-class DeterminarPeriodosPerdidosServiceSpec extends Specification{
-    @Shared private PeriodoPort port
-    @Subject @Shared private DeterminarPeriodosPerdidosUseCase service
+class DeterminarPeriodosPerdidosServiceSpec extends Specification {
+    @Shared
+    private PeriodoPort port
+    @Subject
+    @Shared
+    private DeterminarPeriodosPerdidosUseCase service
 
     void setup() {
         port = Stub(PeriodoPort)
@@ -16,7 +19,7 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification{
 
     }
 
-    def "al obtener un Periodo nulo, se retorna un error de servicio no disponible"(){
+    def "al obtener un Periodo nulo, se retorna un error de servicio no disponible"() {
         given:
         port.getFechasPeriodoAleatorio() >> Periodo.PERIODO_NULO
         when:
@@ -26,12 +29,12 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification{
         e.message.contains("La consulta de las fechas del period aleatorio no fue satisfactoria")
     }
 
-    def "al obtener un Periodo sin fechas faltantes, la lista de estas es vacia"(){
+    def "al obtener un Periodo sin fechas faltantes, la lista de estas es vacia"() {
         given:
         def respuestaPort = Periodo.builder().id(1)
                 .fechaCreacion(LocalDate.of(2020, 2, 1))
                 .fechaFin(LocalDate.of(2020, 4, 1))
-                .fechas([LocalDate.parse("2020-03-01")])
+                .fechas([LocalDate.parse("2020-03-01")] as TreeSet)
                 .build()
         port.getFechasPeriodoAleatorio() >> respuestaPort
 
@@ -39,7 +42,7 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification{
         PeriodoConsFaltantes periodo = service.calcular()
 
         then:
-        with(periodo){
+        with(periodo) {
             getFechasFaltantes().isEmpty()
             getId() == respuestaPort.getId()
             getFechaCreacion() == respuestaPort.getFechaCreacion()
@@ -48,6 +51,27 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification{
         }
     }
 
+    def "al obtener un Periodo con 1 fechas faltantes, la lista de estas la posee"() {
+        given:
+        def respuestaPort = Periodo.builder().id(1)
+                .fechaCreacion(LocalDate.of(2020, 1, 1))
+                .fechaFin(LocalDate.of(2020, 4, 1))
+                .fechas([LocalDate.parse("2020-03-01")] as TreeSet)
+                .build()
+        port.getFechasPeriodoAleatorio() >> respuestaPort
+
+        when:
+        PeriodoConsFaltantes periodo = service.calcular()
+
+        then:
+        with(periodo) {
+            getFechasFaltantes().containsAll([LocalDate.parse("2020-02-01")] as TreeSet)
+            getId() == respuestaPort.getId()
+            getFechaCreacion() == respuestaPort.getFechaCreacion()
+            getFechaFin() == respuestaPort.getFechaFin()
+            getFechas().containsAll(respuestaPort.getFechas())
+        }
+    }
 
 
 }
