@@ -1,4 +1,4 @@
-package com.previred.periodos.determinafaltantes.infrastructure;
+package com.previred.periodos.determinafaltantes.infrastructure.adapter.secundary.adapter.secundary;
 
 import lombok.Getter;
 import lombok.Setter;

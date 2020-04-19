@@ -1,7 +1,9 @@
-package com.previred.periodos.determinafaltantes.infrastructure
+package com.previred.periodos.determinafaltantes.infrastructure.adapter.secundary
 
 import com.previred.periodos.determinafaltantes.core.Periodo
 import com.previred.periodos.determinafaltantes.core.PeriodoPort
+import com.previred.periodos.determinafaltantes.infrastructure.adapter.secundary.adapter.secundary.ApiPeriodoAdapter
+import com.previred.periodos.determinafaltantes.infrastructure.adapter.secundary.adapter.secundary.ApiPeriodoAdapterConfiguration
 import org.springframework.web.client.RestTemplate
 import spock.lang.Shared
 import spock.lang.Specification
@@ -43,7 +45,7 @@ class ApiPeriodoAdapterSpec extends Specification {
 
     def "retorna un objeto Periodo vacio en caso que se genera un exception al consultar el API Periodo"() {
         given:
-        restTemplate.getForObject(_ as String, Periodo.class) >> new Exception("EXCEPTION")
+        restTemplate.getForObject(_ as String, Periodo.class) >> {throw new Exception("EXCEPTION")}
 
         when:
         Periodo periodo = adapter.getFechasPeriodoAleatorio()

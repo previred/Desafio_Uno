@@ -1,4 +1,4 @@
-package com.previred.periodos.determinafaltantes.infrastructure;
+package com.previred.periodos.determinafaltantes.infrastructure.adapter.secundary.adapter.secundary;
 
 import com.previred.periodos.determinafaltantes.core.Periodo;
 import com.previred.periodos.determinafaltantes.core.PeriodoPort;
