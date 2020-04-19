@@ -29,12 +29,12 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification {
         e.message.contains("La consulta de las fechas del period aleatorio no fue satisfactoria")
     }
 
-    def "al obtener un Periodo sin fechas faltantes, la lista de estas es vacia"() {
+    def "calcula las fechas faltantes, la lista de fechas del periodo"() {
         given:
         def respuestaPort = Periodo.builder().id(1)
-                .fechaCreacion(LocalDate.of(2020, 2, 1))
-                .fechaFin(LocalDate.of(2020, 4, 1))
-                .fechas([LocalDate.parse("2020-03-01")] as TreeSet)
+                .fechaCreacion(fechaCreacion)
+                .fechaFin(fechaFin)
+                .fechas(fechas)
                 .build()
         port.getFechasPeriodoAleatorio() >> respuestaPort
 
@@ -43,34 +43,18 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification {
 
         then:
         with(periodo) {
-            getFechasFaltantes().isEmpty()
+            getFechasFaltantes().containsAll(faltantes)
             getId() == respuestaPort.getId()
             getFechaCreacion() == respuestaPort.getFechaCreacion()
             getFechaFin() == respuestaPort.getFechaFin()
             getFechas().containsAll(respuestaPort.getFechas())
         }
-    }
 
-    def "al obtener un Periodo con 1 fechas faltantes, la lista de estas la posee"() {
-        given:
-        def respuestaPort = Periodo.builder().id(1)
-                .fechaCreacion(LocalDate.of(2020, 1, 1))
-                .fechaFin(LocalDate.of(2020, 4, 1))
-                .fechas([LocalDate.parse("2020-03-01")] as TreeSet)
-                .build()
-        port.getFechasPeriodoAleatorio() >> respuestaPort
-
-        when:
-        PeriodoConsFaltantes periodo = service.calcular()
-
-        then:
-        with(periodo) {
-            getFechasFaltantes().containsAll([LocalDate.parse("2020-02-01")] as TreeSet)
-            getId() == respuestaPort.getId()
-            getFechaCreacion() == respuestaPort.getFechaCreacion()
-            getFechaFin() == respuestaPort.getFechaFin()
-            getFechas().containsAll(respuestaPort.getFechas())
-        }
+        where:
+        fechaCreacion            | fechaFin                 | fechas                                                                                                                                  | faltantes
+        LocalDate.of(2020, 2, 1) | LocalDate.of(2020, 4, 1) | [LocalDate.parse("2020-03-01")] as TreeSet                                                                                              | [] as TreeSet
+        LocalDate.of(2020, 1, 1) | LocalDate.of(2020, 4, 1) | [LocalDate.parse("2020-03-01")] as TreeSet                                                                                              | [LocalDate.parse("2020-02-01")] as TreeSet
+        LocalDate.of(1969, 3, 1) | LocalDate.of(1970, 1, 1) | [LocalDate.parse("1969-03-01"), LocalDate.parse("1969-05-01"), LocalDate.parse("1969-09-01"), LocalDate.parse("1970-01-01")] as TreeSet | [LocalDate.parse("1969-04-01"),LocalDate.parse("1969-06-01"),LocalDate.parse("1969-07-01"),LocalDate.parse("1969-08-01"),LocalDate.parse("1969-10-01"),LocalDate.parse("1969-11-01"),LocalDate.parse("1969-12-01")] as TreeSet
     }
 
 
