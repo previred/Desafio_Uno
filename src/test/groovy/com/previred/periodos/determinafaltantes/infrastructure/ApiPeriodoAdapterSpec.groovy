@@ -12,7 +12,7 @@ class ApiPeriodoAdapterSpec extends Specification{
         restTemplate.getForObject(_ as String, Periodo.class) >> null
         def config = Stub(ApiPeriodoAdapterConfiguration)
         config.getUrl() >> new URL("http://localhost:8080/periodos/api")
-        config.getFormatoFecha() >> ""
+        config.getFormatoFecha() >> "yyyy-MM-dd"
         PeriodoPort adapter = new ApiPeriodoAdapter(restTemplate, config)
 
         when:
@@ -21,5 +21,22 @@ class ApiPeriodoAdapterSpec extends Specification{
         then:
         periodo != null
     }
+
+    def"retorna un objeto Periodo vacio en caso que se genera un exception al consultar el API Periodo"(){
+        given:
+        RestTemplate restTemplate = Stub(RestTemplate)
+        restTemplate.getForObject(_ as String, Periodo.class) >> new Exception("EXCEPTION")
+        def config = Stub(ApiPeriodoAdapterConfiguration)
+        config.getUrl() >> new URL("http://localhost:8080/periodos/api")
+        config.getFormatoFecha() >> "yyyy-MM-dd"
+        PeriodoPort adapter = new ApiPeriodoAdapter(restTemplate, config)
+
+        when:
+        Periodo periodo = adapter.getFechasPeriodoAleatorio()
+
+        then:
+        periodo == Periodo.PERIODO_NULO
+    }
+
 
 }
