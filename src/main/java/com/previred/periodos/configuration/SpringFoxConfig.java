@@ -8,7 +8,6 @@ import org.springframework.core.Ordered;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.schema.AlternateTypeRules;
-import springfox.documentation.schema.WildcardType;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
@@ -28,10 +27,11 @@ public class SpringFoxConfig {
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
+                .directModelSubstitute(LocalDate.class, String.class)
                 .alternateTypeRules(
                         AlternateTypeRules.newRule(
                                 typeResolver.resolve(SortedSet.class, LocalDate.class),
-                                typeResolver.resolve(WildcardType.class), Ordered.HIGHEST_PRECEDENCE))
+                                typeResolver.resolve(SortedSet.class, String.class), Ordered.HIGHEST_PRECEDENCE))
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.previred.periodos"))
                 .paths(PathSelectors.any())
