@@ -39,7 +39,7 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification {
         port.getFechasPeriodoAleatorio() >> respuestaPort
 
         when:
-        PeriodoConsFaltantes periodo = service.calcular()
+        PeriodoConFaltantes periodo = service.calcular()
 
         then:
         with(periodo) {

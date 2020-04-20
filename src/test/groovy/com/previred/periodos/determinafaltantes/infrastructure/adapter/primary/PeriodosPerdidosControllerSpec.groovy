@@ -1,7 +1,7 @@
 package com.previred.periodos.determinafaltantes.infrastructure.adapter.primary
 
 import com.previred.periodos.determinafaltantes.core.DeterminarPeriodosPerdidosUseCase
-import com.previred.periodos.determinafaltantes.core.PeriodoConsFaltantes
+import com.previred.periodos.determinafaltantes.core.PeriodoConFaltantes
 import com.previred.periodos.determinafaltantes.core.PeriodoDataSourceNoDisponible
 import spock.lang.Shared
 import spock.lang.Specification
@@ -32,7 +32,7 @@ class PeriodosPerdidosControllerSpec extends Specification {
     }
 
     def "los calculos no son alterados en el controller"() {
-        def respuestaService = PeriodoConsFaltantes.builder().id(1)
+        def respuestaService = PeriodoConFaltantes.builder().id(1)
                 .fechaCreacion(fechaCreacion)
                 .fechaFin(fechaFin)
                 .fechas(fechas)
@@ -41,7 +41,7 @@ class PeriodosPerdidosControllerSpec extends Specification {
         given:
         service.calcular() >> respuestaService
         when:
-        PeriodoConsFaltantes respuestaController = controller.getPeriodosPerdidos()
+        PeriodoConFaltantes respuestaController = controller.getPeriodosPerdidos()
         then:
         with(respuestaController) {
             getFechasFaltantes().containsAll(faltantes)

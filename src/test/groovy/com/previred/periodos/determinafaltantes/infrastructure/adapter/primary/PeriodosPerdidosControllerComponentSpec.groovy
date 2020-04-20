@@ -1,7 +1,7 @@
 package com.previred.periodos.determinafaltantes.infrastructure.adapter.primary
 
 import com.previred.periodos.determinafaltantes.core.DeterminarPeriodosPerdidosUseCase
-import com.previred.periodos.determinafaltantes.core.PeriodoConsFaltantes
+import com.previred.periodos.determinafaltantes.core.PeriodoConFaltantes
 import com.previred.periodos.determinafaltantes.core.PeriodoDataSourceNoDisponible
 import com.previred.periodos.determinafaltantes.infrastructure.adapter.primary.error.ErrorControllerAdvice
 import org.springframework.http.MediaType
@@ -48,7 +48,7 @@ class PeriodosPerdidosControllerComponentSpec extends Specification {
 
 
     def "los calculos no son alterados en el controller"() {
-        def respuestaService = PeriodoConsFaltantes.builder().id(1)
+        def respuestaService = PeriodoConFaltantes.builder().id(1)
                 .fechaCreacion(fechaCreacion)
                 .fechaFin(fechaFin)
                 .fechas(fechas)

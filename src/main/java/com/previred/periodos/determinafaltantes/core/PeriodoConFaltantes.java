@@ -12,7 +12,7 @@ import java.util.TreeSet;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
-public class PeriodoConsFaltantes extends Periodo{
+public class PeriodoConFaltantes extends Periodo{
     @Builder.Default
     private SortedSet<LocalDate> fechasFaltantes =  new TreeSet<>();
 }

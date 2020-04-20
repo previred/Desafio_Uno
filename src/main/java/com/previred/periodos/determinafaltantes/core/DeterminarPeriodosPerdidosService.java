@@ -15,14 +15,14 @@ public class DeterminarPeriodosPerdidosService implements DeterminarPeriodosPerd
     private final PeriodoPort periodoPort;
 
     @Override
-    public PeriodoConsFaltantes calcular() throws PeriodoDataSourceNoDisponible {
+    public PeriodoConFaltantes calcular() throws PeriodoDataSourceNoDisponible {
         Periodo fechasPeriodoAleatorio = periodoPort.getFechasPeriodoAleatorio();
         if(fechasPeriodoAleatorio == Periodo.PERIODO_NULO){
             log.info(LA_CONSULTA_DE_LAS_FECHAS_DEL_PERIOD_ALEATORIO_NO_FUE_SATISFACTORIA);
             throw new PeriodoDataSourceNoDisponible(LA_CONSULTA_DE_LAS_FECHAS_DEL_PERIOD_ALEATORIO_NO_FUE_SATISFACTORIA);
         }
 
-        return PeriodoConsFaltantes.builder()
+        return PeriodoConFaltantes.builder()
                 .id(fechasPeriodoAleatorio.getId())
                 .fechaCreacion(fechasPeriodoAleatorio.getFechaCreacion())
                 .fechaFin(fechasPeriodoAleatorio.getFechaFin())
