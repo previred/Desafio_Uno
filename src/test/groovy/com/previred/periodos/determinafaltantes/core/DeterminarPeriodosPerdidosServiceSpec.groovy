@@ -44,10 +44,12 @@ class DeterminarPeriodosPerdidosServiceSpec extends Specification {
         then:
         with(periodo) {
             getFechasFaltantes().containsAll(faltantes)
+            getFechasFaltantes().size() == faltantes.size()
             getId() == respuestaPort.getId()
             getFechaCreacion() == respuestaPort.getFechaCreacion()
             getFechaFin() == respuestaPort.getFechaFin()
             getFechas().containsAll(respuestaPort.getFechas())
+            getFechas().size() == respuestaPort.getFechas().size()
         }
 
         where:

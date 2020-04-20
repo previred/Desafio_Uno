@@ -1,0 +1,5 @@
+determina-faltantes:
+  config:
+    url: http://127.0.0.1:8080/periodos/api
+    formatoFecha: "yyyy-MM-dd"
+    fechaPorDefecto: "0000-01-01"

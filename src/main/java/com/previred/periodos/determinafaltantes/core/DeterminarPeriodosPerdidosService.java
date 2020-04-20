@@ -33,7 +33,7 @@ public class DeterminarPeriodosPerdidosService implements DeterminarPeriodosPerd
 
     private SortedSet<LocalDate> calcularFechasFaltantes(@NonNull Periodo periodo) {
         SortedSet<LocalDate> faltantes = new TreeSet<>();
-        for(LocalDate fecha = periodo.getFechaCreacion(); fecha.isBefore(periodo.getFechaFin()); fecha = fecha.plusMonths(1)){
+        for(LocalDate fecha = periodo.getFechaCreacion().plusMonths(1); fecha.isBefore(periodo.getFechaFin()); fecha = fecha.plusMonths(1)){
             if(!periodo.getFechas().contains(fecha)){
                 faltantes.add(fecha);
             }

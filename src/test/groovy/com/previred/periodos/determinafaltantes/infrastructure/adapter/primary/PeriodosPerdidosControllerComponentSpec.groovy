@@ -1,6 +1,5 @@
 package com.previred.periodos.determinafaltantes.infrastructure.adapter.primary
 
-
 import com.previred.periodos.determinafaltantes.core.DeterminarPeriodosPerdidosUseCase
 import com.previred.periodos.determinafaltantes.core.PeriodoConsFaltantes
 import com.previred.periodos.determinafaltantes.core.PeriodoDataSourceNoDisponible
