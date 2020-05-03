@@ -1,0 +1,26 @@
+version: '3.5'
+services: 
+    java:
+        build: ./java
+        restart: always
+        volumes:
+            - ./java/:/user/src/app
+        networks: 
+            - backend
+        ports: 
+            - 8080:8080
+    
+    python:
+        build: ./python
+        restart: always
+        volumes: 
+            - ./python/:/app
+        links:
+            - java
+        networks: 
+            - backend
+        ports: 
+            - 5000:5000
+networks:
+    backend:
+        driver: "bridge"

@@ -1,0 +1,76 @@
+swagger: "2.0"
+info:
+  description: "API para desafio previred"
+  version: "1.0.0"
+  title: "Swagger Partners API"
+  contact:
+    name: "Felipe Aillon Sanhueza"
+    email: "faillon@gmail.com"
+host: "localhost:5000"
+basePath: "/api/v1"
+tags:
+- name: "periodos"
+  description: "api para encontrar periodos faltantes"
+schemes:
+- "http"
+paths:
+  /periodos:
+    get:
+      tags:
+      - "periodos"
+      summary: "Busca periodos faltantes en un array"
+      description: "Consume servicio previred que devuelve fechas aleatorias entre fecha de inicio y fin"
+      operationId: "api.api_imp.encontrar_periodos_faltantes"
+      produces:
+      - "application/json"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Periodo"
+        "500":
+          description: "Internal Error"
+
+definitions:
+  
+  Periodo:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+        example: 6
+      fechaCreacion:
+        type: "string"
+        format: "date"
+        example: "1968-08-01"
+      fechaFin:
+        type: "string"
+        format: "date"
+        example: "1971-06-01"
+      fechas:
+        type: "array"
+        items:
+          type: "string"
+          format: "date"
+          example: [
+            "1969-03-01",
+            "1969-05-01",
+            "1969-09-01",
+            "1971-05-01"
+          ]
+      fechasFaltantes:
+        type: "array"
+        items:
+          type: "string"
+          format: "date"
+          example: [
+            "1969-03-01",
+            "1969-05-01",
+            "1969-09-01",
+            "1971-05-01"
+          ]
+    
+externalDocs:
+  description: "Especificación de swagger"
+  url: 'https://swagger.io/docs/specification/about/'
