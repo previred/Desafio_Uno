@@ -1,0 +1,16 @@
+{
+  "groupId"         : "com.hossman.periodos",
+  "artifactId"      : "SpringBootRestApiTestPrevired",
+  "artifactVersion" : "1.0.0",
+  "artifactDescription" : "Micro Servicio de prueBa de periodos",
+  
+  "basePackage"     : "com.hossman.periodos",
+  "invokerPackage"  : "com.hossman.periodos.swagger",
+  "apiPackage"      : "com.hossman.periodos.swagger.codegen.api",
+  "modelPackage"    : "com.hossman.periodos.swagger.codegen.model",
+  "configPackage"   : "com.hossman.periodos.swagger.codegen.config",
+  "java8"           : true,
+  "title"           : "SpringBootRestApiTestPrevired",
+  "hideGenerationTimestamp" : true,
+  "library"         : "spring-boot"
+}
