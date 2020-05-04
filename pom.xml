@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.previred.arquitectura.seleccion</groupId>
+	<artifactId>lagunas</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Lagunas</name>
+	<organization>
+		<name>Previred</name>
+		<url>https://www.previred.com/web/previred/</url>
+	</organization>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<junit-version>4.12</junit-version>
+		<jackson-version>2.2.3</jackson-version>
+		<col-version>3.2.2</col-version>
+		<jaco-version>5.6.1.15064</jaco-version>
+	</properties>
+
+	<dependencies>
+		
+		<dependency>
+			<groupId>org.sonarsource.java</groupId>
+			<artifactId>sonar-jacoco-listeners</artifactId>
+			<version>${jaco-version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${col-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>${jackson-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+
+	</dependencies>
+
+	<build>
+		<finalName>lagunas</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.3.0.603</version>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.1</version>
+
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>cl.previred.arquitectura.seleccion.lagunas.Main</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>make-assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<developers>
+		<developer>
+			<id>jvillablanca</id>
+			<name>Juan Villablanca</name>
+			<roles>
+				<role>architect</role>
+				<role>developer</role>
+			</roles>
+			<timezone>America/Santiago</timezone>
+		</developer>
+	</developers>
+
+
+</project>
