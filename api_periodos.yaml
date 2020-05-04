@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  description: "Implementación de servicio para periodos faltantes"
+  version: "1.0.0"
+  title: "API Periodos Faltantes"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    name: "Claudio Galleguillos Iturrieta"
+    email: "claudiogalleguillositurrieta@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "127.0.0.1:8081"
+basePath: "/periodosfaltantes"
+tags:
+  - name: "periodosfaltantes"
+    description: "Operacion para verificación de periodos faltantes"
+schemes:
+  - "http"
+paths:
+  /periodosFaltantes:
+    get:
+      tags:
+        - "Periodos"
+      summary: "Encuentra los periodos faltantes dentro de un rango de fechas desde el servicio GDD"
+      operationId: "periodosfaltantes"
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Invocación correcta del servicio"
+          schema:
+            $ref: "#/definitions/DTOFecha"
+        400:
+          description: "Error en la invocación del servicio"
+definitions:
+  DTOFecha:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      fechaCreacion:
+        type: "string"
+        format: "date"
+      fechaFin:
+        type: "string"
+        format: "date"
+      fechas:
+        type: array
+        items:
+          type: string
+          format: "date"
+        minLength: 1
+        maxLength: 100
+      fechasFaltantes:
+        type: array
+        items:
+          type: string
+          format: "date"
+        minLength: 0
+        maxLength: 100
+externalDocs:
+  description: Especificación de swagger
+  url: 'https://swagger.io/docs/specification/about/'

@@ -1,0 +1,16 @@
+{
+  "groupId"         : "com.previred.periodosfaltantes",
+  "artifactId"      : "api-periodosfaltantes",
+  "artifactVersion" : "1.0.0",
+  "artifactDescription" : "Servicio de Periodos faltantes",
+  
+  "basePackage"     : "com.previred.periodosfaltantes",
+  "invokerPackage"  : "com.previred.periodosfaltantes.swagger",
+  "apiPackage"      : "com.previred.periodosfaltantes.swagger.codegen.api",
+  "modelPackage"    : "com.previred.periodosfaltantes.swagger.codegen.model",
+  "configPackage"   : "com.previred.periodosfaltantes.swagger.codegen.config",
+  "java8"           : true,
+  "title"           : "API Periodos Faltantes",
+  "hideGenerationTimestamp" : true,
+  "library"         : "spring-boot"
+}
