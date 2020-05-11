@@ -1,0 +1,88 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Generar fechas restantes Períodos Previred",
+      "description": "Servicio REST para generar fechas faltantes productos de invocar al servicio GDD Previred",
+      "license": {
+        "name": "MIT",
+        "url": "https://opensource.org/licenses/MIT"
+      }
+    },
+    "host": "localhost:3000",
+    "basePath": "/api/",
+    "schemes": [
+      "http"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "paths": {
+      "/genDates": {
+        "get": {
+          "tags": [
+            "Generar Fechas Restantes"
+          ],
+          "summary": "Generar fechas faltantes",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "OK",
+              "schema": {
+                "$ref": "#/definitions/response"
+              }
+            },
+            "400": {
+              "description": "Bad Request",
+              "schema": {
+                "$ref": "#/definitions/error 400"
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "schema": {
+                "$ref": "#/definitions/error 500"
+              }
+            }
+          }
+        }
+      }
+    },
+    "definitions": {
+        "response": {
+                  "type" : "Object",
+                  "example" : { 
+                      "id": 0,
+                      "fechaCreacion": "2020-05-08",
+                      "fechaFin": "2020-05-08",
+                      "fechas": [
+                       null
+                      ],
+                      "fechasRestantes": [
+                        null
+                       ]
+                  }
+        },
+        "error 400" : {
+           "properties": {
+            "message": {
+              "type": "string",
+              "example" : "400 Bad Request"
+            }
+          }
+        },
+        "error 500" : {
+          "properties": {
+           "message": {
+             "type": "string",
+             "example" : "500 Server Error"
+           }
+         }
+       }
+      }
+    }
