@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "url.periodos.api.service",
+  "type": "java.lang.String",
+  "description": "A description for 'url.periodos.api.service'"
+}]}

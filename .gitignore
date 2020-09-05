@@ -1,0 +1,49 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Maven 
+target/
+
+# OS
+.DS_Store
+
+# eclipse project file
+.settings/
+.classpath
+.project
+
+# Binaries
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.war
+*.ear
+*.sar
+*.class
+
+!gradle/wrapper/gradle-wrapper.jar
+
+build/
+lib/
+out/
+.gradle/
+.idea/
+*.iml
+*.ipr
+*.iws
+/bin/
+
