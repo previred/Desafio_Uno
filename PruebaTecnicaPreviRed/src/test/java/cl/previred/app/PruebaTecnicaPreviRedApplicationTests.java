@@ -1,0 +1,13 @@
+package cl.previred.app;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class PruebaTecnicaPreviRedApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
