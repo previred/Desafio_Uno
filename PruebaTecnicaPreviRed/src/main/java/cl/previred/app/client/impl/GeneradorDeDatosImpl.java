@@ -6,6 +6,8 @@ import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -13,6 +15,7 @@ import cl.previred.app.client.IGeneradorDeDatos;
 
 @Component
 public class GeneradorDeDatosImpl implements IGeneradorDeDatos {
+	private static final Logger logger = LoggerFactory.getLogger(GeneradorDeDatosImpl.class);
 
 	
 	@Value("${metodo.api.fechas}")
@@ -55,8 +58,10 @@ public class GeneradorDeDatosImpl implements IGeneradorDeDatos {
 		    conn.disconnect();
 		    return json;
 		}catch (RuntimeException | ConnectException e) {
+			logger.warn("Error en el componente de conección a la api externa", e);
 			throw e;
 		}catch (Exception e) {
+			logger.error("Error inesperado por la api", e);
 			throw e;
 		}
 		

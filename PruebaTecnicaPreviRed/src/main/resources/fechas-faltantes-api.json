@@ -1,0 +1,116 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "La Api se conecta a un recurso externo para obtener la data y luego con la data se obtiene las fechas faltantes.",
+        "title": "API Fechas Faltantes"
+    },
+    "host": "localhost:8090",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "fecha-controller",
+            "description": "Fecha Controller"
+        }
+    ],
+    "paths": {
+        "/app/consulta-global": {
+            "get": {
+                "tags": [
+                    "fecha-controller"
+                ],
+                "summary": "/consulta-global",
+                "operationId": "getFechasFaltantesUsingGET",
+                "produces": [
+                    "*/*"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Exito",
+                        "schema": {
+                            "$ref": "#/definitions/ResponseDto"
+                        }
+                    },
+                    "401": {
+                        "description": "No Autorización",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "403": {
+                        "description": "Error de Información",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "No Encontrado",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Error de programación",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": {
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "deprecated": false
+            }
+        }
+    },
+    "definitions": {
+        "ResponseDto": {
+            "type": "object",
+            "required": [
+                "fechaCreacion",
+                "fechaFin",
+                "fechas",
+                "fechasFaltante"
+            ],
+            "properties": {
+                "fechaCreacion": {
+                    "type": "string",
+                    "description": "2013-02-01"
+                },
+                "fechaFin": {
+                    "type": "string",
+                    "description": "2019-12-01"
+                },
+                "fechas": {
+                    "type": "array",
+                    "description": "{2013-02-01, 2016-05-01,2013-02-01}",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "fechasFaltante": {
+                    "type": "array",
+                    "description": "{2013-03-01,2016-04-01,2013-01-01}",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "description": "1...n"
+                }
+            },
+            "title": "ResponseDto",
+            "description": "modelo de respuesta"
+        }
+    }
+}

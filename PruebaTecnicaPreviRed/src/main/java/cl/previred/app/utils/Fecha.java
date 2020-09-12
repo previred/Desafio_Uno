@@ -7,9 +7,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import cl.previred.app.data.dto.ResponseDto;
 
 public class Fecha {
+	private static final Logger logger = LoggerFactory.getLogger(Fecha.class);
 	
 	public static final String FORMAT_YYYYMMDD_GUION = "YYYY'-'MM'-'dd";
 	public static final String FORMAT_YYYYMMDD_ISO = "yyyy-MM-dd";
@@ -26,8 +30,10 @@ public class Fecha {
 			DateTimeFormatter formatter = DateTimeFormatter.ofPattern(FORMAT_YYYYMMDD_GUION, locale);
 			return date.format(formatter);		
 		}catch (DateTimeParseException e) {
+			logger.warn("Error en la clase Fecha al pasar LocalDate a String", e);
 				throw new IllegalArgumentException("Ha ocurrido un problema en el método getLocalDateTimeString(date) - error: ".concat(e.getMessage()));
 		}catch (Exception e) {
+			logger.error("Error inesperado en la clase Fecha->getLocalDateTimeString", e);
 				throw new Exception("Ha ocurrido un problema en el método getLocalDateTimeString(date) - error: ".concat(e.getMessage()));
 		}
 	}
@@ -54,8 +60,10 @@ public class Fecha {
 			}	
 			
 		}catch (DateTimeParseException e) {
+			logger.warn("Error en la clase Fecha al crear la lista de fechas faltantes", e);
 			throw new IllegalArgumentException("Ha ocurrido un problema en el método listadoFechas(fechaIni,fechaFin) - error: ".concat(e.getMessage()));
 		}catch (Exception e) {
+			logger.error("Error inesperado en la clase Fecha->listadoFechasFaltantes", e);
 			throw e;
 		}
 
