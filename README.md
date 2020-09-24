@@ -26,8 +26,8 @@ java -jar .\api-periodos-1.0.0.jar
 ```
 
 *Nota*:
-Debe estar disponible el puerto *8084* en el PC donde se ejecute esta API
-Debe estar disponible la API GDD bajo el puerto *8080*.
+Debe estar disponible el puerto *8084* en el PC donde se ejecute esta API.
+Adiconalemente debe estar disponible la API GDD bajo el puerto *8080*.
 
 
 # Visualizar Documentación y consumir la API
