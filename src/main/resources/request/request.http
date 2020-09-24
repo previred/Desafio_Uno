@@ -1,0 +1,29 @@
+GET http://localhost:8393/gdd
+
+###
+
+POST http://localhost:8393/level1
+Accept: application/json
+Cache-Control: no-cache
+Content-Type: application/json
+
+{
+  "id": 1,
+  "fechaCreacion": "1977-02-01",
+  "fechaFin": "1977-12-01",
+  "fechas": [
+    "1977-05-01",
+    "1977-08-01"
+  ]
+}
+
+###
+
+POST http://localhost:8393/level2
+
+###
+
+POST http://localhost:8393/level3
+
+###
+
