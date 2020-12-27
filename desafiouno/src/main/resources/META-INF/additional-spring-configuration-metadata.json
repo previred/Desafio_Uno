@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "external.application.periodo.server",
+    "type": "java.lang.String",
+    "description": "A description for 'external.application.periodo.server'"
+  },
+  {
+    "name": "external.application.periodo.puerto",
+    "type": "java.lang.String",
+    "description": "A description for 'external.application.periodo.puerto'"
+  },
+  {
+    "name": "service.url.periodo",
+    "type": "java.lang.String",
+    "description": "A description for 'service.url.periodo'"
+  },
+  {
+    "name": "external.service.url.periodo",
+    "type": "java.lang.String",
+    "description": "A description for 'external.service.url.periodo'"
+  }
+]}
