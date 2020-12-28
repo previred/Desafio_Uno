@@ -1,0 +1,4 @@
+server:
+ port: 8081
+urlPeriodos: http://localhost:8080/periodos/api
+
