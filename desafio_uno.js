@@ -10,7 +10,7 @@ const input = process.argv[2];
 const output = process.argv[3];
 
 // Read File
-fs.readFile("./assets/json/source.json", "utf8", function (err, data) {
+fs.readFile(input, "utf8", function (err, data) {
   if (err) {
     throw err;
   }
@@ -28,21 +28,18 @@ fs.readFile("./assets/json/source.json", "utf8", function (err, data) {
     switch (y) {
       case min_year:
         for (m = min_month; m <= 12; m++) {
-          //   console.log(y + "-" + ("0" + m).slice(-2) + "-01");
           var gen_date = y + "-" + ("0" + m).slice(-2) + "-01";
           data_range.push(gen_date);
         }
         break;
       case max_year:
         for (m = 1; m <= max_month; m++) {
-          //   console.log(y + "-" + ("0" + m).slice(-2) + "-01");
           var gen_date = y + "-" + ("0" + m).slice(-2) + "-01";
           data_range.push(gen_date);
         }
         break;
       default:
         for (m = 1; m <= 12; m++) {
-          //   console.log(y + "-" + ("0" + m).slice(-2) + "-01");
           var gen_date = y + "-" + ("0" + m).slice(-2) + "-01";
           data_range.push(gen_date);
         }
@@ -58,7 +55,7 @@ fs.readFile("./assets/json/source.json", "utf8", function (err, data) {
   };
   // Write File
   fs.writeFile(
-    "./assets/json/output.json",
+    "./assets/json/" + output,
     JSON.stringify(output_data),
     function (err) {
       if (err) return console.log(err);
