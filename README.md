@@ -1,4 +1,4 @@
-# Desafío 1: Periodos perdidos
+# Previred Desafío 1: Periodos perdidos
 
 Primer desafío enviado por Previred para prueba de Proceso de Selección para Ingeniero desarrollo Junior.
 Programa hecho en node.js que substrae fechas de entre otro rango de fechas.
