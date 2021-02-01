@@ -40,7 +40,7 @@ Archivo generado de entrada está ubicado en `./assets/json/input-1612170182871.
 
 ## Uso
 
-En la carpeta raíz de este repositorio, escribir
+En la carpeta raíz de este repositorio, escribir:
 
 ```shell
 node desafio_uno <endpoint_url> archivo_de_salida.json
