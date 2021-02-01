@@ -40,6 +40,8 @@ node desafio_uno <input_file_or_url> <./assets/json/output.json>
 
 ## Datos Commit
 
-Francisco Andrés Cerda Sepúlveda, francisco.cerda@gmail.com, Talento Digital
+Nombre: Francisco Andrés Cerda Sepúlveda
+Correo: francisco.cerda@gmail.com
+Me enteré por: Selección Beca Talento Digital
 
 TODO: pull request
