@@ -29,10 +29,10 @@ cd /path/to/Desafio_Uno
 npm i
 ```
 
-## Uso
+# Uso
 
 ```shell
-npm desafio_uno <input_file_or_url> <./assets/json/output.json>
+node desafio_uno <input_file_or_url> <./assets/json/output.json>
 ```
 
 ## Datos Commit
