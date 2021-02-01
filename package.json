@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/nufrankz/Desafio_Uno/issues"
   },
-  "homepage": "https://github.com/nufrankz/Desafio_Uno#readme"
+  "homepage": "https://github.com/nufrankz/Desafio_Uno#readme",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
 }

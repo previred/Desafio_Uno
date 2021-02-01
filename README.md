@@ -2,14 +2,20 @@
 
 Primer desafío enviado por Previred para prueba de Proceso de Selección para Ingeniero desarrollo Junior.
 
-Programa hecho en `node.js` que substrae fechas de entre otro rango de fechas.
+Programa escrito en `node.js`, que substrae fechas de entre otro rango de fechas, a partir de una API Rest (local) escrita en Java Spring Boot.
 
-Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de salida en `./assets/json/output.json`.
+Archivo generado de entrada está ubicado en `./assets/json/input-1612170182871.json` y de salida en `./assets/json/output.json`.
 
 ## Requerimientos
 
 - Sistema Operativo compatible con node.js
 - node.js v12.16.3
+- axios 0.21.1
+- Para levantar API GDD, [estas instrucciones](https://github.com/previred/Generador_Datos_Desafio_Uno), y, en el archivo `./ApiPeriodos/pom.xml`, el siguiente agregado (ya que no pude compilarlo sólo con `mvn package` en MacOS Catalina 10.15.7):
+  `````xml
+  <dependency> <groupId>javax.xml.bind</groupId> <artifactId>jaxb-api</artifactId> <version>2.3.0</version> </dependency>
+  ````
+  `````
 
 ## Instalación
 
@@ -35,15 +41,23 @@ Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de 
 ## Uso
 
 ```shell
-node desafio_uno <input_file_or_url> <./assets/json/output.json>
+node desafio_uno <endpoint_url> archivo_de_salida.json
 ```
+
+La ejecución de `desafio_uno` genera automáticamente un archivo `input-[timestamp].json` en `./assets/json/` con el contenido generado por la API GDD.
+
+Parámetros:
+`endpoint_url`: **Opcional** Endpoint URL a consumir, actualmente fija en la dirección generada por GDD nativo.
+`archivo_de_salida.json`: Nombre del archivo a generar, ubicado en `./assets/json/`.
 
 ## Datos Commit
 
-Nombre: Francisco Andrés Cerda Sepúlveda
+**Nombre:** Francisco Andrés Cerda Sepúlveda
 
-Correo: francisco.cerda@gmail.com
+**Correo:** francisco.cerda@gmail.com
 
-Me enteré por: Selección Beca Talento Digital
+**Me enteré por:** Selección Beca Talento Digital
+
+Espero quedar seleccionado :)
 
 TODO: pull request
