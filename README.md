@@ -11,7 +11,7 @@ Archivo generado de entrada está ubicado en `./assets/json/input-1612170182871.
 - Sistema Operativo compatible con node.js
 - node.js v12.16.3
 - axios 0.21.1
-- Para levantar API GDD, [estas instrucciones](https://github.com/previred/Generador_Datos_Desafio_Uno), y, en el archivo `./Generador_Datos_Desafio_Uno/ApiPeriodos/pom.xml`, el siguiente código, inmediatamente antes de la tag `</dependencies>`, ya que no pude compilarlo sólo con `mvn package` en MacOS Catalina 10.15.7:
+- Para levantar API GDD, [estas instrucciones](https://github.com/previred/Generador_Datos_Desafio_Uno), y, en el archivo `./Generador_Datos_Desafio_Uno/ApiPeriodos/pom.xml`, el siguiente código, inmediatamente antes de la tag `</dependencies>`, ya que no pude compilarlo sólo con `mvn package` (MacOS Catalina 10.15.7, Java 15.0.1, Maven 3.6.3):
 
   ```xml
   <dependency> <groupId>javax.xml.bind</groupId> <artifactId>jaxb-api</artifactId> <version>2.3.0</version> </dependency>
