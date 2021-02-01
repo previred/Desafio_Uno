@@ -13,7 +13,7 @@ Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de 
 
 ## Instalación
 
-1. Instalar <a href="https://nodejs.org/es/download/" target="_blank">node.js</a>
+1. Instalar [node.js](https://nodejs.org/es/download/)
 2. Clonar repositorio
 
    ```shell
