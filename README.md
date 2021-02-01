@@ -28,7 +28,11 @@ Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de 
 
 4. Instalar dependencias
 
-## Uso
+   ```shell
+   npm i
+   ```
+
+## Uso
 
 ```shell
 node desafio_uno <input_file_or_url> <./assets/json/output.json>
