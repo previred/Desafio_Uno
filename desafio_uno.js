@@ -2,7 +2,6 @@
 fs = require("fs");
 
 // Variables
-let input_data;
 let data_range = [];
 
 // Arguments
@@ -14,16 +13,16 @@ fs.readFile(input, "utf8", function (err, data) {
   if (err) {
     throw err;
   }
-  // Data
+  // Parsed data
   const input_data = JSON.parse(data);
 
-  // Fechas Tope
+  // Fechas tope
   var min_year = Number(input_data.fechaCreacion.split("-")[0]);
   var max_year = Number(input_data.fechaFin.split("-")[0]);
   var min_month = Number(input_data.fechaCreacion.split("-")[1]);
   var max_month = Number(input_data.fechaFin.split("-")[1]);
 
-  // Escribe años
+  // Escribe fechas, push a rango a substraer según año
   for (y = min_year; y <= max_year; y++) {
     switch (y) {
       case min_year:
@@ -46,20 +45,25 @@ fs.readFile(input, "utf8", function (err, data) {
         break;
     }
   }
+
+  // Substracción fechas otorgadas de generadas
   let lost_periods = data_range.filter((x) => !input_data.fechas.includes(x));
+
+  // Objeto salida
   let output_data = {
     id: input_data.id,
     fechaCreacion: input_data.fechaCreacion,
     fechaFin: input_data.fechaFin,
     fechasFaltantes: lost_periods,
   };
+
   // Write File
   fs.writeFile(
     "./assets/json/" + output,
     JSON.stringify(output_data),
     function (err) {
       if (err) return console.log(err);
-      console.log("exito!");
+      console.log("desafio_uno: exito!");
     }
   );
 });

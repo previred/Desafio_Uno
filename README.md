@@ -1,7 +1,8 @@
 # Previred Desafío 1: Periodos perdidos
 
 Primer desafío enviado por Previred para prueba de Proceso de Selección para Ingeniero desarrollo Junior.
-Programa hecho en node.js que substrae fechas de entre otro rango de fechas.
+Programa hecho en `node.js` que substrae fechas de entre otro rango de fechas.
+Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de salida en `./assets/json/output.json`.
 
 ## Requerimientos
 
@@ -29,7 +30,7 @@ cd /path/to/Desafio_Uno
 npm i
 ```
 
-# Uso
+## Uso
 
 ```shell
 node desafio_uno <input_file_or_url> <./assets/json/output.json>
