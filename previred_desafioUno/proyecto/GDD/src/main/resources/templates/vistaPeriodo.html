@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title th:text="${titulo}"></title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1 th:text="${titulo}"></h1>
+		
+		<table class="table table-success table-striped">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Fecha Inicio</th>
+					<th>Fecha Final</th>
+					<th>Fechas aleatorias</th>
+					<th>Fechas Restantes</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<div  th:text="${periodo.id}"></div>
+					</td>
+					<td>
+						<div  th:text="${periodo.fechaCreacion}"></div>
+					</td>
+					<td>
+						<div  th:text="${periodo.fechaFin}"></div>
+					</td>
+					<td>
+						<div  th:each="fecha : ${periodo.fechas}">
+							<div th:text="${fecha}"></div>
+						</div>
+					</td>
+					<td>
+						<div  th:each="fecha : ${periodo.fechasFaltantes}">
+							<div th:text="${fecha}"></div>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div>
+			<a class="btn btn-primary" th:href="@{/}">Volver</a>
+			<a class="btn btn-warning" th:href="@{/fechasJSON}"> Exportar JSON</a>
+						
+		</div>
+	
+	</div>
+
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<title th:textt="${titulo}"></title>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+	crossorigin="anonymous">
+</head>
+<body>
+
+	<div style="text-align: center;">
+		<h1 th:text="${titulo}"></h1>
+		<div>
+			<p>
+				Bienvenido/a:<br>				
+				Introduzca dos fechas que sean el primer dia de un mes, no deben ser iguales y además<br>
+				el intervalo no debe ser menor de 10 meses ni mayor a 100 meses...
+			</p>
+		</div>
+
+		<div th:if="${mens != null}">
+			<h3 class="alert alert-warning" th:text="${mens}"></h3>
+		</div>
+
+		<form th:action="@{/calculaFechas}" method="post">
+			<div class="mb-3">
+				<label for="fechaInicio" class="form-label">Fecha Inicio</label> <input
+					type="date" class="mb-3" id="fechaInicio" name="fechaInicio"
+					required>
+			</div>
+
+			<div class="mb-3">
+				<label for="fechaFinal" class="form-label">Fecha final</label> <input
+					type="date" class="mb-3" name="fechaFinal" id="fechaFinal" required>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Enviar</button> 
+				<a class="btn btn-warning" th:href="@{/respuestaDesdeServicioGDD}">Servicio GDD</a>
+			
+			</div>
+			
+		</form>
+	</div>
+	
+	
+	
+	
+	
+	
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+		crossorigin="anonymous"></script>
+</body>
+</html>
