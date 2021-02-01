@@ -14,21 +14,20 @@ Archivo de muestra de entrada está ubicado en `./assets/json/source.json` y de 
 1. Instalar [node.js](https://nodejs.org/es/download/)
 2. Clonar repositorio
 
-```shell
-git clone https://github.com/nufrankz/Desafio_Uno.git
-```
+   ```shell
+   git clone https://github.com/nufrankz/Desafio_Uno.git
+   ```
 
 3. Dirigirse al directorio del repositorio
 
-```shell
-cd /path/to/Desafio_Uno
-```
+   ```shell
+   cd /path/to/Desafio_Uno
+   ```
 
 4. Instalar dependencias
-
-```shell
-npm i
-```
+   ```shell
+   npm i
+   ```
 
 ## Uso
 
