@@ -46,7 +46,8 @@ node desafio_uno <endpoint_url> archivo_de_salida.json
 
 La ejecución de `desafio_uno` genera automáticamente un archivo `input-[timestamp].json` en `./assets/json/` con el contenido generado por la API GDD.
 
-Parámetros:
+### Parámetros
+
 `endpoint_url`: **Opcional** Endpoint URL a consumir, actualmente fija en la dirección generada por GDD nativo.
 
 `archivo_de_salida.json`: Nombre del archivo a generar, ubicado en `./assets/json/`.
