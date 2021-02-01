@@ -48,6 +48,7 @@ La ejecución de `desafio_uno` genera automáticamente un archivo `input-[timest
 
 Parámetros:
 `endpoint_url`: **Opcional** Endpoint URL a consumir, actualmente fija en la dirección generada por GDD nativo.
+
 `archivo_de_salida.json`: Nombre del archivo a generar, ubicado en `./assets/json/`.
 
 ## Datos Commit
