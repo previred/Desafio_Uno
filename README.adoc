@@ -1,0 +1,90 @@
+# https://github.com/previred/Desafio_Uno[Previred Level 1 Solution]
+
+A simple command line solution for https://github.com/previred/Desafio_Uno (Level 1)
+
+This project was implemented in two different languages
+
+- Python
+- https://github.com/ogu-lang/Ogu/[Ogú] (Just for fun)
+
+## Technology
+
+- Python 3.6.x
+- Ogú 0.2.5 (Ferrilo)
+
+## Makefile
+
+- `make py`: Executes the _Python_ solution
+- `make ogu`: Executes the _Ogú_ solution (requires java >=8)
+
+## Licence
+
+MIT Licence
+
+## Sample Execution
+
+`$ python3 . `
+
+Will generate `output.json` from `input.json`.
+
+### Input JSON
+
+```json
+{
+    "id": 6,
+    "fechaCreacion": "1969-03-01",
+    "fechaFin": "1970-01-01",
+    "fechas": [
+    "1969-03-01",
+    "1969-05-01",
+    "1969-09-01",
+    "1970-01-01"]
+}
+```
+
+### Output JSON
+
+```json
+{
+    "id": 6,
+    "fechaCreacion": "1969-03-01",
+    "fechaFin": "1970-01-01",
+    "fechasFaltantes": [
+    "1969-04-01",
+    "1969-06-01",
+    "1969-07-01",
+    "1969-08-01",
+    "1969-10-01",
+    "1969-11-01",
+    "1969-12-01"]
+}
+```
+
+## Possible Improvements
+
+- Add Unit Tests
+
+## Credits
+
+- Coded by Camilo Castro <camilo@ninjas.cl>
+
+Some portions of the code based on the following stack overflow answers:
+
+- https://stackoverflow.com/a/37396546
+- https://stackoverflow.com/a/4479842
+- https://stackoverflow.com/a/41125943
+
+Using:
+
+- https://github.com/dateutil/dateutil/
+- https://github.com/benjaminp/six
+- https://github.com/clojure/data.json
+
+++++
+<p>
+  Made with <i class="fa fa-heart">&#9829;</i> by
+  <a href="https://ninjas.cl">
+    Ninjas.cl
+  </a>.
+</p>
+++++

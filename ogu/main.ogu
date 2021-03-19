@@ -1,0 +1,84 @@
+-- MIT License
+-- -----------
+--
+-- Copyright (c) 2021 Camilo Castro <camilo@ninjas.cl>
+-- Permission is hereby granted, free of charge, to any person
+-- obtaining a copy of this software and associated documentation
+-- files (the "Software"), to deal in the Software without
+-- restriction, including without limitation the rights to use,
+-- copy, modify, merge, publish, distribute, sublicense, and/or sell
+-- copies of the Software, and to permit persons to whom the
+-- Software is furnished to do so, subject to the following
+-- conditions:
+--
+-- The above copyright notice and this permission notice shall be
+-- included in all copies or substantial portions of the Software.
+--
+-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+-- EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+-- OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+-- NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+-- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+-- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+-- FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+-- OTHER DEALINGS IN THE SOFTWARE.
+
+module PreviredNivel1
+
+from clojure.core import slurp, spit, sort, conj, into, take
+from clojure.set import difference
+from clojure.data.json import read-str, write-str
+
+from [:jvm] java.time import LocalDate
+
+-- set constants
+
+let input = "input.json"
+let output = "output.json"
+let max-elements = 100
+
+-- read input data
+
+let jsonData = slurp input
+let params = read-str jsonData :key-fn keyword
+
+let start-at = params :fechaCreacion
+set start-at = LocalDate.parse start-at
+
+let end-at = params :fechaFin
+set end-at = LocalDate.parse end-at
+
+let available-dates = params :fechas
+
+-- generate dates from start to end
+
+let all-dates = []
+
+loop finish = .isEqual start-at end-at do
+    when finish == false then
+        set all-dates = conj all-dates (.toString start-at)
+        set start-at = .plusMonths start-at 1
+        repeat with finish = .isEqual start-at end-at
+
+set all-dates = conj all-dates (.toString end-at)
+
+-- get which dates are missing using sets
+
+let final-dates = take max-elements (
+    sort (
+        into [] (
+            difference (to-set all-dates) (to-set available-dates)
+            )
+        )
+    )
+
+-- output final json
+
+let solution = write-str {
+    :id (params :id),
+    :fechaCreacion (params :fechaCreacion),
+    :fechaFin (params :fechaFin),
+    :fechasFaltantes final-dates
+}
+
+spit output solution
