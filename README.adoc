@@ -2,21 +2,23 @@
 
 A simple command line solution for https://github.com/previred/Desafio_Uno (Level 1)
 
-This project was implemented in two different languages
+This project was implemented in three different languages:
 
-- Python
+- https://www.python.org/[Python] (First Solution)
 - https://github.com/ogu-lang/Ogu/[Ogú] (Just for fun)
+- https://elixir-lang.org/[Elixir] (Robust Solution)
 
 ## Technology
 
 - Python 3.6.x
 - Ogú 0.2.5 (Ferrilo)
+- Elixir 1.11
 
 ## Makefile
 
 - `make py`: Executes the _Python_ solution (Requires Python >= 3.6)
 - `make ogu`: Executes the _Ogú_ solution (Requires Java >=8)
-- `make ex`: [.line-through]#Executes the _Elixir_ solution (Requires Erlang OTP >= 22)# (In Progress)
+- `make ex`: Executes the _Elixir_ solution (Requires Erlang OTP >= 22)
 
 ## Licence
 
@@ -24,7 +26,7 @@ MIT Licence
 
 ## Sample Execution
 
-`$ python3 .`
+- `$ make ex`
 
 Will generate `output.json` from `input.json`.
 
@@ -63,7 +65,7 @@ Will generate `output.json` from `input.json`.
 
 ## Possible Improvements
 
-- Add Unit Tests
+- Add Unit Tests to _Python_.
 
 ## Credits
 
@@ -80,6 +82,8 @@ Using:
 - https://github.com/dateutil/dateutil/
 - https://github.com/benjaminp/six
 - https://github.com/clojure/data.json
+- https://hexdocs.pm/jason/readme.html
+- https://hexdocs.pm/timex/getting-started.html
 
 ++++
 <p>

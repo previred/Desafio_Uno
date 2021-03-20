@@ -6,6 +6,5 @@ p py python:
 o ogu:
 	cd ogu && java -jar ./ogu.jar -n ./main.ogu
 
-# TODO Elixir
-# e ex elixir:
-# cd elixir && mix solution
+e ex elixir:
+	cd elixir && mix solution
