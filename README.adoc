@@ -14,8 +14,9 @@ This project was implemented in two different languages
 
 ## Makefile
 
-- `make py`: Executes the _Python_ solution
-- `make ogu`: Executes the _Ogú_ solution (requires java >=8)
+- `make py`: Executes the _Python_ solution (Requires Python >= 3.6)
+- `make ogu`: Executes the _Ogú_ solution (Requires Java >=8)
+- `make ex`: [.line-through]#Executes the _Elixir_ solution (Requires Erlang OTP >= 22)# (In Progress)
 
 ## Licence
 
@@ -23,7 +24,7 @@ MIT Licence
 
 ## Sample Execution
 
-`$ python3 . `
+`$ python3 .`
 
 Will generate `output.json` from `input.json`.
 
