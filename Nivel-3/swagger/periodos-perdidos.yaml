@@ -1,0 +1,61 @@
+swagger: '2.0'
+info:
+  description: Obtiene los periodos perdidos, dada una secuencia de fechas obtenidas desde API GDD
+  version: 1.0.0
+  title: Periodos Perdidos
+  # put the contact info for your development or API team
+  contact:
+    email: jorgesanmartinjeldres@gmail.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+host: 127.0.0.1:8081
+basePath: /periodos-perdidos
+tags:
+  - name: periodos perdidos
+    description: Lista de periodos perdidos en GDD
+schemes:
+   - http
+
+paths:
+  /api:
+    get:
+      tags:
+        - periodos perdidos
+      summary: obtiene periodos perdidos
+      operationId: periodos perdidos
+      produces:
+      - application/json
+      responses:
+        200:
+          description: Periodo y lista de fechas perdidas
+          schema:
+              $ref: '#/definitions/Periodo'
+        
+      
+definitions:
+  Periodo:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      fechaCreacion:
+        type: string
+        format: date
+      fechaFin:
+        type: string
+        format: date
+      fechas:
+        type: array
+        items:
+          type: string
+          format: date
+      fechasFaltantes:
+        type: array
+        items:
+          type: string
+          format: date
