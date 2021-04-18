@@ -6,7 +6,7 @@
 
 > Implementar un nuevo servicio REST. Este servicio REST debe invocar al servicio GDD y entregar la respuesta en formato JSON con las fechas recibidas y las fechas faltantes. Ejemplo de la respuesta que debería entregar:
 
-*Ejemplo Salida*
+*Ejemplo JSON Salida*
 
 ```
 {
@@ -59,4 +59,4 @@
 
 
 ### knowledge issues
-- En Swagger UI no reconoce la clase LocalDate
+- En Swagger UI no reconoce la clase LocalDate.
