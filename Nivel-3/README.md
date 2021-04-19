@@ -1,4 +1,4 @@
-#Respuesta desafío 1: Periodos Perdidos
+# Respuesta desafío 1: Periodos Perdidos
 
 Respuesta a desafío de programación para ingresar a Previred.
 
