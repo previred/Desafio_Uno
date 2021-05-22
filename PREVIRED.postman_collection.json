@@ -1,0 +1,34 @@
+{
+	"info": {
+		"_postman_id": "15abf0b3-a2d9-4b84-a2db-fecf799f81a8",
+		"name": "PREVIRED",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GDD",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/fechas/fechaCreacion/1990-03-01/fechaFin/1991-01-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"fechas",
+						"fechaCreacion",
+						"1990-03-01",
+						"fechaFin",
+						"1991-01-01"
+					]
+				},
+				"description": "GENERADOR DE DATOS"
+			},
+			"response": []
+		}
+	]
+}
