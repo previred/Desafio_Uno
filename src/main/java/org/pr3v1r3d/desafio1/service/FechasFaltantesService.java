@@ -1,10 +1,11 @@
 package org.pr3v1r3d.desafio1.service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.pr3v1r3d.desafio1.client.model.GddResponse;
-import org.pr3v1r3d.desafio1.model.date.PopulateMissingResponse;
+import org.pr3v1r3d.desafio1.model.date.FechasFaltantesResponse;
 import org.pr3v1r3d.desafio1.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,9 +14,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class DateService {
+public class FechasFaltantesService {
 
-	@Value("${rest-service.gdd.url}")
+	@Value("${service.rest.gdd.url}")
 	private String gddUrl;
 	
 	@Autowired
@@ -24,11 +25,11 @@ public class DateService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     
-	public PopulateMissingResponse populateMissing() {
-		PopulateMissingResponse populateMissingResponse = new PopulateMissingResponse();
+	public FechasFaltantesResponse fechasFaltantes() {
+		FechasFaltantesResponse fechasFaltantesResponse = new FechasFaltantesResponse();
 		GddResponse gddResponse = callGdd();
 	    //System.out.println(gddResponse);
-	    List missingDates = new ArrayList();
+	    List<LocalDate> missingDates = new ArrayList<LocalDate>();
 	    DateUtil.findMissingDates(
 	    		gddResponse.getFechaCreacion(),
 	    		gddResponse.getFechaFin(),
@@ -38,13 +39,14 @@ public class DateService {
 	    //TODO: move to repository component
 	    jdbcTemplate.execute("INSERT INTO LOG_REQ(DT) VALUES (CURRENT_TIMESTAMP);");
 	    Long id = jdbcTemplate.queryForObject("CALL SCOPE_IDENTITY();", Long.class);
-	    populateMissingResponse.setId(id);
-	    populateMissingResponse.setInitDate(gddResponse.getFechaCreacion());
-	    populateMissingResponse.setFinalDate(gddResponse.getFechaFin());
-	    populateMissingResponse.setDates(gddResponse.getFechas());
-	    populateMissingResponse.setMissingDates(missingDates);
 	    
-	    return populateMissingResponse;
+	    fechasFaltantesResponse.setId(id);
+	    fechasFaltantesResponse.setFechaCreacion(gddResponse.getFechaCreacion());
+	    fechasFaltantesResponse.setFechaFin(gddResponse.getFechaFin());
+	    fechasFaltantesResponse.setFechas(gddResponse.getFechas());
+	    fechasFaltantesResponse.setFechasFaltantes(missingDates);
+	    
+	    return fechasFaltantesResponse;
 	}
 
 	//TODO: move to rest-consumes component
