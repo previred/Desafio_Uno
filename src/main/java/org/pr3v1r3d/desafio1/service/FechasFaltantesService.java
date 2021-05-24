@@ -13,8 +13,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Service
 public class FechasFaltantesService {
+
+    Logger logger = LoggerFactory.getLogger(FechasFaltantesService.class);
 
 	@Value("${service.rest.gdd.url}")
 	private String gddUrl;
@@ -28,7 +33,6 @@ public class FechasFaltantesService {
 	public FechasFaltantesResponse fechasFaltantes() {
 		FechasFaltantesResponse fechasFaltantesResponse = new FechasFaltantesResponse();
 		GddResponse gddResponse = callGdd();
-	    //System.out.println(gddResponse);
 	    List<LocalDate> missingDates = new ArrayList<LocalDate>();
 	    DateUtil.findMissingDates(
 	    		gddResponse.getFechaCreacion(),
@@ -52,6 +56,7 @@ public class FechasFaltantesService {
 	//TODO: move to rest-consumes component
 	private GddResponse callGdd() {
 		GddResponse gddResponse = restTemplate.getForObject(gddUrl, GddResponse.class);
+		logger.info(gddResponse.toString());
 	    return gddResponse;
 	}
 
