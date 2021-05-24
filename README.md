@@ -4,6 +4,8 @@ Este proyecto API Rest responde al desafío planteado en el repositorio:
 
 <https://github.com/previred/Desafio_Uno/>
 
+La solucion se construyo con las indicaciones de la opción **Nivel 3**
+
 ## Tecnologías utilizadas
 
  - Java 1.8
@@ -23,19 +25,19 @@ Es necesario tener instalado Java 1.8  y Maven versión 3.6.3.
 Para compilar debe ubicarse en la raíz del proyecto y ejecutar:
 
 ```bash
-mvn package
+mvn clean package
 ```
 
 Luego ingresar al directorio target y ejecutar:
 
 ```bash
-java -jar .\api-periodos-1.0.0.jar
+java -jar .\desafio1-1.0.jar
 ```
 
-Por defecto la aplicación se levanta en el puerto 8081, si decide cambiarlo indíquelo en la línea de comando:
+Por defecto la aplicación se levanta en el puerto 8081, si decide cambiarlo (por ejemplo a 8082) indíquelo en la línea de comando:
 
 ```bash
-java -jar .\api-periodos-1.0.0.jar
+java -jar .\desafio1-1.0.jar --server.port=8082
 ```
 
 Para que el servicio responda correctamente debe estar disponible el servicio Generador de Datos, el cual por defecto se consume en la url:
@@ -45,20 +47,32 @@ Para que el servicio responda correctamente debe estar disponible el servicio Ge
 Si desea cambiar este endpoint indíquelo en la línea de comando:
 
 ```bash
-java -jar .\api-periodos-1.0.0.jar
+java -jar .\desafio1-1.0.jar --service.rest.gdd.url=http://example/periodos/api
 ```
 
 ## Consumir el servicio API Rest
 
-Desde Linux o Windows (PowerShell) ejecutar:
+Desde Windows (PowerShell) ejecutar:
+
+```bash
+curl -Method GET -Uri http://127.0.0.1:8081/periodos-perdidos -UseBasicParsing
+```
+
+Desde Linux ejecutar:
 
 ```bash
 curl -X GET 'http://127.0.0.1:8080/periodos/api'
 ```
 
+Tambien directamente desde el navegador a la siguiente URL:
+
+<http://127.0.0.1:8081/periodos-perdidos>
+
+*Nota: El dominio y puerto variara de acuerdo a como despliegue la aplicacion.*
+
 ## Documentación API
 
-La documentación de la aplicación queda disponible automáticamente una vez que entra en ejecución.
+La documentación queda disponible automáticamente una vez que se levanta la aplicación.
 
  - OpenAPI 3 Specification Docs formato JSON:
 
@@ -72,6 +86,7 @@ La documentación de la aplicación queda disponible automáticamente una vez qu
 
 <http://localhost:8081/swagger-ui.html>
 
+*Nota: El dominio y puerto variara de acuerdo a como despliegue la aplicacion.*
 
 ## Otros...
 
