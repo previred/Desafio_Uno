@@ -1,3 +1,32 @@
+
+
+
+
+
+## API Documentation
+
+### OpenAPI 3 Specification Docs JSON format:
+
+http://localhost:8081/v3/api-docs
+
+### OpenAPI 3 Specification Docs YAML format:
+
+http://localhost:8081/v3/api-docs.yaml
+
+### Swagger UI
+
+http://localhost:8081/swagger-ui.html
+
+
+
+
+
+
+
+
+
+
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:
