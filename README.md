@@ -61,7 +61,7 @@ curl -Method GET -Uri http://127.0.0.1:8081/periodos-perdidos -UseBasicParsing
 Desde Linux ejecutar:
 
 ```bash
-curl -X GET 'http://127.0.0.1:8080/periodos/api'
+curl -X GET 'http://127.0.0.1:8081/periodos-perdidos'
 ```
 
 Tambien directamente desde el navegador a la siguiente URL:
