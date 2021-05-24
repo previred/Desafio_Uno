@@ -96,7 +96,7 @@ La documentación queda disponible automáticamente una vez que se levanta la ap
 java -jar swagger-codegen-cli-2.4.9.jar generate -i http://127.0.0.1:8080/periodos/api-docs -l java --group-id com.previred.periodos --artifact-id api-periodos-client --artifact-version 1.0.0 -o api-periodos-client/1.0.0
 ```
 
-Lo que significa tener que agregarlo a nuestro repositorio local (y eventualmente a Nexus) para poder incluirlo como dependencia en el proyecto:
+Lo que significa tener que agregarlo a nuestro repositorio Maven local (y eventualmente a Nexus) para poder incluirlo como dependencia:
 
 ```bash
 mvn install:install-file -Dfile=./rest-clients/api-periodos-client/1.0.0/api-periodos-client-1.0.0.jar -DgroupId=com.previred.periodos -DartifactId=api-periodos-client -Dversion=1.0.0 -Dpackaging=jar
@@ -107,6 +107,4 @@ Pero se optó simplemente por traer el modelo directamente, por lo ligero y flex
 ```bash
 java -jar swagger-codegen-cli-2.4.9.jar generate -i http://127.0.0.1:8080/periodos/api-docs -l java -Dmodels -DmodelTests=false -DmodelDocs=false -o api-periodos/1.0.0
 ```
- - Para reducir la complejidad del proyecto la persistencia en la DB H2 no se implementó en un componente Repository (se marcó con un TODO).
-
- - Falto mejorar el manejo de excepciones, por ejemplo con una implementación ResponseStatusException.
+ - Para generar un id secuencial en la respuesta se utilizo una DB H2 en memoria, la cual no se implementó en un componente Repository (se marcó como un TODO).
