@@ -3,7 +3,7 @@ package org.pr3v1r3d.desafio1.model;
 import java.time.LocalDate;
 import java.util.List;
 
-public class FechasFaltantesResponse {
+public class PeriodosPerdidosResponse {
 
 	private Long id;
 	private LocalDate fechaCreacion; //yyyy-mm-dd

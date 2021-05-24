@@ -1,7 +1,7 @@
 package org.pr3v1r3d.desafio1.controller;
 
 import org.pr3v1r3d.desafio1.model.GlobalError;
-import org.pr3v1r3d.desafio1.service.FechasFaltantesService;
+import org.pr3v1r3d.desafio1.service.PeriodosPerdidosService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-	Logger logger = LoggerFactory.getLogger(FechasFaltantesService.class);
+	Logger logger = LoggerFactory.getLogger(PeriodosPerdidosService.class);
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<GlobalError> exceptionHandler(Exception ex){
