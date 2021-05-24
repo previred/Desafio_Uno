@@ -52,21 +52,25 @@ java -jar .\desafio1-1.0.jar --service.rest.gdd.url=http://example/periodos/api
 
 ## Consumir el servicio API Rest
 
-Desde Windows (PowerShell) ejecutar:
+ - Desde Windows (PowerShell) ejecutar:
 
 ```bash
 curl -Method GET -Uri http://127.0.0.1:8081/periodos-perdidos -UseBasicParsing
 ```
 
-Desde Linux ejecutar:
+ - Desde Linux ejecutar:
 
 ```bash
 curl -X GET 'http://127.0.0.1:8081/periodos-perdidos'
 ```
 
-Tambien directamente desde el navegador a la siguiente URL:
+ - Desde el navegador a la siguiente URL:
 
 <http://127.0.0.1:8081/periodos-perdidos>
+
+ - Se puede generar un cliente como libreria en distintos lenguajes con Swagger Codegen (abajo ver URLs de documentación).
+
+ - Se pueden obtener directamente los request y response en distintos lenguajes con Swagger Codegen (abajo ver URLs de documentación).
 
 *Nota: El dominio y puerto variara de acuerdo a como despliegue la aplicacion.*
 
