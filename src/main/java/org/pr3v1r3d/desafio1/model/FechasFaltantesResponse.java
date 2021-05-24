@@ -1,4 +1,4 @@
-package org.pr3v1r3d.desafio1.model.date;
+package org.pr3v1r3d.desafio1.model;
 
 import java.time.LocalDate;
 import java.util.List;

@@ -75,7 +75,7 @@ La documentación de la aplicación queda disponible automáticamente una vez qu
 
 ## Otros...
 
-Para construir el cliente del servicio Generador De Datos se evaluó la opción de generar el jar cliente:
+ - Para construir el cliente del servicio Generador De Datos se evaluó la opción de generar el jar cliente:
 
 ```bash
 java -jar swagger-codegen-cli-2.4.9.jar generate -i http://127.0.0.1:8080/periodos/api-docs -l java --group-id com.previred.periodos --artifact-id api-periodos-client --artifact-version 1.0.0 -o api-periodos-client/1.0.0
@@ -92,5 +92,6 @@ Pero se optó simplemente por traer el modelo directamente, por lo ligero y flex
 ```bash
 java -jar swagger-codegen-cli-2.4.9.jar generate -i http://127.0.0.1:8080/periodos/api-docs -l java -Dmodels -DmodelTests=false -DmodelDocs=false -o api-periodos/1.0.0
 ```
+ - Para reducir la complejidad del proyecto la persistencia en la DB H2 no se implementó en un componente Repository (se marcó con un TODO).
 
-Para reducir la complejidad del proyecto la persistencia en la DB H2 no se implementó en un componente Repository (se marcó con un TODO).
+ - Falto mejorar el manejo de excepciones, por ejemplo con una implementación ResponseStatusException.

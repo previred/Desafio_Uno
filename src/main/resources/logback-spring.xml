@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
 
-    <property name="LOGS" value="./logs" />
-
     <appender name="Console"
         class="ch.qos.logback.core.ConsoleAppender">
         <layout class="ch.qos.logback.classic.PatternLayout">
@@ -13,6 +11,7 @@
     </appender>
 
 	<!-- 
+	<property name="LOGS" value="./logs" />
     <appender name="RollingFile"
         class="ch.qos.logback.core.rolling.RollingFileAppender">
         <file>${LOGS}/spring-boot-logger.log</file>
@@ -33,8 +32,12 @@
     </appender>
 	-->
 
-    <root level="error">
+    <root level="info">
         <appender-ref ref="Console" />
     </root>
+
+    <logger name="org.pr3v1r3d.desafio1" level="error" additivity="false">
+        <appender-ref ref="Console" />
+    </logger>
 
 </configuration>

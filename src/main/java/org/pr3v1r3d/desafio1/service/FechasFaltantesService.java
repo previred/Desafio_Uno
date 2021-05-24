@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.pr3v1r3d.desafio1.client.model.GddResponse;
-import org.pr3v1r3d.desafio1.model.date.FechasFaltantesResponse;
+import org.pr3v1r3d.desafio1.model.FechasFaltantesResponse;
 import org.pr3v1r3d.desafio1.util.DateUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,7 +30,7 @@ public class FechasFaltantesService {
     @Autowired
     private JdbcTemplate jdbcTemplate;
     
-	public FechasFaltantesResponse fechasFaltantes() {
+	public FechasFaltantesResponse fechasFaltantes() throws Exception {
 		FechasFaltantesResponse fechasFaltantesResponse = new FechasFaltantesResponse();
 		GddResponse gddResponse = callGdd();
 	    List<LocalDate> missingDates = new ArrayList<LocalDate>();
@@ -54,10 +54,14 @@ public class FechasFaltantesService {
 	}
 
 	//TODO: move to rest-consumes component
-	private GddResponse callGdd() {
-		GddResponse gddResponse = restTemplate.getForObject(gddUrl, GddResponse.class);
-		logger.info(gddResponse.toString());
-	    return gddResponse;
+	private GddResponse callGdd() throws Exception {
+		try {
+			GddResponse gddResponse = restTemplate.getForObject(gddUrl, GddResponse.class);
+			logger.info(gddResponse.toString());
+		    return gddResponse;
+		} catch(Exception e) {
+			throw new Exception("El servicio Generador de Datos no esta disponible");
+		}
 	}
 
 }
