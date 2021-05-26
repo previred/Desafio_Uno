@@ -1,0 +1,20 @@
+<configuration>
+
+    <conversionRule conversionWord="loggingSequence" converterClass="cl.previred.infrastructure.logger.AtomicSequenceConverter" />
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{dd/MM/yyyy}; %date{HH:mm:ss.SSS}; %X{ThreaId}; "previred"; %M;  level=%level , log_order=%loggingSequence %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <logger name="cl.mercLibre" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT"></appender-ref>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>

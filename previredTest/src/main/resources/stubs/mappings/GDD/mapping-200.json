@@ -1,0 +1,21 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPattern": "/api/v1/gdd",
+    "headers": {
+      "Content-Type": {
+        "contains": "application/json"
+      },
+      "Accept": {
+        "contains": "application/json"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "bodyFileName": "GDD/200-gdd.json"
+  }
+}
