@@ -1,5 +1,5 @@
 # Desafío 1: Periodos perdidos
-
+ 
 El desafío consiste en lo siguiente:
 
 -   Existe un servicio REST que llamaremos Generador De Datos o GDD.
