@@ -1,0 +1,14 @@
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/exceptions/DesafioUnoInformedException.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/SecurityConfig.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/AppConfig.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/service/impl/OneLevelCallGDDServiceImpl.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/SwaggerApiDocConstants.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/Nivel1Application.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/service/impl/DesafioUnoServiceImpl.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/controller/McerdaPeriodoController.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/SwaggerConfigProperties.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/service/DesafioUnoService.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/DesafioUnoConstants.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/service/OneLevelCallGDDService.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/config/SwaggerConfig.java
+/home/bodegafresh/git/repos/Desafio_Uno/mcerda/desafio1/mcerdaGddApi/src/main/java/cl/previred/desafio/uno/nivel3/api/dto/DesafioUnoFechasDTO.java

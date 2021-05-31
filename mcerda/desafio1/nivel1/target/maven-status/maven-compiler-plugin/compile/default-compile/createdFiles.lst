@@ -1,0 +1,11 @@
+cl/previred/desafio/uno/nivel1/main/MainApp.class
+cl/previred/desafio/uno/nivel1/config/AppConfig.class
+cl/previred/desafio/uno/nivel1/service/OneLevelReaderFileService.class
+cl/previred/desafio/uno/nivel1/service/DesafioUnoService.class
+cl/previred/desafio/uno/nivel1/config/DesafioUnoConstants.class
+cl/previred/desafio/uno/nivel1/service/impl/OneLevelReaderFileServiceImpl.class
+cl/previred/desafio/uno/nivel1/Nivel1Application.class
+cl/previred/desafio/uno/nivel1/service/impl/DesafioUnoServiceImpl.class
+cl/previred/desafio/uno/nivel1/exceptions/DesafioUnoInformedException.class
+cl/previred/desafio/uno/nivel1/dto/DesafioUnoFechasDTO$DesafioUnoFechasDTOBuilder.class
+cl/previred/desafio/uno/nivel1/dto/DesafioUnoFechasDTO.class

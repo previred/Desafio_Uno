@@ -1,0 +1,11 @@
+cl/previred/desafio/uno/nivel3/api/service/impl/OneLevelCallGDDServiceImpl.class
+cl/previred/desafio/uno/nivel3/api/config/AppConfig.class
+cl/previred/desafio/uno/nivel3/api/service/impl/DesafioUnoServiceImpl.class
+cl/previred/desafio/uno/nivel3/api/config/DesafioUnoConstants.class
+cl/previred/desafio/uno/nivel3/api/dto/DesafioUnoFechasDTO$DesafioUnoFechasDTOBuilder.class
+cl/previred/desafio/uno/nivel3/api/dto/DesafioUnoFechasDTO.class
+cl/previred/desafio/uno/nivel3/api/Nivel1Application.class
+cl/previred/desafio/uno/nivel3/api/service/OneLevelCallGDDService.class
+cl/previred/desafio/uno/nivel3/api/exceptions/DesafioUnoInformedException.class
+cl/previred/desafio/uno/nivel3/api/service/DesafioUnoService.class
+cl/previred/desafio/uno/nivel3/api/controller/McerdaPeriodoController.class
