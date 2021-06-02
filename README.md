@@ -1,130 +1,246 @@
-# Desafío 1: Periodos perdidos
+# Solución a Desafío 1 de Previred
 
-El desafío consiste en lo siguiente:
+La solución al problema de las identificación de fechas faltantes se realizó implementando el Nivel 3 (Crear un API Rest que consuma al API de períodos e incorpore las fechas faltantes), utilizando las siguientes tecnologías:
 
--   Existe un servicio REST que llamaremos Generador De Datos o GDD.
-    -   El servicio responde con una lista de fechas generadas aleatoriamente. Estas fechas se encuentran en un lapso definidos por dos valores: fechaCreacion y fechaFin.
-    -   Cada fecha generada corresponde al primer día de un mes.
-    -   La respuesta contienen un máximo de 100 fechas. 
-    -   El servicio no entrega todas las fechas dentro del periodo, omite algunas de forma también aleatoria.
--   El objetivo de este ejercicio es que determines cuáles son los periodos que faltan.
+-	[Apache Maven 3.8.1](https://maven.apache.org/download.cgi#downloading-apache-maven-3-8-1)
+-	[Java 11.0.1](https://www.oracle.com/java/technologies/javase/11-0-11-relnotes.html)
+-	[Quarkus Framework 1.13.3](https://quarkus.io/blog/quarkus-1-13-3-final-released/)
 
-Este es un ejemplo de la respuesta que entrega este servicio:
+El desarrollo y pruebas se realizaron en entorno Linux (Kubuntu 20.04.2 LTS).
 
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1968-08-01",
-    "fechaFin": "1971-06-01",
-    "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1971-05-01"]
-}
+
+## Instrucciones de compilación
+
+Dentro del directorio raíz de la solución ejecutar los siguientes comandos (bash):
+
+```bash
+    ./mvnw clean install
+    ./mvnw package
+```
+## Instrucciones de ejecución
+
+Habiendo instalado y empaquetado los fuentes de acuerdo a lo indicado en el paso anterior, ejecutar el siguiente comando para levantar la aplicación:
+
+```bash
+    java -jar target/quarkus-app/quarkus-run.jar
 ```
 
-Acá se puede apreciar que el servicio generó fechas entre el 1 de agosto de 1968 y el 1 de junio de 1971. Sólo se generaron 4 fechas en este caso. 
-De acuerdo a esto, faltarían fechas, 5 de 1968, 9 fechas de 1969, 5 fechas de 1971, etc.
-Una versión del GDD se encuentra en este repositorio en GitHub:
-https://github.com/previred/Generador_Datos_Desafio_Uno
+El API Rest quedará escuchando en la dirección:
+http://0.0.0.0:9090/periodos/api/v2
 
-El desafío puede ser resuelto de tres maneras distintas. 
-Tú eliges cuál es la que más te acomoda entre estos tres niveles:
+El Swagger-UI quedará disponible en:
+http://0.0.0.0:9090/swagger-ui
 
-## Nivel 1: 
-    Crear un programa que recibe, a través de la entrada estándar, un archivo en formato Json con la estructura de la respuesta de servicio (como el ejemplo de arriba) y que entrega a través de la salida estándar, como respuesta, un archivo Json con las fechas faltantes.
-Ejemplo:
-    Se entrega un archivo con este contenido:
-    
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
-    "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"]
-}
+La prueba ejecutada con CURL: 
+
+```bash
+    curl -X GET "http://0.0.0.0:9090/periodos/api/v2"
 ```
-
-El programa debe responder con archivo con este contenido:
-    
+## Ejemplo de salida
 ```json
 {
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
+    "fechaCreacion": "1999-11-01",
+    "fechaFin": "2016-02-01",
+    "fechas": [
+        "1999-12-01",
+        "2000-01-01",
+        "2000-05-01",
+        "2000-07-01",
+        "2000-10-01",
+        "2000-12-01",
+        "2001-02-01",
+        "2001-03-01",
+        "2001-04-01",
+        "2001-07-01",
+        "2001-08-01",
+        "2001-11-01",
+        "2002-01-01",
+        "2002-03-01",
+        "2002-05-01",
+        "2002-07-01",
+        "2002-08-01",
+        "2002-09-01",
+        "2002-10-01",
+        "2002-11-01",
+        "2002-12-01",
+        "2003-04-01",
+        "2003-07-01",
+        "2003-08-01",
+        "2003-09-01",
+        "2003-10-01",
+        "2004-01-01",
+        "2004-02-01",
+        "2004-03-01",
+        "2004-07-01",
+        "2004-08-01",
+        "2004-11-01",
+        "2005-02-01",
+        "2005-05-01",
+        "2005-06-01",
+        "2005-07-01",
+        "2005-08-01",
+        "2005-09-01",
+        "2005-10-01",
+        "2005-11-01",
+        "2006-02-01",
+        "2006-06-01",
+        "2006-09-01",
+        "2006-10-01",
+        "2006-11-01",
+        "2007-01-01",
+        "2007-04-01",
+        "2007-06-01",
+        "2007-07-01",
+        "2007-08-01",
+        "2007-10-01",
+        "2008-01-01",
+        "2008-03-01",
+        "2008-05-01",
+        "2008-06-01",
+        "2008-08-01",
+        "2008-10-01",
+        "2008-11-01",
+        "2009-02-01",
+        "2009-12-01",
+        "2010-01-01",
+        "2010-02-01",
+        "2010-05-01",
+        "2010-06-01",
+        "2010-07-01",
+        "2010-09-01",
+        "2010-10-01",
+        "2010-11-01",
+        "2011-01-01",
+        "2011-02-01",
+        "2011-05-01",
+        "2011-11-01",
+        "2011-12-01",
+        "2012-01-01",
+        "2012-03-01",
+        "2012-05-01",
+        "2012-06-01",
+        "2012-11-01",
+        "2013-01-01",
+        "2013-04-01",
+        "2013-05-01",
+        "2013-08-01",
+        "2013-09-01",
+        "2013-10-01",
+        "2013-12-01",
+        "2014-01-01",
+        "2014-03-01",
+        "2014-06-01",
+        "2014-08-01",
+        "2014-10-01",
+        "2014-11-01",
+        "2015-04-01",
+        "2015-05-01",
+        "2015-06-01",
+        "2015-07-01",
+        "2015-08-01",
+        "2015-10-01",
+        "2015-12-01"
+    ],
     "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
+        "1999-11-01",
+        "2000-02-01",
+        "2000-03-01",
+        "2000-04-01",
+        "2000-06-01",
+        "2000-08-01",
+        "2000-09-01",
+        "2000-11-01",
+        "2001-01-01",
+        "2001-05-01",
+        "2001-06-01",
+        "2001-09-01",
+        "2001-10-01",
+        "2001-12-01",
+        "2002-02-01",
+        "2002-04-01",
+        "2002-06-01",
+        "2003-01-01",
+        "2003-02-01",
+        "2003-03-01",
+        "2003-05-01",
+        "2003-06-01",
+        "2003-11-01",
+        "2003-12-01",
+        "2004-04-01",
+        "2004-05-01",
+        "2004-06-01",
+        "2004-09-01",
+        "2004-10-01",
+        "2004-12-01",
+        "2005-01-01",
+        "2005-03-01",
+        "2005-04-01",
+        "2005-12-01",
+        "2006-01-01",
+        "2006-03-01",
+        "2006-04-01",
+        "2006-05-01",
+        "2006-07-01",
+        "2006-08-01",
+        "2006-12-01",
+        "2007-02-01",
+        "2007-03-01",
+        "2007-05-01",
+        "2007-09-01",
+        "2007-11-01",
+        "2007-12-01",
+        "2008-02-01",
+        "2008-04-01",
+        "2008-07-01",
+        "2008-09-01",
+        "2008-12-01",
+        "2009-01-01",
+        "2009-03-01",
+        "2009-04-01",
+        "2009-05-01",
+        "2009-06-01",
+        "2009-07-01",
+        "2009-08-01",
+        "2009-09-01",
+        "2009-10-01",
+        "2009-11-01",
+        "2010-03-01",
+        "2010-04-01",
+        "2010-08-01",
+        "2010-12-01",
+        "2011-03-01",
+        "2011-04-01",
+        "2011-06-01",
+        "2011-07-01",
+        "2011-08-01",
+        "2011-09-01",
+        "2011-10-01",
+        "2012-02-01",
+        "2012-04-01",
+        "2012-07-01",
+        "2012-08-01",
+        "2012-09-01",
+        "2012-10-01",
+        "2012-12-01",
+        "2013-02-01",
+        "2013-03-01",
+        "2013-06-01",
+        "2013-07-01",
+        "2013-11-01",
+        "2014-02-01",
+        "2014-04-01",
+        "2014-05-01",
+        "2014-07-01",
+        "2014-09-01",
+        "2014-12-01",
+        "2015-01-01",
+        "2015-02-01",
+        "2015-03-01",
+        "2015-09-01",
+        "2015-11-01",
+        "2016-01-01",
+        "2016-02-01"
+    ],
+    "id": 1
 }
 ```
- 
-El programa se debe ejecutar de la siguiente manera:
-    $ mi_solucion < nombre_archivo_entrada > nombre_archivo_salida
-
-## Nivel 2:
-
-Construir un programa que invoque al servicio REST GDD y escriba como salida un archivo con las fechas, los periodos recibidos y la lista de periodos faltantes.
-Ejemplo:
-
-```
-INVOCACION:
-    $ mi-solucion
-SALIDA (un archivo con el siguiente contenido) :
-      fecha creación: 2018-10-01
-         fecha fin: 2019-04-01
-         fechas recibidas: 2018-10-01, 2018-12-01, 2019-01-01, 2019-04-01
-        fechas faltantes: 2018-11-01, 2019-02-01, 2019-03-01
-```
-
-## Nivel 3:
-
-Implementar un nuevo servicio REST. Este servicio REST debe invocar al servicio GDD y entregar la respuesta en formato JSON con las fechas recibidas y las fechas faltantes.
-Ejemplo de la respuesta que debería entregar:
-
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
-    "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"],
-    "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
-
-}
-```
-
-REQUISITOS:
--   Se pueden implementar las soluciones en cualquier lenguaje y framework. Aunque recomendamos usar: Java(con o sin Spring Boot), Go y Python.
--   La solución debe ser enviada vía un pull request a este repositorio.
--   La solución debe contener un README.md con las instrucciones para compilar e instalar.
--   Puedes implementar cualquiera de los 3 niveles, no es necesario implementar los 3.
--   Hay bonus si usas SWAGGER.
--   Junto con la solución debes entregar un archivo con la entrada y con la salida en formato JSON.
-- Por ultimo en el detalle del commit debes indicar los siguientes datos
-   - Nombre Completo.
-   - Correo Electrónico.
-   - Vía por la que te entérate del desafío. Estas pueden ser: Empresa de outsourcing (indicar cuál), twitter, LinkedIn, etc.
-
-
-NOTA:
-Todos los pull reuqests serán rechazados, esto no quiere decir que ha sido rechazada la solución, sino que es una forma de que otros postulantes no copien tu código.

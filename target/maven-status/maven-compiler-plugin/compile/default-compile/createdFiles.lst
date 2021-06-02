@@ -1,0 +1,4 @@
+periodos/api/client/Periodo.class
+periodos/api/service/MSPeriodo.class
+periodos/api/client/PeriodoV2.class
+periodos/api/client/PeriodosV1Client.class
