@@ -1,0 +1,9 @@
+eureka:
+   client:
+      registerWithEureka: false
+      fetchRegistry: false
+   server:
+      healthcheck:
+         enabled: true
+server:
+   port: 8761

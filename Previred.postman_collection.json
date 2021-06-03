@@ -1,0 +1,134 @@
+{
+	"info": {
+		"_postman_id": "7100e2c9-af87-4b38-9960-9e79a5eaa555",
+		"name": "Pred",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GDD",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8080/periodos/api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"periodos",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GDD Zuul",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8050/api-periodos/periodos/api",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8050",
+					"path": [
+						"api-periodos",
+						"periodos",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FechasPerdidas",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8090/Periodos-v1-0-0/PeriodosPerdidos/fechasAleatorias",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8090",
+					"path": [
+						"Periodos-v1-0-0",
+						"PeriodosPerdidos",
+						"fechasAleatorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FechasPerdidas Zuul",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8050/prueba1/Periodos-v1-0-0/PeriodosPerdidos/fechasAleatorias",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8050",
+					"path": [
+						"prueba1",
+						"Periodos-v1-0-0",
+						"PeriodosPerdidos",
+						"fechasAleatorias"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
