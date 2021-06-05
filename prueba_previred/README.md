@@ -1,4 +1,4 @@
-Se habré el proyecto (yo lo trabaje con IDE IntelliJ), ideal borrar carpeta target, compilar proyecto (pueden ajustar la ruta del Log de manera opcional en el archivo log4j.properties), esto genera una nueva carpeta target, el cual también genera dentro de nuestra carpeta un archivo con extensión .war, este es el proyecto compilado para subir a un servidor tomcat 
+Se abre el proyecto (yo lo trabaje con IDE IntelliJ), ideal borrar carpeta target, compilar proyecto (pueden ajustar la ruta del Log de manera opcional en el archivo log4j.properties), esto genera una nueva carpeta target, el cual también genera dentro de nuestra carpeta un archivo con extensión .war, este es el proyecto compilado para subir a un servidor tomcat 
 <br>Este archivo .war se puede levantar en cualquier servidor tomcat desde la version 8 en adelante.
 <br><br>
 Importante<br>
