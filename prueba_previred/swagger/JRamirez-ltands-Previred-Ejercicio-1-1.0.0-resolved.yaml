@@ -1,0 +1,93 @@
+---
+swagger: "2.0"
+info:
+  description: Documentacion swagger para ejercicio 1 previred
+  version: 1.0.0
+  title: Ejercicio 1
+  termsOfService: https://github.com/previred/Desafio_Uno
+  contact:
+    email: jonathan.ramirez.oliva@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /JRamirez-ltands/Previred-Ejercicio-3/1.0.0
+tags:
+- name: fechas/detalle
+  description: Servicio para obtener fechas dentro de un rango especifico
+schemes:
+- https
+- http
+paths:
+  /fecha/detalle:
+    put:
+      tags:
+      - fecha/detalle
+      summary: Obtiene y actualiza informacion de respuesta de fechas
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        description: se ingresa los rangos de inicio y fin, tambien la opcion de agregar fechas
+        required: true
+        schema:
+          $ref: '#/definitions/body'
+      responses:
+        "400":
+          description: Invalid ID supplied
+        "404":
+          description: Fecha not found
+        "405":
+          description: Validation exception
+        "500":
+          description: Error Syntaxis exception server
+definitions:
+  body:
+    type: object
+    required:
+    - fechaCreacion
+    - fechaFin
+    properties:
+      fechaCreacion:
+        type: string
+        format: yyyy-MM-dd
+      fechaFin:
+        type: string
+        format: yyyy-MM-dd
+      fechas:
+        type: array
+        description: Listado de fechas.
+        items:
+          $ref: '#/definitions/fechas'
+  ApiResponse:
+    type: object
+    properties:
+      fechaCreacion:
+        type: string
+        format: yyyy-MM-dd
+      fechaFin:
+        type: string
+        format: yyyy-MM-dd
+      fechas:
+        type: array
+        items:
+          $ref: '#/definitions/ArrayFechas'
+      fechasFaltantes:
+        type: array
+        items:
+          $ref: '#/definitions/ArrayFechas'
+  ArrayFechas:
+    type: array
+    description: Listado de fechas.
+    items:
+      $ref: '#/definitions/fechas'
+  fechas:
+    type: string
+    format: yyyy-MM-dd
+    description: Element.
+externalDocs:
+  description: https://github.com/JRamirez-ltands/Desafio_Uno
+  url: http://swagger.io
