@@ -196,8 +196,7 @@ Maven 4
 # Compilar y ejecutar el proyecto
 
 Para copilar el proyecto se requiere Java, Maven y Eclipse(configurado con Spring Tools 4) instalado.
-Abrir eclipse y cargar proyecto
-ejecutar proyecto como "String Boot App"
+Abrir eclipse y cargar el proyecto, ejecutar el proyecto como "String Boot App".
 
 *Nota*:
 Debe estar disponible el puerto *9080* en la estación de trabajo donde se ejecute esta API
