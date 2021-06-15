@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.0</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.previred.periodos</groupId>
+	<artifactId>periodos-faltantes</artifactId>
+	<version>1.0.0</version>
+	<name>periodos-faltantes</name>
+	<description>MS que devuelve un listado de periodos al azar entregados al invocar al GDD y un listado de los peridos faltantes al invocar el GDD</description>
+	<properties>
+		<java.version>1.8</java.version>
+		<spring.fox.version>2.9.2</spring.fox.version>
+		<jkube.version>1.0.2</jkube.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		
+		<!-- Spring Fox 2 -->      
+        <dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${spring.fox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${spring.fox.version}</version>
+		</dependency>
+		  
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<profiles>
+	    <profile>
+	      <id>kubernetes</id>
+	      <build>
+	        <plugins>
+	          <plugin>
+	            <groupId>org.eclipse.jkube</groupId>
+	            <artifactId>kubernetes-maven-plugin</artifactId>
+	            <version>${jkube.version}</version>
+	          </plugin>
+	        </plugins>
+	      </build>
+	    </profile>
+	    <profile>
+	      <id>openshift</id>
+	      <build>
+	        <plugins>
+	          <plugin>
+	            <groupId>org.eclipse.jkube</groupId>
+	            <artifactId>openshift-maven-plugin</artifactId>
+	            <version>${jkube.version}</version>	
+	          </plugin>
+	        </plugins>
+	      </build>
+	    </profile>
+	    <profile>
+	      <id>kubernetes-with-ingress</id>
+	      <properties>
+	         <jkube.createExternalUrls>true</jkube.createExternalUrls>
+	      </properties>
+	      <build>
+	        <plugins>
+	          <plugin>
+	            <groupId>org.eclipse.jkube</groupId>
+	            <artifactId>kubernetes-maven-plugin</artifactId>
+	            <version>${jkube.version}</version>
+	            <configuration>
+	              <enricher>
+	                <config>
+	                  <jkube-service>
+	                    <type>LoadBalancer</type>
+	                  </jkube-service>
+	                </config>
+	              </enricher>
+	            </configuration>
+	          </plugin>
+	        </plugins>
+	      </build>
+	    </profile>
+	</profiles>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

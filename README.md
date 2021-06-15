@@ -1,130 +1,200 @@
-# Desafío 1: Periodos perdidos
+# Busqueda de Periodos perdidos para servicio GDD
 
-El desafío consiste en lo siguiente:
+Proyecto expone 3 API REST con la finalidad de probar los servicios por separado o en conjunto
 
--   Existe un servicio REST que llamaremos Generador De Datos o GDD.
-    -   El servicio responde con una lista de fechas generadas aleatoriamente. Estas fechas se encuentran en un lapso definidos por dos valores: fechaCreacion y fechaFin.
-    -   Cada fecha generada corresponde al primer día de un mes.
-    -   La respuesta contienen un máximo de 100 fechas. 
-    -   El servicio no entrega todas las fechas dentro del periodo, omite algunas de forma también aleatoria.
--   El objetivo de este ejercicio es que determines cuáles son los periodos que faltan.
+*POST /api/periodos-faltantes*
 
-Este es un ejemplo de la respuesta que entrega este servicio:
+Este servicio recibe un JSON dispuesto por GDD y lo complementa para devolver el mismo JSON complementado con el campo fechasFaltantes con las fechas que fueron omitidas aleatoriamente al invocar al GDD
+
+Como entrada tendriamos la siguiente estrutura:
 
 ```json
 {
     "id": 6,
-    "fechaCreacion": "1968-08-01",
-    "fechaFin": "1971-06-01",
+    "fechaCreacion": "1968-01-01",
+    "fechaFin": "1968-09-01",
     "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1971-05-01"]
+      "1968-03-01",
+      "1968-05-01",
+      "1968-06-01",
+      "1971-08-01"]
 }
 ```
 
-Acá se puede apreciar que el servicio generó fechas entre el 1 de agosto de 1968 y el 1 de junio de 1971. Sólo se generaron 4 fechas en este caso. 
-De acuerdo a esto, faltarían fechas, 5 de 1968, 9 fechas de 1969, 5 fechas de 1971, etc.
-Una versión del GDD se encuentra en este repositorio en GitHub:
-https://github.com/previred/Generador_Datos_Desafio_Uno
+Como resultado entrega la siguiente estrutura (datos son de ejemplo):
 
-El desafío puede ser resuelto de tres maneras distintas. 
-Tú eliges cuál es la que más te acomoda entre estos tres niveles:
-
-## Nivel 1: 
-    Crear un programa que recibe, a través de la entrada estándar, un archivo en formato Json con la estructura de la respuesta de servicio (como el ejemplo de arriba) y que entrega a través de la salida estándar, como respuesta, un archivo Json con las fechas faltantes.
-Ejemplo:
-    Se entrega un archivo con este contenido:
-    
 ```json
 {
     "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
+    "fechaCreacion": "1968-01-01",
+    "fechaFin": "1968-09-01",
     "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"]
+      "1968-03-01",
+      "1968-05-01",
+      "1968-06-01",
+      "1971-08-01"],
+	"fechasFaltantes": [
+	  "1968-01-01",
+	  "1968-02-01",
+	  "1968-04-01",
+	  "1968-07-01",
+	  "1968-09-01"
+	]
 }
 ```
+*Nota*:
+El formato de las fechas es yyyy-MM-dd
+El servicio entrega un objeto periodo, el periodo contiene un id, una fecha inicial, una fecha final, una lista de fechas aleatorias entre las fechas inicial y final, y una lista de fechas faltantes que complementan el campo anterior.
 
-El programa debe responder con archivo con este contenido:
-    
-```json
-{
-    "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
-    "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
-}
-```
- 
-El programa se debe ejecutar de la siguiente manera:
-    $ mi_solucion < nombre_archivo_entrada > nombre_archivo_salida
 
-## Nivel 2:
+*GET /api/periodos-gdd*
 
-Construir un programa que invoque al servicio REST GDD y escriba como salida un archivo con las fechas, los periodos recibidos y la lista de periodos faltantes.
-Ejemplo:
+Este servicio devuelve un JSON con un rango de fechas y las fechas aleatorias entre ellas entregadas por el sistema GDD, es una invocacion al sistema GDD solo para obtener un JSON de prueba para ejecutar el servicio anterior.
 
-```
-INVOCACION:
-    $ mi-solucion
-SALIDA (un archivo con el siguiente contenido) :
-      fecha creación: 2018-10-01
-         fecha fin: 2019-04-01
-         fechas recibidas: 2018-10-01, 2018-12-01, 2019-01-01, 2019-04-01
-        fechas faltantes: 2018-11-01, 2019-02-01, 2019-03-01
-```
-
-## Nivel 3:
-
-Implementar un nuevo servicio REST. Este servicio REST debe invocar al servicio GDD y entregar la respuesta en formato JSON con las fechas recibidas y las fechas faltantes.
-Ejemplo de la respuesta que debería entregar:
+Como resultado entrega la siguiente estrutura (datos son de ejemplo):
 
 ```json
 {
     "id": 6,
-    "fechaCreacion": "1969-03-01",
-    "fechaFin": "1970-01-01",
+    "fechaCreacion": "1968-01-01",
+    "fechaFin": "1968-09-01",
     "fechas": [
-      "1969-03-01",
-      "1969-05-01",
-      "1969-09-01",
-      "1970-01-01"],
-    "fechasFaltantes": [
-      "1969-04-01",
-      "1969-06-01",
-      "1969-07-01",
-      "1969-08-01",
-      "1969-10-01",
-      "1969-11-01",
-      "1969-12-01"]
-
+      "1968-03-01",
+      "1968-05-01",
+      "1968-06-01",
+      "1971-08-01"]
 }
 ```
-
-REQUISITOS:
--   Se pueden implementar las soluciones en cualquier lenguaje y framework. Aunque recomendamos usar: Java(con o sin Spring Boot), Go y Python.
--   La solución debe ser enviada vía un pull request a este repositorio.
--   La solución debe contener un README.md con las instrucciones para compilar e instalar.
--   Puedes implementar cualquiera de los 3 niveles, no es necesario implementar los 3.
--   Hay bonus si usas SWAGGER.
--   Junto con la solución debes entregar un archivo con la entrada y con la salida en formato JSON.
-- Por ultimo en el detalle del commit debes indicar los siguientes datos
-   - Nombre Completo.
-   - Correo Electrónico.
-   - Vía por la que te entérate del desafío. Estas pueden ser: Empresa de outsourcing (indicar cuál), twitter, LinkedIn, etc.
+*Nota*:
+El formato de las fechas es yyyy-MM-dd
+El servicio entrega un objeto periodo, el periodo contiene un id, una fecha inicial, una fecha final y una lista de fechas aleatorias entre las fechas inicial y final.
 
 
-NOTA:
-Todos los pull reuqests serán rechazados, esto no quiere decir que ha sido rechazada la solución, sino que es una forma de que otros postulantes no copien tu código.
+*GET /api/periodos-gdd-faltantes*
+
+Este servicio devuelve un JSON con un rango de fechas y las fechas aleatorias entre ellas entregadas por el sistema GDD, a su vez retorna el campo fechasFaltantes con la completitud de las fechas que fueron omitidas aleatoriamente al invocar al GDD
+
+Como resultado entrega la siguiente estrutura (datos son de ejemplo):
+
+```json
+{
+    "id": 6,
+    "fechaCreacion": "1968-01-01",
+    "fechaFin": "1968-09-01",
+    "fechas": [
+      "1968-03-01",
+      "1968-05-01",
+      "1968-06-01",
+      "1971-08-01"],
+	"fechasFaltantes": [
+	  "1968-01-01",
+	  "1968-02-01",
+	  "1968-04-01",
+	  "1968-07-01",
+	  "1968-09-01"
+	]
+}
+```
+*Nota*:
+El formato de las fechas es yyyy-MM-dd
+El servicio entrega un objeto periodo, el periodo contiene un id, una fecha inicial, una fecha final, una lista de fechas aleatorias entre las fechas inicial y final, y una lista de fechas faltantes que complementan el campo anterior.
+
+
+# Detalle de los sistemas
+
+Swagger 2.9.2 (Spring Fox 2)
+Java 8
+JKuke 1.0.2
+Spring-Boot 2.4.0.RELEASE
+Maven 3.6.3
+
+
+# Compilar y ejecutar el proyecto (Ambiente Linux)
+
+# Compilar y ejecutar el proyecto con Docker
+
+Para copilar el proyecto se requiere 
+*Java 1.8, 
+*Maven 3.6.3 y 
+*Docker Engine como parte de Linux.
+
+Para comprobar que los productos requeridos estan instalados y corriendo, ejecute las siguientes instrucciones
+
+```bash
+systemctl status docker
+** en caso de estar detenido ejecutar **
+systemctl start docker
+
+mvn -version
+java -version
+```
+
+Ingresar al directorio *periodos-faltantes* ejecutar el siguiente comando *maven*
+
+```bash
+mvn clean package k8s:build -Pkubernetes
+```
+
+Esto generará una imagen en el Docker que se puede visualizar y ejecutar con las siguientes instrucciones
+
+```bash
+docker image ls
+** Deberia existir una imagen con la siguiente descripcion **
+REPOSITORY                      TAG     IMAGE ID            CREATED...
+periodos/periodos-faltantes		1.0.0	5722e458d3fe		56 minutes ago...
+
+docker run -p 8080:8080 -e ENDPOINT_GDD=http://192.1.10.22:8080/periodos/api -d periodos/periodos-faltantes:1.0.0
+
+```
+
+**Donde:**
+*ENDPOINT_GDD* corresponde a la url donde se encuentre publicado el servicio GDD  
+*-p 8080:8080* es el puerto donde se va a exponer el proyecto, en caso que el servicio GDD este ejecutandose en la misma maquina se debe cambiar el puerto de exposicion para que no colisione, ejemplo *-p 8081:8080*
+
+*Nota*:
+Debe estar disponible el puerto *8080* o en el que se expuso en el PC donde se ejecuto el Docker
+
+# Compilar y ejecutar el proyecto solo con Java
+
+Para copilar el proyecto se requiere Java y Maven.
+
+Para comprobar que los productos requeridos estan instalados y corriendo, ejecute las siguientes instrucciones
+
+```bash
+mvn -version
+java -version
+```
+
+Ingresar al directorio *periodos-faltantes* ejecutar el siguiente comando *maven*
+
+```bash
+mvn clean package
+```
+
+Luego de compilar el proyecto ejecutar el siguiente comando *java*
+
+```bash
+java -jar target/periodos-faltantes-1.0.0.jar
+```
+*Nota*:
+Debe estar disponible el puerto *8080* o en el PC donde se ejecute esta API
+
+En caso de requerir su ejecucion en otro puerto, para este caso debe descomentar la linea #port: ${APP_PORT:8081} del archivo application.yml, luego volver a ejecutar el proceso de package y ejecución
+
+
+# Visualizar Documentación y consumir la API
+
+La documentación swagger del API (una vez que se levanta el API) queda disponible en
+
+http://localhost:8080/swagger-ui.html#/
+
+Para consumir los servicios REST se pueden hacer desde swagger, este tambien generar el comando CURL, en caso que se quiera consumir desde la consola de comando
+
+Ejemplo para el *GET /api/periodos-gdd-faltantes*
+
+```bash
+curl -X GET "http://localhost:8080/api/periodos-gdd-faltantes" -H "accept: application/json"
+```
+
+*Nota*:
+Se ha definido por Alcance del requerimiento omitir la seguridad OAuth 2.0 de los servicios por no contar con un OpenID configurado para la seguridad. 
