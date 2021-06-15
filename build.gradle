@@ -1,0 +1,47 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+    id 'jacoco'
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+group = 'cl.pabloromero'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+  	implementation "org.codehaus.groovy:groovy:3.0.8"
+  	testImplementation platform("org.spockframework:spock-bom:2.0-groovy-3.0")
+ 	testImplementation "org.spockframework:spock-core"
+  	testImplementation "org.spockframework:spock-junit4" 
+  
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+}
+
+test {
+	useJUnitPlatform()
+    finalizedBy jacocoTestReport // report is always generated after tests run
+}
+
+jacocoTestReport {
+    afterEvaluate {
+        classDirectories.setFrom(files(classDirectories.files.collect {
+            fileTree(dir: it, exclude: ['cl/pabloromero/DesafioUnoApplication**', 'cl/pabloromero/config/**'])
+        }))
+    }
+    dependsOn test // tests are required to run before generating the report
+}
