@@ -4,10 +4,10 @@ import com.previred.periodos.model.Periodo;
 
 public interface IGeneraDatosService {
 	
-	public Periodo obtenerGDD() throws Exception;
+	public Periodo obtenerGDD();
 	
-	public Periodo obtenerFechasFaltantes(Periodo payload) throws Exception;
+	public Periodo obtenerFechasFaltantes(Periodo payload);
 	
-	public Periodo obtenerGDDconFechasFaltantes() throws Exception;
+	public Periodo obtenerGDDconFechasFaltantes();
 
 }

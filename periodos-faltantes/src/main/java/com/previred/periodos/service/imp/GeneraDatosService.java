@@ -1,5 +1,6 @@
 package com.previred.periodos.service.imp;
 
+import java.net.ConnectException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,8 @@ import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.previred.periodos.error.InvalidInputException;
+import com.previred.periodos.error.ResourceNotFoundException;
 import com.previred.periodos.model.Periodo;
 import com.previred.periodos.service.IGeneraDatosService;
 
@@ -27,7 +30,7 @@ public class GeneraDatosService implements IGeneraDatosService {
 	private String uriRestGDD;
 	
 	@Override
-	public Periodo obtenerGDD() throws Exception {
+	public Periodo obtenerGDD() {
 		
 		SimpleClientHttpRequestFactory factory = new SimpleClientHttpRequestFactory();
 		factory.setBufferRequestBody(false);
@@ -41,25 +44,30 @@ public class GeneraDatosService implements IGeneraDatosService {
 		// HttpEntity<String>: To get result as String.
 		HttpEntity<String> entity = new HttpEntity<>(headers);
  
-		// Send request with POST method, and Headers.
-		ResponseEntity<Periodo> responseRest = restTemplate.exchange(uriRestGDD, HttpMethod.GET, entity, Periodo.class);
+		try {
+			// Send request with POST method, and Headers.
+			ResponseEntity<Periodo> responseRest = restTemplate.exchange(uriRestGDD, HttpMethod.GET, entity, Periodo.class);
+			
+			if(responseRest.getStatusCodeValue() == 200){
+				logger.info("Response for POST Request: OK ");
+				
+				Periodo result = responseRest.getBody();
+				
+				return result;
+	
+			}else{
+				logger.info("Response for POST Request: NULL");
+		        throw new ResourceNotFoundException("Error al invocar a GDD");
+		    }
 		
-		if(responseRest.getStatusCodeValue() == 200){
-			logger.info("Response for POST Request: OK ");
-			
-			Periodo result = responseRest.getBody();
-			
-			return result;
-
-		}else{
-			logger.info("Response for POST Request: NULL");
-	        throw new Exception("Error al invocar a GDD");
-	    }
+		} catch(Exception error) {
+			 throw new ResourceNotFoundException(error.getMessage());
+		}
 
 	}
 
 	@Override
-	public Periodo obtenerFechasFaltantes(Periodo payload) throws Exception {
+	public Periodo obtenerFechasFaltantes(Periodo payload) {
 		
 		List<LocalDate> fechas = payload.getFechas();
 		
@@ -81,13 +89,13 @@ public class GeneraDatosService implements IGeneraDatosService {
 			
 			return payload;
 		}else {
-			throw new Exception("fechaCreacion es mayor a fechaFin");	
+			throw new InvalidInputException("fechaCreacion es mayor a fechaFin");	
 		}
 		
 	}
 
 	@Override
-	public Periodo obtenerGDDconFechasFaltantes() throws Exception {
+	public Periodo obtenerGDDconFechasFaltantes() {
 		
 		Periodo result = new Periodo();
 		

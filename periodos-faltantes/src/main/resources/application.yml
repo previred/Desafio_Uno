@@ -1,10 +1,11 @@
 spring.jackson.date-format: yyyy-MM-dd
 spring.jackson.serialization.WRITE_DATES_AS_TIMESTAMPS: false
 server:
+   error.include-message: ALWAYS
    #port: ${APP_PORT:8081}
    path:
       base: ${PATH_BASE:/api}
       gdd.get: ${PATH_GET_PERIODOS_GDD:/periodos-gdd}
       periodos.post: ${PATH_POST_PERIODOS_FALTANTES:/periodos-faltantes}
       periodos.get: ${PATH_GET_PERIODOS_GDD_FALTANTES:/periodos-gdd-faltantes}
-rest.gdd.uri: ${ENDPOINT_GDD:http://localhost:8081/periodos/api}
+rest.gdd.uri: ${ENDPOINT_GDD:http://localhost:8080/periodos/api}

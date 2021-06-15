@@ -174,11 +174,12 @@ mvn clean package
 Luego de compilar el proyecto ejecutar el siguiente comando *java*
 
 ```bash
+export ENDPOINT_GDD=http://192.1.10.22:8080/periodos/api
 java -jar target/periodos-faltantes-1.0.0.jar
 ```
 *Nota*:
 Debe estar disponible el puerto *8080* o en el PC donde se ejecute esta API
-
+*export ENDPOINT_GDD*, permite setear la URL del REST API GDD para que servicio pueda encontrar en Endpoint correctamente.
 En caso de requerir su ejecucion en otro puerto, para este caso debe descomentar la linea #port: ${APP_PORT:8081} del archivo application.yml, luego volver a ejecutar el proceso de package y ejecución
 
 
