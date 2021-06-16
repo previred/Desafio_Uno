@@ -1,7 +1,9 @@
 package cl.pabloromero.service.impl;
 
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,15 +22,28 @@ public class DesafioUnoServiceImpl implements DesafioUnoService {
 	
 	public FechasFaltantesResponse getFechasFaltantes() {
 		Periodos periodos = gddGateway.periodos();
-		List<Date> fechasFaltantes =  new ArrayList<Date>();
-		fechasFaltantes.add(new Date());
+		List<LocalDate> fechasFaltantes =  calcularFechasFaltantes(periodos.getFechaCreacion(), periodos.getFechaFin(), periodos.getFechas());
 		return FechasFaltantesResponse.builder()
 				.id(periodos.getId())
 				.fechaCreacion(periodos.getFechaCreacion())
 				.fechaFin(periodos.getFechaFin())
 				.fechas(periodos.getFechas())
-				.fechasFaltantes(fechasFaltantes)
-				.build();
+				.fechasFaltantes(fechasFaltantes).build();
 	}
 
+	private List<LocalDate> calcularFechasFaltantes(LocalDate fechaCreacion, LocalDate fechaFin,
+			List<LocalDate> fechas) {
+		long diferenciaEntreFechas = ChronoUnit.MONTHS.between(YearMonth.from(fechaCreacion), YearMonth.from(fechaFin));
+
+		List<LocalDate> fechasFaltantes = new ArrayList<LocalDate>();
+		fechasFaltantes.add(fechaCreacion);
+		
+		for (int i = 0; i < diferenciaEntreFechas; i++) {
+			LocalDate fechaNueva = fechasFaltantes.get(i).plusMonths(1);
+			fechasFaltantes.add(fechaNueva);
+		}
+		
+		fechasFaltantes.removeAll(fechas);
+		return fechasFaltantes;
+	}
 }

@@ -1,6 +1,6 @@
 package cl.pabloromero.controller
 
-import org.mockito.Mock
+import java.time.LocalDate
 
 import cl.pabloromero.model.FechasFaltantesResponse
 import cl.pabloromero.service.DesafioUnoService
@@ -18,10 +18,10 @@ class DesafioUnoControllerSpecs extends Specification{
 		given:
 			controller.service.getFechasFaltantes() >> FechasFaltantesResponse.builder()
 														.id(1)
-														.fechaCreacion(new Date())
-														.fechaFin(new Date())
-														.fechas([new Date()])
-														.fechasFaltantes([new Date()])
+														.fechaCreacion(LocalDate.of(1969, 03, 01))
+														.fechaFin(LocalDate.of(1970, 01, 01))
+														.fechas([LocalDate.of(1969, 03, 01)])
+														.fechasFaltantes([LocalDate.of(1969, 03, 01)])
 														.build()
 		when: "ejecuto al servicio"
 			def response = controller.getFechasFaltantes()

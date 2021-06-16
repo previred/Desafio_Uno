@@ -1,25 +1,29 @@
 package cl.pabloromero.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import groovy.transform.ToString;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Builder
 @Getter
 @Setter
 @ToString
-public class Periodos {
+@AllArgsConstructor
+@NoArgsConstructor
+public class Periodos{
 
 	private int id;
 
-	private Date fechaCreacion;
+	private LocalDate fechaCreacion;
 	
-	private Date fechaFin;
+	private LocalDate fechaFin;
 	
-	private List<Date> fechas;
+	private List<LocalDate> fechas;
 	
 }

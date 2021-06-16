@@ -1,6 +1,6 @@
 package cl.pabloromero.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 import groovy.transform.ToString;
@@ -20,11 +20,11 @@ public class FechasFaltantesResponse {
 
 	private int id;
 
-	private Date fechaCreacion;
+	private LocalDate fechaCreacion;
 	
-	private Date fechaFin;
+	private LocalDate fechaFin;
 	
-	private List<Date> fechas;
+	private List<LocalDate> fechas;
 	
-	private List<Date> fechasFaltantes;
+	private List<LocalDate> fechasFaltantes;
 }
