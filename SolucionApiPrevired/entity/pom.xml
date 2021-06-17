@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+   <parent>
+      <groupId>cl.hossman</groupId>
+      <artifactId>SolucionApiPrevired</artifactId>
+      <version>1.0.0</version>
+   </parent>
+   <packaging>jar</packaging>
+   <artifactId>entity</artifactId>
+   <name>entity</name>
+   <version>1.0.0</version>
+   <description>entity</description>
+   <properties>
+      <java.version>1.8</java.version>
+      <maven.compiler.source>${java.version}</maven.compiler.source>
+      <maven.compiler.target>${java.version}</maven.compiler.target>
+      <springfox-version>2.7.0</springfox-version>
+   </properties>
+   <dependencies>
+      <!--SpringFox dependencies -->
+      <dependency>
+         <groupId>io.springfox</groupId>
+         <artifactId>springfox-swagger2</artifactId>
+         <version>${springfox-version}</version>
+      </dependency>
+      <dependency>
+         <groupId>io.springfox</groupId>
+         <artifactId>springfox-swagger-ui</artifactId>
+         <version>${springfox-version}</version>
+      </dependency>
+      <!-- Bean Validation API support -->
+      <dependency>
+         <groupId>javax.validation</groupId>
+         <artifactId>validation-api</artifactId>
+         <version>2.0.1.Final</version>
+      </dependency>
+      <dependency>
+         <groupId>com.fasterxml.jackson.datatype</groupId>
+         <artifactId>jackson-datatype-jsr310</artifactId>
+         <version>2.8.10</version>
+      </dependency>
+   </dependencies>
+</project>

@@ -1,16 +1,10 @@
-# Respuesta Desafio 3
-
+# Respuesta Desafio 1 Nivel 3 
 Este proyecto expone un API REST se conecta a otra API REST y entrega la siguiente información:
 
-NOTA DE LA SOLUCION: Técnicamente para el conector a la api-periodos debiese haberse creado con un jar distinto que haga de conector, sin embargo, este fue programado simplemente
-en un package distinto para mantener sencilla la prueba.
+NOTA 1: Como pre-requisito se debe estar ejecutando la API api-periodos-1.0.0.jar la cual fue entregada
+como parte de este desafío e incluye su propio README de ejecución
 
-NOTA 1: Como pre-requisito se debe estar ejecutando la API api-periodos-1.0.0. 
-NOTA 2: Se debe configurar en el archivo application.properties, ubicado en los resources del proyecto SpringBootRestApiTestPrevired los siguientes configs (Vienen configurados):
-
-api-periodos-server=http://localhost:
-api-periodos-port=8080
-api-periodos-periodos=/periodos/api
+Ejemplo de respuesta:
 
 *id*: identificador
 *fechaCreacion*: Fecha de inicio de la secuencia
@@ -308,19 +302,18 @@ Ejemplo.
 # Compilar y ejecutar el proyecto
 
 Para copilar el proyecto se requiere Java y Maven instalado.
-Ingresar al directorio *SpringBootRestApiTestPrevired* ejecutar el siguiente comando *maven*
+Ingresar al directorio *SolucionApiPrevired* ejecutar el siguiente comando *maven*
 
 ```bash
-mvn package
+mvn install
 ```
-
-Luego de compilar el proyecto ingresar al directorio *target* ejecutar el siguiente comando *java*
+Luego ejecutamos la aplicación
 
 ```bash
-java -jar .\SpringBootRestApiTestPrevired-1.0.0.jar
+java -jar .\facade\target\facade-1.0.0.jar
 ```
 *Nota*:
-Debe estar disponible el puerto *8180* en el PC donde se ejecute esta API
+Debe estar disponible el puerto *8180* en la terminal donde se ejecute esta API
 
 # Probar
 
@@ -331,13 +324,13 @@ http://127.0.0.1:8180/periodos/swagger-ui.html#/
 Para consumir el servicio se debe invocar la siguiente URL
 
 ```bash
-curl -X GET --header 'Accept: application/json' 'http://localhost:8180/periodos/api'
+curl -X GET --header 'Accept: application/json' 'http://127.0.0.1:8180/api/v1/periodos'
 ```
 
 # Probar con otros clientes
 
 Se puede utilizar SOAP UI o POSTMAN para el envío de la petición del tipo GET configurado el request con los headers 'Accept: application/json'
 
-URL: http://localhost:8180/periodos/api
+URL: http://localhost:8180/api/v1/periodos
 
 
