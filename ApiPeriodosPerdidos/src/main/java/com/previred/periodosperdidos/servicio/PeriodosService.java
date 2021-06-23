@@ -90,7 +90,7 @@ public class PeriodosService {
         	
         	// Validación de fecha faltante!...
         	LocalDate dateProcess = LocalDate.of(yearProcess, monthProcess, 1);
-            System.out.println("Finding " + dateProcess);
+            //System.out.println("Finding " + dateProcess);
             Optional<LocalDate> queryResult = fechas.stream()
                     .filter(value -> value != null)
                     .filter(value -> value.equals(dateProcess))
