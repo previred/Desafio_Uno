@@ -1,0 +1,21 @@
+micronaut:
+  application:
+    name: missingDates
+  server:
+    port: 8081
+    thread-selection: auto
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
+      swagger-ui:
+        paths: classpath:META-INF/swagger/views/swagger-ui
+        mapping: /swagger-ui/**
+jackson:
+  serialization:
+    WRITE_DATES_AS_TIMESTAMPS: false
+services:
+  gdd:
+    url: ${GDD_URL:`http://localhost:8080`}
+    path: ${GDD_PATH:`/periodos/api`}

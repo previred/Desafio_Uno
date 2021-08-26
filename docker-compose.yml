@@ -1,0 +1,14 @@
+version: "3.5"
+services:
+  missing-dates:
+    build: ./missing-dates/
+    container_name: missing-dates
+    ports:
+      - "8081:8081"
+    environment:
+      - GDD_URL=http://gdd:8080
+  gdd:
+    build: ./Generador_Datos_Desafio_Uno/ApiPeriodos/
+    container_name: gdd
+    ports:
+      - "8080:8080"

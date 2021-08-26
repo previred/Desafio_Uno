@@ -1,0 +1,11 @@
+micronaut:
+  server:
+    port: ${random.port}
+
+spec:
+  name: mockGdd
+
+services:
+  gdd:
+    url: http://localhost:${micronaut.server.port}
+    path: /periods
