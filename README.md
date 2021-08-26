@@ -20,7 +20,7 @@ Ir a la carpeta `missing-dates` correr:
 ```sh
 mvn -T 1C clean package && java -jar target/missing-dates-1.0.jar
 ```
-Luego ir a la carpeta `Generador_Datos_Desafio_Uno` y seguir las instrucciones. En resumen:
+Luego ir a la carpeta `Generador_Datos_Desafio_Uno/ApiPeriodos` y seguir las instrucciones. En resumen:
 ```sh
 mvn package && java -jar target/api-periodos-1.0.0.jar
 ```
