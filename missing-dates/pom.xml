@@ -24,7 +24,7 @@
   <repositories>
     <repository>
       <id>central</id>
-      <url>https://nexus.glats.me/repository/maven-public/</url>
+      <url>https://repo.maven.apache.org/maven2</url>
     </repository>
   </repositories>
 
@@ -187,16 +187,5 @@
   </build>
 
   <pluginRepositories>
-    <pluginRepository>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-      <id>central</id>
-      <name>Central Repository</name>
-      <url>https://nexus.glats.me/repository/maven-public/</url>
-    </pluginRepository>
   </pluginRepositories>
 </project>
