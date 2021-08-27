@@ -5,5 +5,5 @@ RUN mvn -T 1C -f /root/pom.xml clean package
 
 FROM adoptopenjdk/openjdk11:alpine-slim
 COPY --from=build /root/target/missing-dates-*.jar app.jar
-EXPOSE 8080
+EXPOSE 8081
 CMD ["java", "-Dcom.sun.management.jmxremote", "-Xmx128m", "-jar", "app.jar"]
