@@ -1,3 +1,7 @@
+server:
+  port: 8484
+
+
 logging:
   level:
     root: INFO
