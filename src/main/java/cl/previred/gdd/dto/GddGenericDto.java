@@ -3,7 +3,9 @@ package cl.previred.gdd.dto;
 public abstract class GddGenericDto {
 
   private Integer id;
+
   private String fechaCreacion;
+
   private String fechaFin;
 
   public Integer getId() {
