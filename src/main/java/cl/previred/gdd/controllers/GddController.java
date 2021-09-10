@@ -25,13 +25,14 @@ public class GddController {
   @Autowired
   private IGddService gddService;
 
-  @ApiOperation(value = "Servicio que calcula las fechas faltantes en un período determinado", notes = "Servicio que calcula las fechas faltantes en un período determinado")
+  @ApiOperation(value = "Servicio que calcula las fechas faltantes en un período determinado.", notes = "Servicio que calcula las fechas faltantes en un período determinado")
   @ApiResponses(value = {
           @ApiResponse(code = 200, message = "OK", examples =
                   @Example(value = {@ExampleProperty(mediaType = "application/json", value = "{\"id\": 6, \"fechaCreacion\": \"1969-03-01\", \"fechaFin\": \"1970-01-01\", \"fechas\": [\"1969-03-01\", \"1969-05-01\", \"1969-09-01\", \"1970-01-01\"]}")})
           )
   })
   @PostMapping(path = "/rest/gdd")
+
   public ResponseEntity<GddResponse> gdd(@RequestBody GddRequest request) throws ServiceException {
     GddResponse gddResponse = gddService.calculateMissingPeriods(request);
     return ResponseEntity.ok(gddResponse);
