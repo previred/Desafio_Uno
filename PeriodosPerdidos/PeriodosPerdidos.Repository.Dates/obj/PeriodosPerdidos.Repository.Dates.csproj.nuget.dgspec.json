@@ -1,0 +1,124 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Repository.Dates\\PeriodosPerdidos.Repository.Dates.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\PeriodosPerdidos.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\PeriodosPerdidos.Abstractions.csproj",
+        "projectName": "PeriodosPerdidos.Abstractions",
+        "projectPath": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\PeriodosPerdidos.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\RodolfoEstebanGonzal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\RodolfoEstebanGonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://componenteserviex.pkgs.visualstudio.com/_packaging/ServiexNugetSXCore/nuget/v3/index.json": {},
+          "https://componenteserviex.pkgs.visualstudio.com/_packaging/ServiexNugetVarios/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Repository.Dates\\PeriodosPerdidos.Repository.Dates.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Repository.Dates\\PeriodosPerdidos.Repository.Dates.csproj",
+        "projectName": "PeriodosPerdidos.Repository.Dates",
+        "projectPath": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Repository.Dates\\PeriodosPerdidos.Repository.Dates.csproj",
+        "packagesPath": "C:\\Users\\RodolfoEstebanGonzal\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Repository.Dates\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\RodolfoEstebanGonzal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://componenteserviex.pkgs.visualstudio.com/_packaging/ServiexNugetSXCore/nuget/v3/index.json": {},
+          "https://componenteserviex.pkgs.visualstudio.com/_packaging/ServiexNugetVarios/nuget/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\PeriodosPerdidos.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\RodolfoEstebanGonzal\\source\\repos\\PeriodosPerdidos\\PeriodosPerdidos.Abstractions\\PeriodosPerdidos.Abstractions.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

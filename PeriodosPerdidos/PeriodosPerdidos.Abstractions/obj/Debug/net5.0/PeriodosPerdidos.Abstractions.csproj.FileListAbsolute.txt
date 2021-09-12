@@ -1,0 +1,11 @@
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\bin\Debug\net5.0\PeriodosPerdidos.Abstractions.deps.json
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\bin\Debug\net5.0\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\bin\Debug\net5.0\ref\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\bin\Debug\net5.0\PeriodosPerdidos.Abstractions.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.AssemblyInfoInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.AssemblyInfo.cs
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.csproj.CoreCompileInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\ref\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Abstractions\obj\Debug\net5.0\PeriodosPerdidos.Abstractions.pdb

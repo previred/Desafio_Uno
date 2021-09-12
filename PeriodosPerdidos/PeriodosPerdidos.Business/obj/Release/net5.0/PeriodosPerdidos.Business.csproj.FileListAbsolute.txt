@@ -1,0 +1,17 @@
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Business.deps.json
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Business.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\ref\PeriodosPerdidos.Business.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Business.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Abstractions.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.csprojAssemblyReference.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.AssemblyInfoInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.AssemblyInfo.cs
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.csproj.CoreCompileInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.csproj.CopyComplete
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\ref\PeriodosPerdidos.Business.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\obj\Release\net5.0\PeriodosPerdidos.Business.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Common.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Business\bin\Release\net5.0\PeriodosPerdidos.Common.pdb

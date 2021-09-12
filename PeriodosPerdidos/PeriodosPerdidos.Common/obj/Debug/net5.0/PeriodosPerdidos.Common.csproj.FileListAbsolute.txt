@@ -1,0 +1,15 @@
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\PeriodosPerdidos.Common.deps.json
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\PeriodosPerdidos.Common.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\ref\PeriodosPerdidos.Common.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\PeriodosPerdidos.Common.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\bin\Debug\net5.0\PeriodosPerdidos.Abstractions.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.AssemblyInfoInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.AssemblyInfo.cs
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.csproj.CoreCompileInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.csproj.CopyComplete
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\ref\PeriodosPerdidos.Common.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Common\obj\Debug\net5.0\PeriodosPerdidos.Common.csprojAssemblyReference.cache

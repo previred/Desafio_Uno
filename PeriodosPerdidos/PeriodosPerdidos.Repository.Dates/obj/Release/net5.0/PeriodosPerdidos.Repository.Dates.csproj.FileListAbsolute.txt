@@ -1,0 +1,15 @@
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\PeriodosPerdidos.Repository.Dates.deps.json
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\PeriodosPerdidos.Repository.Dates.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\ref\PeriodosPerdidos.Repository.Dates.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\PeriodosPerdidos.Repository.Dates.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\PeriodosPerdidos.Abstractions.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\bin\Release\net5.0\PeriodosPerdidos.Abstractions.pdb
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.csprojAssemblyReference.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.AssemblyInfoInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.AssemblyInfo.cs
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.csproj.CoreCompileInputs.cache
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.csproj.CopyComplete
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\ref\PeriodosPerdidos.Repository.Dates.dll
+C:\Users\RodolfoEstebanGonzal\source\repos\PeriodosPerdidos\PeriodosPerdidos.Repository.Dates\obj\Release\net5.0\PeriodosPerdidos.Repository.Dates.pdb
