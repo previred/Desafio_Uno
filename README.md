@@ -15,6 +15,10 @@ Mira **Despliegue** para conocer como desplegar el proyecto.
 Java Version 8
 ```
 
+```
+Debes tener Corriendo la el servicio api-periodos-1.0.0.jar en el localhost y puerto 8080
+```
+
 ### Instalación 🔧
 
 
