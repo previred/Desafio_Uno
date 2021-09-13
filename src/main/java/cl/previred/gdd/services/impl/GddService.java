@@ -21,6 +21,8 @@ public class GddService implements IGddService {
 
   private static final String FORMAT_DATE = "yyyy-MM-dd";
 
+  private static final int LIMIT = 100;
+
   /**
    * Implementa el método calculateMissingPeriods
    * @param request
@@ -47,7 +49,7 @@ public class GddService implements IGddService {
     ArrayList<String> notFoundDates = new ArrayList<>();
     while (initialCalendar.getTime().compareTo(finalCalendar.getTime()) <= 0) {
       String fDate = sdf.format(initialCalendar.getTime());
-      if (!request.getFechas().contains(fDate)) {
+      if (!request.getFechas().contains(fDate) && notFoundDates.size() < LIMIT) {
         notFoundDates.add(fDate);
       }
       initialCalendar.add(GregorianCalendar.MONTH, 1);
