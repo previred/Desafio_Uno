@@ -47,9 +47,9 @@ public class GddService implements IGddService {
     finalCalendar.setTime(endDate);
 
     ArrayList<String> notFoundDates = new ArrayList<>();
-    while (initialCalendar.getTime().compareTo(finalCalendar.getTime()) <= 0) {
+    while (initialCalendar.getTime().compareTo(finalCalendar.getTime()) <= 0 && notFoundDates.size() < LIMIT) {
       String fDate = sdf.format(initialCalendar.getTime());
-      if (!request.getFechas().contains(fDate) && notFoundDates.size() < LIMIT) {
+      if (!request.getFechas().contains(fDate)) {
         notFoundDates.add(fDate);
       }
       initialCalendar.add(GregorianCalendar.MONTH, 1);
