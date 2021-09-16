@@ -1,0 +1,6 @@
+server:
+  port: 8081
+springdoc:
+  api-docs:
+    path: /openapi
+url-api-periodos: http://127.0.0.1:8080/periodos/api
