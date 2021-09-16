@@ -416,13 +416,10 @@ Este proyecto emplea el servicio Rest provisto por Previred en GitHub (https://g
 
 A partir de ello, se debe modificar lo siguiente:
 ```
-*endpoint.periodos.protocolo=http://*
-
-*endpoint.periodos.host=127.0.0.1*
-
-*endpoint.periodos.port=8080*
-
-*endpoint.periodos.path=/periodos/api*
+endpoint.periodos.protocolo=http://
+endpoint.periodos.host=127.0.0.1
+endpoint.periodos.port=8080
+endpoint.periodos.path=/periodos/api
 ```
 
 Además, el proyecto *api-generador-datos-fecha* utiliza el puerto *8081* de manera que para una correcta implementación este debe estar disponible.
