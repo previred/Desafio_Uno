@@ -415,11 +415,15 @@ java -jar api-generador-datos-fecha-0.0.1.jar
 Este proyecto emplea el servicio Rest provisto por Previred en GitHub (https://github.com/previred/Generador_Datos_Desafio_Uno) de manera que para la correcta utilización es necesario modificar el endpoint en el archivo application.properties obtenido a partir de la ejecución del proyecto GDD.
 
 A partir de ello, se debe modificar lo siguiente:
-
+```
 *endpoint.periodos.protocolo=http://*
+
 *endpoint.periodos.host=127.0.0.1*
+
 *endpoint.periodos.port=8080*
+
 *endpoint.periodos.path=/periodos/api*
+```
 
 Además, el proyecto *api-generador-datos-fecha* utiliza el puerto *8081* de manera que para una correcta implementación este debe estar disponible.
 
