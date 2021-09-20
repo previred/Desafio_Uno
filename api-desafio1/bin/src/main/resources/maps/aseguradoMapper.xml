@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.api_desafio1.repository.mybatis.mapper.IAseguradoReptryMapper">
+
+	<resultMap type="com.api_desafio1.bl.entity.AsegdoTitular" id="asegurado">
+		<result property="idPrevision" column="idIsapre"/>
+		<result property="prevision" column="glosaIsapre"/>
+		<result property="vigente" column="vigente"/>
+		<result property="rut" column="identificador"/>
+		<result property="nombre" column="nombre"/>
+		<result property="apPaterno" column="apellidoPaterno"/>
+		<result property="apMaterno" column="apellidoMaterno"/>
+		<result property="fechaNacimiento" column="fechaNacimiento"/>
+		<result property="estadoCivil" column="glosaEstadoCivil"/>
+		<result property="idPersona" column="idPersona"/>
+		<!--<collection property="contacto" ofType="cl.vc.apiasegurado.dtos.Contacto" -->
+	</resultMap>
+	
+	<resultMap type="com.api_desafio1.bl.entity.Registro" id="registro">
+		<result property="mensaje" column="mensaje" />
+	</resultMap>
+	
+	
+	<sql id="sqlAsegurados">
+		Select 
+		isa.idIsapre idIsapre,
+		isa.glosa as glosaIsapre,
+		p.idPersona,
+        p.identificador,
+		p.vigente,
+		p.nombre,
+		p.apellidoPaterno,
+		p.apellidoMaterno,
+		(select CASE
+		WHEN p.IdEstadoCivil = null THEN NULL
+		ELSE Glosa
+		END
+		from Suscripcion.dbo.EstadoCivil where IdEstadoCivil = p.IdEstadoCivil) as glosaEstadoCivil,
+		p.sexo,
+		convert(datetime, p.fechaNacimiento, 105) as fechaNacimiento,
+		iua.UsuBloqueo
+		FROM Suscripcion.dbo.ContratoSeguroAsegurados csa
+		INNER JOIN Suscripcion.dbo.Persona p ON csa.idPersona = p.idPersona
+		INNER JOIN Suscripcion.dbo.Isapre isa on csa.idIsapre = isa.idIsapre
+		INNER JOIN Suscripcion.dbo.IntUsuarioAsegurado iua on p.idPersona = iua.IdPersona
+	</sql>
+
+	<select id="buscarTitularPorRut" resultMap="asegurado" parameterType="map">	
+	    		 <include refid="sqlAsegurados" />
+		 Where p.identificador = #{rutAsegurado}
+	</select>
+	
+	<select id="guardar" resultMap="registro" parameterType="map">
+		DECLARE
+		@p_salida Char(90)
+		exec Suscripcion.dbo.arqtra_AseguradoCrear
+		@p_nombre=#{param.nombre},
+		@p_mail=#{param.mail},
+		@p_salida=@p_salida OUT		
+		
+		select @p_salida as mensaje
+	</select>
+	
+	<select id="eliminar" resultMap="registro" parameterType="map">
+		DECLARE
+		@p_salida Char(90)
+		exec Suscripcion.dbo.arqtr_pa_AseguradoEliminar
+		@p_PKIdPrueba=#{pkId},
+		@p_salida=@p_salida OUT		
+		select @p_salida as mensaje
+	</select>
+
+	<select id="listarPorApPaterno" resultMap="asegurado" parameterType="map">
+	    <include refid="sqlAsegurados" />
+	    <bind name="patternLike" value="'%' + apellidoPaterno + '%'" />
+		 Where p.apellidoPaterno LIKE #{patternLike}
+	</select>
+	
+</mapper>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- Se necesita defaults.xml para separar la salida del logging a consola y archivo 
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />-->
+
+	<!-- Este filtro se aplica a todos los perfiles por defecto-->
+	<logger name="org.springframework" level="INFO"/>
+	
+	<springProperty scope="context" name="myappName" source="spring.application.name"/>
+	
+	<property scope="context" name="LOGSTASH_HOST" value="${LOGSTASH_HOST}"/>
+    <property scope="context" name="LOGSTASH_PORT" value="${LOGSTASH_PORT}"/>
+
+	<appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+		<!-- <destination>${LOGSTASH_HOST}:${LOGSTASH_PORT}</destination>-->
+		<destination>logcentral-desa.vidacamara.cl:4560</destination>
+		<!-- encoder is required -->
+		<encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+	</appender>
+	
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+		    <pattern>${myappName} - %d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
+		    <charset>UTF-8</charset>
+		</encoder>
+	</appender>	
+	
+	<springProfile name="dev">
+		
+		<!-- Todos los mensajes seran enviados a la salida llamada "console". 
+			El filtro por defecto establece un nivel mínimo de "DEBUG". -->
+		<root level="INFO">
+			<appender-ref ref="console" />
+			<appender-ref ref="stash" />
+		</root>
+	</springProfile>
+	
+	<!-- Manejo por perfil cuando no corresponde a desarrollo -->
+	<springProfile name="!dev">
+	<!-- Todos los mensajes se enviaran a la salida llamada "stash".
+		El filtro por defecto establece un nivel mínimo de "INFO". -->
+		<root level="INFO">
+			<appender-ref ref="stash" />
+		</root>
+	</springProfile>
+ 
+</configuration>

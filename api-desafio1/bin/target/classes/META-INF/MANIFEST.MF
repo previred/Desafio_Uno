@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Built-By: oscar
+Build-Jdk: 15.0.2
+Implementation-Title: fwk-springboot-api
+Implementation-Version: 3.0.7-RELEASE
+Implementation-Vendor-Id: com.vc
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-URL: http://projects.spring.io/spring-boot/fwk-springboot
+ -api/
+Created-By: Maven Integration for Eclipse
+

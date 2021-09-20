@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: api_producto
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://api-cloud.apidesa.vidacamara.cl
