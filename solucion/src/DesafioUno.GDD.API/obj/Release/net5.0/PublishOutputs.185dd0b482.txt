@@ -1,0 +1,12 @@
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.GDD.API.exe
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.GDD.API.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.GDD.API.deps.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.GDD.API.runtimeconfig.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.GDD.API.pdb
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\FluentValidation.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.GDD.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

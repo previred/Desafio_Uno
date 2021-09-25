@@ -1,0 +1,16 @@
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.Nivel3.API.exe
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.Nivel3.API.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.Nivel3.API.deps.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.Nivel3.API.runtimeconfig.json
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\DesafioUno.Nivel3.API.pdb
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\FluentValidation.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\System.Configuration.ConfigurationManager.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\System.Security.Cryptography.ProtectedData.dll
+C:\Users\VEGA\source\repos\Desafio_Uno\src\DesafioUno.Nivel3.API\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
