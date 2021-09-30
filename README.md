@@ -2,7 +2,7 @@
 
 #### Introducción
 
-La presente aplicación tiene como objetivo generar las fechas faltantes dentro de un rango de fecha contenidos en un archivo JSON, como por ejemplo si el programa procesa un archivo con el siguiente contenido:
+La presente aplicación tiene como objetivo generar las fechas faltantes dentro de un rango de fecha contenidos en un archivo JSON. Como por ejemplo si el programa procesa un archivo con el siguiente contenido:
 
 
 ```html
@@ -59,7 +59,7 @@ Al ejecutar el programa generará otro archivo con todo el contenido del archivo
 
 #### Generación del JAR y ejecución del programa
 
-	Para ejecutar el programa se debe generar un archivo de tipo JAR Runnable con su clase principal GenFechasFaltantes. Desde el IDE Eclipse se deben seguir los siguientes pasos: Click derecho sobre el proyecto -> exportar -> Runnable Jar File ->Siguiente -> En el listado Launch configuration se debe seleccionar la clase GenFechasFaltantes -> Finish. Una vez generado el archivo JAR ya se puede ejecutar la aplicación desde la linea de comando  la siguiente instrucción:
+	Para ejecutar el programa se debe generar un archivo de tipo JAR Runnable con su clase principal GenFechasFaltantes. Desde el IDE Eclipse se deben seguir los siguientes pasos: Click derecho sobre el proyecto -> exportar -> Runnable Jar File ->Siguiente -> En el listado Launch configuration se debe seleccionar la clase GenFechasFaltantes -> Finish. Una vez generado el archivo JAR ya se puede ejecutar la aplicación desde la linea de comandos con la siguiente instrucción:
 
 *java -jar DesafioPrevired.jar NombreArchivoOrigen NombreArchivoDestino*
 
