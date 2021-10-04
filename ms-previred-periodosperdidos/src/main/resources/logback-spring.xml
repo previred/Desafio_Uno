@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%d %p %C{1.} [%t] %m%n</pattern>
+        </encoder>
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${RUTA_LOGS}/@project.artifactId@-@project.version@-${HOSTNAME}_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <appender name="minimal" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>%m%n</pattern>
+        </encoder>
+        <prudent>true</prudent>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${RUTA_LOGS}/@project.artifactId@_std_@project.version@-${HOSTNAME}_%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>90</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <logger name="org.springframework.ws.client.MessageTracing.sent" level="TRACE" />
+    <logger name="org.springframework.ws.client.MessageTracing.received" level="TRACE" />
+    <logger name="org.springframework.ws.server.MessageTracing" level="TRACE" />
+    <logger name="std.logger" level="ALL" additivity="false">
+        <appender-ref ref="minimal" />
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="FILE" />
+    </root>
+
+    <jmxConfigurator />
+
+</configuration>
