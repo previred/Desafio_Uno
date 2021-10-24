@@ -1,0 +1,16 @@
+{
+  "groupId"         : "com.previred.periodos.apiperiodosperdidos",
+  "artifactId"      : "api-periodos-perdidos",
+  "artifactVersion" : "1.0.0",
+  "artifactDescription" : "Micro Servicio de prueva de periodos perdidos",
+  
+  "basePackage"     : "com.previred.periodos.apiperiodosperdidos",
+  "invokerPackage"  : "com.previred.periodos.apiperiodosperdidos.swagger",
+  "apiPackage"      : "com.previred.periodos.apiperiodosperdidos.swagger.codegen.api",
+  "modelPackage"    : "com.previred.periodos.apiperiodosperdidos.swagger.codegen.model",
+  "configPackage"   : "com.previred.periodos.apiperiodosperdidos.swagger.codegen.config",
+  "java8"           : true,
+  "title"           : "API Periodos Perdidos",
+  "hideGenerationTimestamp" : true,
+  "library"         : "spring-boot"
+}
