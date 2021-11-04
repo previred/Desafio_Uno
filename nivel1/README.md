@@ -5,6 +5,7 @@ Dentro de la carpeta nivel1 se encuentra el archivo de prueba llamado "ggd2.json
 # Detalle de los sistemas
 
 Java 11
+ant
 
 # Compilar y ejecutar el proyecto
 
