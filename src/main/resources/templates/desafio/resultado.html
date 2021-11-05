@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Desafio | Resultado</title>
+
+</head>
+<body
+	th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}">
+	<div
+		style="display: flex; justify-content: space-around; align-content: space-between; align-items: center; width: 100%">
+		<h2>Resultado Fechas Faltantes Desafio Nivel 3</h2>
+		<form th:action="@{/rest/resultado}" th:method="get">
+			<button type="submit">Ver como Respuesta JSON</button>
+		</form>
+	</div>
+	<div
+		style="display: flex; justify-content: center; align-content: space-around; align-items: center; width: 100%">
+		<textarea th:text="${resultado}" rows="60" style="width: 80%"></textarea>
+	</div>
+</body>
+</html>
+<!-- <script> -->
+<!-- No boostrap para que sea mas livano -->
+<!-- </script> -->
