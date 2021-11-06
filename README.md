@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="LogoTC.jpg" width="180" title="Tech Consult">
+</p>
+
 # Desafío 1: Periodos perdidos
 
 El desafío consiste en lo siguiente:
