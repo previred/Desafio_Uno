@@ -19,7 +19,7 @@ import cl.previred.infrastructurecross.application.agent.dto.PeriodosPerdidosAge
 import cl.previred.infrastructurecross.application.agent.service.IGeneradorDatosAgentService;
 import cl.previred.infrastructurecross.application.util.ObjectMapper;
 
-@Service
+@Service 
 public class PeriodosPerdidosService implements IPeriodosPerdidosService{
 	@Value("${url.api.periodos}")
 	private String urlApiPeriodos;
