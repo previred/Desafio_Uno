@@ -1,0 +1,46 @@
+info:
+  name: 'BackEnd Periodos Perdides Desafio uno'
+  
+project:
+  version: '1.0.0'
+  
+server:
+  error:
+    whitelabel:
+      enabled: false
+  port: 8082
+
+spring:
+  profiles: 
+    active: 
+      - dev
+    include:
+      - message
+  jackson:
+    default-property-inclusion: NON_NULL
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+  datasource:
+    driverClassName: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: foo
+    password: bar
+      
+#Configuracion Actuator
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    health.sensitive: true
+  health:
+    db:
+      enabled: true
+    defaults:
+      enabled: true
+      
+#SERVICIO DE API FREE
+url.api.free: https://www.boredapi.com/api/activity
+url.api.periodos: http://127.0.0.1:8080/periodos/api

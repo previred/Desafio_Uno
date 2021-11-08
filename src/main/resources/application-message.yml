@@ -1,0 +1,14 @@
+applicationmessages:
+  messages:
+  - appCode: 0
+    message: 'Error Interno del Servidor. '
+    httpCode: 500
+  - appCode: 1
+    message: 'Respuesta nula de servicio generacion de datos. '
+    httpCode: 403
+  - appCode: 2
+    message: 'Fecha creacion nula o vacia. '
+    httpCode: 403
+  - appCode: 3
+    message: 'Fecha fin nula o vacia. '
+    httpCode: 403
