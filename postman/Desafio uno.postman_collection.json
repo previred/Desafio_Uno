@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "2f9c9403-b9c9-4bf9-af3e-cbcf2d30a6f9",
+		"name": "Desafio uno",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "0. estado aplicacion",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/actuator/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"actuator",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "0. estado aplicacion Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/PeriodosPerdidos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"PeriodosPerdidos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

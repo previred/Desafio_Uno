@@ -2,6 +2,7 @@ package cl.previred.application.service.impl;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -69,6 +70,11 @@ public class PeriodosPerdidosService implements IPeriodosPerdidosService{
 		if(periodosPerdidosAgentResponseDto != null &&
 				periodosPerdidosAgentResponseDto.getFechaFin() == null) {
 			environmentException.error(3);
+		}
+		if(periodosPerdidosAgentResponseDto != null &&
+				periodosPerdidosAgentResponseDto.getFechas() == null) {
+			periodosPerdidosAgentResponseDto.setFechas(new ArrayList<>());
+			
 		}
 	}
 
