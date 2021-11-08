@@ -3,14 +3,13 @@ plugins {
 	id 'io.spring.dependency-management' version '1.0.8.RELEASE'
 	id 'java'
 	id 'war'
-	id 'org.sonarqube' version '2.7'
 }
 
-group = 'cl.coopeuch'
+group = 'cl.previred'
 sourceCompatibility = '1.8'
 
 task run(type: JavaExec, dependsOn: classes) {
-   main = 'cl.coopeuch.BackEndVentaDistanciaApplication'
+   main = 'cl.previred.BackEndPeriodosPerdidosApplication'
    classpath = sourceSets.main.runtimeClasspath
 }
 
