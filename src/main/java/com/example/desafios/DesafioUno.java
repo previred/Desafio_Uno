@@ -3,7 +3,6 @@ package com.example.desafios;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.time.LocalDate;
-import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -52,21 +51,16 @@ public class DesafioUno {
 			//Se calcula la cantidad de meses que faltan entre la fecha de creacion y fin
 			LocalDate creacion = LocalDate.parse(jsonFechasEntrada.getFechaCreacion(), formato);
 			LocalDate fin = LocalDate.parse(jsonFechasEntrada.getFechaFin(), formato);
-			Period diferencia = Period.between(creacion, fin);
-			int year = diferencia.getYears();
-			int meses = diferencia.getMonths();
-			year = year * 12;
-			meses = meses + year;
 
-			for (int i = 0; i <= meses; i++) {
-				LocalDate newDate = creacion.plusMonths(i);
-				String formattedString = newDate.format(formato);
+			while (creacion.isBefore(fin)) {
+				creacion = creacion.plusMonths(1);
+				String formattedString = creacion.format(formato);
 				fechasFaltantes.add(formattedString);
 			}
+			
 
 			//se eliminan las fechas inicialmente obtenidas en el json de entrada
 			fechasFaltantes.removeAll(jsonFechasEntrada.getFechas());
-
 			//llamado a metodo para escribir el archivo de salida
 			escribirSalida(jsonFechasEntrada, fechasFaltantes, salida);
 		} catch (Exception e) {

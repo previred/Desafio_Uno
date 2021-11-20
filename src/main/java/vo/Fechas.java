@@ -1,5 +1,6 @@
 package vo;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,10 +10,10 @@ public class Fechas {
 	Long id = 0L;
 	
 	/** fecha creacion */
-	String fechaCreacion = "";
+	String fechaCreacion;
 	
 	/** fecha fin */
-	String fechaFin = "";
+	String fechaFin;
 	
 	/** lista de fechas, usar para fechas iniciales o faltantes */ 
 	List<String> fechas = new ArrayList<String>();
