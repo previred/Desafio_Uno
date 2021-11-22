@@ -1,10 +1,9 @@
 package vo;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fechas {
+public class Periodo {
 	
 	/** id */
 	Long id = 0L;

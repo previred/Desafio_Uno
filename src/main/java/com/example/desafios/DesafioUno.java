@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import vo.Fechas;
+import vo.Periodo;
 
 @SpringBootApplication
 public class DesafioUno {
@@ -24,7 +24,7 @@ public class DesafioUno {
 		SpringApplication.run(DesafioUno.class, args);
 
 		//inicializacion de objetos
-		Fechas jsonFechasEntrada = new Fechas();
+		Periodo jsonFechasEntrada = new Periodo();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 		List<String> fechasFaltantes = new ArrayList<String>();
 		JSONParser parser = new JSONParser();
@@ -74,7 +74,7 @@ public class DesafioUno {
 	 * @param jsonFechasEntrada
 	 * @param fechasFaltanttes
 	 */
-	private static void escribirSalida(Fechas jsonFechasEntrada, List<String> fechasFaltantes, String salida) {
+	private static void escribirSalida(Periodo jsonFechasEntrada, List<String> fechasFaltantes, String salida) {
 		JSONObject obj = new JSONObject();
 		obj.put("fechaCreacion", jsonFechasEntrada.getFechaCreacion());
 		obj.put("id", jsonFechasEntrada.getId());
