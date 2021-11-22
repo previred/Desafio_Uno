@@ -11,6 +11,7 @@ seleccionar Run As
 seleccionmar Maven Build
 en el input goals escribir: clean package
 hacer click en run
+el archivo jar generado se encontrará en la carpeta target dentro de la carpeta del proyecto
 ```
 Se incluyen también 2 archivos json que representan la entrada y salida de datos.
 

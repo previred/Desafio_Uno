@@ -1,4 +1,4 @@
-package vo;
+package com.ccu.vo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +64,4 @@ public class Periodo {
 	public void setFechas(List<String> fechas) {
 		this.fechas = fechas;
 	}
-	
-	
 }

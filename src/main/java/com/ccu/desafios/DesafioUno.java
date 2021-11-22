@@ -1,9 +1,10 @@
-package com.example.desafios;
+package com.ccu.desafios;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -12,17 +13,18 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import vo.Periodo;
+import com.ccu.vo.Periodo;
 
 @SpringBootApplication
 public class DesafioUno {
 
 	private static FileWriter file;
 
+	
+	
 	public static void main(String[] args) {
 		SpringApplication.run(DesafioUno.class, args);
-
+		
 		//inicializacion de objetos
 		Periodo jsonFechasEntrada = new Periodo();
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -40,31 +42,39 @@ public class DesafioUno {
 			JSONArray fechas = (JSONArray) jsonEntrada.get("fechas");
 			Iterator<String> fecha = fechas.iterator();
 
-			//Se guardan todos los datos del archivo json de entradas en un objeto tipo Fechas
+			//Se guardan todos los datos del archivo json de entradas en un objeto
 			jsonFechasEntrada.setId((Long) jsonEntrada.get("id"));
 			jsonFechasEntrada.setFechaCreacion((String) jsonEntrada.get("fechaCreacion"));
 			jsonFechasEntrada.setFechaFin((String) jsonEntrada.get("fechaFin"));
-			while (fecha.hasNext()) {
-				jsonFechasEntrada.getFechas().add(fecha.next());
-			}
-
-			//Se calcula la cantidad de meses que faltan entre la fecha de creacion y fin
-			LocalDate creacion = LocalDate.parse(jsonFechasEntrada.getFechaCreacion(), formato);
-			LocalDate fin = LocalDate.parse(jsonFechasEntrada.getFechaFin(), formato);
-
-			while (creacion.isBefore(fin)) {
-				creacion = creacion.plusMonths(1);
-				String formattedString = creacion.format(formato);
-				fechasFaltantes.add(formattedString);
-			}
 			
+			//se utiliza un try-catch por si las fechas no cumplen con el formato
+			try{
+				LocalDate creacion = LocalDate.parse(jsonFechasEntrada.getFechaCreacion(), formato);
+				LocalDate fin = LocalDate.parse(jsonFechasEntrada.getFechaFin(), formato);
+				
+				while (fecha.hasNext()) {
+					jsonFechasEntrada.getFechas().add(fecha.next());
+				}
 
-			//se eliminan las fechas inicialmente obtenidas en el json de entrada
-			fechasFaltantes.removeAll(jsonFechasEntrada.getFechas());
-			//llamado a metodo para escribir el archivo de salida
-			escribirSalida(jsonFechasEntrada, fechasFaltantes, salida);
+				//Se calcula la cantidad de meses que faltan entre la fecha de creacion y fin
+				while (creacion.isBefore(fin)) {
+					creacion = creacion.plusMonths(1);
+					String formattedString = creacion.format(formato);
+					fechasFaltantes.add(formattedString);
+				}
+
+				//se eliminan las fechas inicialmente obtenidas en el json de entrada
+				fechasFaltantes.removeAll(jsonFechasEntrada.getFechas());
+				//llamado a metodo para escribir el archivo de salida
+				escribirSalida(jsonFechasEntrada, fechasFaltantes, salida);
+		    }
+		    catch (DateTimeParseException e)
+		    {
+		        System.out.println("Formato fecha Creacion o Fin invalidos ");
+		        return;
+		    }			
 		} catch (Exception e) {
-			e.printStackTrace();
+			 System.out.println("Error al parsear json ");
 		}
 	}
 	
