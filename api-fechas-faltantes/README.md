@@ -4,13 +4,13 @@
 
 # Arquitectura
 - Paquetes
-	-*martinmgutierrezb.periodos.controller*
+	- **martinmgutierrezb.periodos.controller**
 		Se encuentra la clase que maneja la peticion http.
-	-*martinmgutierrezb.periodos.service*
+	- **martinmgutierrezb.periodos.service**
 		Se encuentra la clase que maneja la logica de negocio.
-	-*martinmgutierrezb.periodos.dao*
+	- **martinmgutierrezb.periodos.dao**
 		Se encuentra la clase que maneja el acceso a datos.
-	-*martinmgutierrezb.periodos.models*
+	- **martinmgutierrezb.periodos.models**
 		Se encuentran los modelos usados para esta solución.
 		
 # Autor: 
